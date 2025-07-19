@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ecarxTv</string>
+    <string name="channel_list_title">IPTV Channels</string>
+    <string name="import_subscription">Import Subscription</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="volume_control">Volume Control</string>
+    <string name="back">Back</string>
+    <string name="no_channels">No channels available. Import a subscription first.</string>
+    <string name="importing">Importing subscription...</string>
+    <string name="import_success">Subscription imported successfully</string>
+    <string name="import_error">Failed to import subscription</string>
+    <string name="connect_to_car">Connect to Android Auto to start watching</string>
+</resources>
