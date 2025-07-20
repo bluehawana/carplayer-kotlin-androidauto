@@ -2,8 +2,8 @@ package com.ecarplay.iptv.storage
 
 import android.content.Context
 import android.os.Environment
-import com.ecarplay.iptv.Channel
-import com.ecarplay.iptv.IPTVSubscription
+import com.ecarplay.iptv.models.Channel
+import com.ecarplay.iptv.models.IPTVSubscription
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -198,6 +198,8 @@ class M3UFileManager(private val context: Context) {
         val channels = mutableListOf<Channel>()
         val lines = content.split("\n")
         
+        android.util.Log.d("M3UFileManager", "Parsing M3U content with ${lines.size} lines")
+        
         var currentChannel: Channel? = null
         var channelInfo = ""
         
@@ -205,11 +207,14 @@ class M3UFileManager(private val context: Context) {
             when {
                 line.startsWith("#EXTINF:") -> {
                     channelInfo = line.substringAfter("#EXTINF:")
+                    android.util.Log.d("M3UFileManager", "Found EXTINF: $channelInfo")
                 }
                 line.startsWith("http") -> {
                     val name = extractChannelName(channelInfo)
                     val logoUrl = extractLogoUrl(channelInfo)
                     val category = extractCategory(channelInfo)
+                    
+                    android.util.Log.d("M3UFileManager", "Creating channel: $name, URL: ${line.trim()}")
                     
                     currentChannel = Channel(
                         id = java.util.UUID.randomUUID().toString(),
@@ -224,6 +229,7 @@ class M3UFileManager(private val context: Context) {
             }
         }
         
+        android.util.Log.d("M3UFileManager", "Parsed ${channels.size} channels total")
         return channels
     }
     

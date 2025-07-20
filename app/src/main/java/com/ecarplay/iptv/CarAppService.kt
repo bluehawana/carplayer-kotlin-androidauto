@@ -19,6 +19,6 @@ class CarAppService : CarAppService() {
 class IPTVSession : Session() {
     
     override fun onCreateScreen(intent: android.content.Intent): Screen {
-        return M3UFileListScreen(carContext)
+        return MainChannelScreen(carContext)
     }
 }

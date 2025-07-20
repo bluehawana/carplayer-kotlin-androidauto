@@ -132,7 +132,7 @@ class M3UFileDetailsScreen(
         coroutineScope.launch {
             val channels = m3uFileManager.loadM3UFile(metadata.fileName)
             if (channels != null) {
-                screenManager.push(ChannelListScreen(carContext, channels, metadata.displayName))
+                screenManager.push(GridChannelScreen(carContext, channels, metadata.displayName))
             } else {
                 showToast("Failed to load channels")
             }

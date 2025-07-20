@@ -3182,15 +3182,18 @@ drawable ic_launcher_foreground
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_movies
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_news
 drawable ic_play_arrow
 drawable ic_play_pause
 drawable ic_playlist
 drawable ic_refresh
 drawable ic_search_black_24
+drawable ic_sports
 drawable ic_tv
 drawable ic_volume
 drawable ic_volume_down
@@ -3732,6 +3735,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settingsButton
 id sharedValueSet
 id sharedValueUnset
 id shortcut

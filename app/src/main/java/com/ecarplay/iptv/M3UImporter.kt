@@ -37,12 +37,18 @@ class M3UImporter(private val context: Context) {
                 val assetManager = context.assets
                 val content = assetManager.open("iptv.m3u").bufferedReader().use { it.readText() }
                 
+                android.util.Log.d("M3UImporter", "Loaded M3U content, length: ${content.length}")
+                android.util.Log.d("M3UImporter", "First 200 chars: ${content.take(200)}")
+                
                 val metadata = m3uFileManager.saveM3UFile(content, "IPTV Channels")
                 if (metadata != null) {
+                    android.util.Log.d("M3UImporter", "Successfully saved M3U file: ${metadata.fileName}")
                     importedFiles.add(metadata)
+                } else {
+                    android.util.Log.e("M3UImporter", "Failed to save M3U file")
                 }
             } catch (e: Exception) {
-                // Asset file not found or can't be read
+                android.util.Log.e("M3UImporter", "Failed to import M3U file", e)
             }
             
             importedFiles

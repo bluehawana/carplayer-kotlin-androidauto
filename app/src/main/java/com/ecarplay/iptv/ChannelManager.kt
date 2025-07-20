@@ -7,6 +7,8 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.URL
+import com.ecarplay.iptv.models.Channel
+import com.ecarplay.iptv.models.IPTVSubscription
 
 class ChannelManager {
     
