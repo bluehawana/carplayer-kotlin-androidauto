@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 2 errors and 45 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 4 errors and 51 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Jul 19 01:49:41 CEST 2025 by AGP (8.2.0)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sun Jul 20 11:17:31 CEST 2025 by AGP (8.10.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,10 +187,12 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#ScopedStorage"><i class="material-icons warning-icon">warning</i>Affected by scoped storage (1)</a>
+      <a class="mdl-navigation__link" href="#Instantiatable"><i class="material-icons error-icon">error</i>Registered class is not instantiatable (2)</a>
       <a class="mdl-navigation__link" href="#MissingIntentFilterForMediaSearch"><i class="material-icons error-icon">error</i>Missing MEDIA_PLAY_FROM_SEARCH intent-filter (1)</a>
       <a class="mdl-navigation__link" href="#MissingMediaBrowserServiceIntentFilter"><i class="material-icons error-icon">error</i>Missing MediaBrowserService intent-filter (1)</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (11)</a>
+      <a class="mdl-navigation__link" href="#SelectedPhotoAccess"><i class="material-icons warning-icon">warning</i>Behavior change when requesting photo library access (1)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (12)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (11)</a>
@@ -199,7 +201,9 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (2)</a>
       <a class="mdl-navigation__link" href="#IconDipSize"><i class="material-icons warning-icon">warning</i>Icon density-independent size validation (2)</a>
       <a class="mdl-navigation__link" href="#IconDuplicates"><i class="material-icons warning-icon">warning</i>Duplicated icons under different names (1)</a>
-      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (3)</a>
+      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (1)</a>
+      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (2)</a>
+      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (4)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -218,6 +222,9 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ScopedStorage">ScopedStorage</a>: Affected by scoped storage</td></tr>
 <tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<a href="#Instantiatable">Instantiatable</a>: Registered class is not instantiatable</td></tr>
+<tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
 <a href="#MissingIntentFilterForMediaSearch">MissingIntentFilterForMediaSearch</a>: Missing MEDIA_PLAY_FROM_SEARCH intent-filter</td></tr>
 <tr>
@@ -227,7 +234,10 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
-<td class="countColumn">11</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#SelectedPhotoAccess">SelectedPhotoAccess</a>: Behavior change when requesting photo library access</td></tr>
+<tr>
+<td class="countColumn">12</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
@@ -261,10 +271,18 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#IconDuplicates">IconDuplicates</a>: Duplicated icons under different names</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#UseKtx">UseKtx</a>: Use KTX extension function</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
 </td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#SetTextI18n">SetTextI18n</a>: TextView Internationalization</td></tr>
+<tr>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#HardcodedText">HardcodedText</a>: Hardcoded text</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (22)</a>
 </td></tr>
@@ -332,6 +350,61 @@ To learn more, read these resources: Play policy: <a href="https://goo.gle/polic
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationScopedStorageLink" onclick="reveal('explanationScopedStorage');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ScopedStorageCardLink" onclick="hideid('ScopedStorageCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="Instantiatable"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="InstantiatableCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Registered class is not instantiatable</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:63</span>: <span class="message">This class should provide a default constructor (a public constructor with no arguments) (<code>com.ecarplay.iptv.ImportScreen</code>)</span><br /><pre class="errorlines">
+<span class="lineno"> 60 </span>
+<span class="lineno"> 61 </span>        <span class="comment">&lt;!-- Import Screen Activity --></span>
+<span class="lineno"> 62 </span>        <span class="tag">&lt;activity</span><span class="attribute">
+</span><span class="caretline"><span class="lineno"> 63 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"</span><span class="error"><span class="value">.ImportScreen</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 64 </span>            <span class="prefix">android:</span><span class="attribute">exported</span>=<span class="value">"false"</span>
+<span class="lineno"> 65 </span>            <span class="prefix">android:</span><span class="attribute">theme</span>=<span class="value">"@style/Theme.ECarPlayIPTV"</span> />
+</pre>
+
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:63</span>: <span class="message"><code>ImportScreen</code> must extend android.app.Activity</span><br /><pre class="errorlines">
+<span class="lineno"> 60 </span>
+<span class="lineno"> 61 </span>        <span class="comment">&lt;!-- Import Screen Activity --></span>
+<span class="lineno"> 62 </span>        <span class="tag">&lt;activity</span><span class="attribute">
+</span><span class="caretline"><span class="lineno"> 63 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"</span><span class="error"><span class="value">.ImportScreen</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 64 </span>            <span class="prefix">android:</span><span class="attribute">exported</span>=<span class="value">"false"</span>
+<span class="lineno"> 65 </span>            <span class="prefix">android:</span><span class="attribute">theme</span>=<span class="value">"@style/Theme.ECarPlayIPTV"</span> />
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationInstantiatable" style="display: none;">
+Activities, services, broadcast receivers etc. registered in the manifest file (or for custom views, in a layout file) must be "instantiatable" by the system, which means that the class must be public, it must have an empty public constructor, and if it's an inner class, it must be a static inner class.<br/>
+<br/>
+If you use a custom <code>AppComponentFactory</code> to instantiate app components yourself, consider disabling this Lint issue in order to avoid false positives.<br/>To suppress this error, use the issue id "Instantiatable" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Instantiatable</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Fatal</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationInstantiatableLink" onclick="reveal('explanationInstantiatable');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="InstantiatableCardLink" onclick="hideid('InstantiatableCard');">
 Dismiss</button>            </div>
             </div>
           </section><a name="MissingIntentFilterForMediaSearch"></a>
@@ -449,7 +522,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:13</span>: <span class="message">Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:13</span>: <span class="message">Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the <code>android.os.Build.VERSION_CODES</code> javadoc for details.</span><br /><pre class="errorlines">
 <span class="lineno"> 10 </span>    defaultConfig {
 <span class="lineno"> 11 </span>        applicationId <span class="string">"com.ecarplay.iptv"</span>
 <span class="lineno"> 12 </span>        minSdk <span class="number">23</span>
@@ -460,7 +533,7 @@ Dismiss</button>            </div>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationOldTargetApi" style="display: none;">
-When your application runs on a version of Android that is more recent than your <code>targetSdkVersion</code> specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the <code>targetSdkVersion</code> is less than 14, your app may get an option button in the UI.<br/>
+When your application or sdk runs on a version of Android that is more recent than your <code>targetSdkVersion</code> specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the <code>targetSdkVersion</code> is less than 14, your app may get an option button in the UI.<br/>
 <br/>
 To fix this issue, set the <code>targetSdkVersion</code> to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: <a href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html">https://developer.android.com/reference/android/os/Build.VERSION_CODES.html</a> as well as follow this guide:<br/>
 <a href="https://developer.android.com/distribute/best-practices/develop/target-sdk.html">https://developer.android.com/distribute/best-practices/develop/target-sdk.html</a><br/><div class="moreinfo">More info: <ul><li><a href="https://developer.android.com/distribute/best-practices/develop/target-sdk.html">https://developer.android.com/distribute/best-practices/develop/target-sdk.html</a>
@@ -490,6 +563,54 @@ To suppress this error, use the issue id "OldTargetApi" as explained in the <a h
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OldTargetApiCardLink" onclick="hideid('OldTargetApiCard');">
 Dismiss</button>            </div>
             </div>
+          </section><a name="SelectedPhotoAccess"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SelectedPhotoAccessCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Behavior change when requesting photo library access</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:12</span>: <span class="message">Your app is currently not handling Selected Photos Access introduced in Android 14+</span><br /><pre class="errorlines">
+<span class="lineno">  9 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.WRITE_EXTERNAL_STORAGE"</span> />
+<span class="lineno"> 10 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.MANAGE_EXTERNAL_STORAGE"</span> />
+<span class="lineno"> 11 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.READ_MEDIA_AUDIO"</span> />
+<span class="caretline"><span class="lineno"> 12 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"</span><span class="warning"><span class="value">android.permission.READ_MEDIA_VIDEO</span></span><span class="value">"</span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 13 </span>
+<span class="lineno"> 14 </span>    <span class="comment">&lt;!-- Car App Library permissions --></span>
+<span class="lineno"> 15 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"androidx.car.app.NAVIGATION_TEMPLATES"</span> />
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationSelectedPhotoAccess" style="display: none;">
+Selected Photo Access is a new ability for users to share partial access to their photo library when apps request access to their device storage on Android 14+.<br/>
+<br/>
+Instead of letting the system manage the selection lifecycle, we recommend you adapt your app to handle partial access to the photo library.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/about/versions/14/changes/partial-photo-video-access">https://developer.android.com/about/versions/14/changes/partial-photo-video-access</a>
+</div>To suppress this error, use the issue id "SelectedPhotoAccess" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">SelectedPhotoAccess</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSelectedPhotoAccessLink" onclick="reveal('explanationSelectedPhotoAccess');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SelectedPhotoAccessCardLink" onclick="hideid('SelectedPhotoAccessCard');">
+Dismiss</button>            </div>
+            </div>
           </section><a name="GradleDependency"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -499,6 +620,15 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:8</span>: <span class="message">A newer version of <code>compileSdkVersion</code> than 34 is available: 35</span><br /><pre class="errorlines">
+<span class="lineno">  5 </span>
+<span class="lineno">  6 </span>android {
+<span class="lineno">  7 </span>    namespace <span class="string">'com.ecarplay.iptv'</span>
+<span class="caretline"><span class="lineno">  8 </span>    <span class="warning">compileSdk <span class="number">34</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  9 </span>
+<span class="lineno"> 10 </span>    defaultConfig {
+<span class="lineno"> 11 </span>        applicationId <span class="string">"com.ecarplay.iptv"</span></pre>
+
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:36</span>: <span class="message">A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0</span><br /><pre class="errorlines">
 <span class="lineno"> 33 </span>}
 <span class="lineno"> 34 </span>
@@ -536,6 +666,8 @@ Dismiss</button>            </div>
 <span class="lineno"> 41 </span>    <span class="comment">// Android Auto support</span>
 <span class="lineno"> 42 </span>    implementation <span class="string">'androidx.car.app:app:1.4.0'</span></pre>
 
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 7 More Occurrences...</button>
+<div id="GradleDependencyDiv" style="display: none">
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:42</span>: <span class="message">A newer version of androidx.car.app:app than 1.4.0 is available: 1.7.0</span><br /><pre class="errorlines">
 <span class="lineno"> 39 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span>
 <span class="lineno"> 40 </span>    
@@ -545,8 +677,6 @@ Dismiss</button>            </div>
 <span class="lineno"> 44 </span>    
 <span class="lineno"> 45 </span>    <span class="comment">// Media playback</span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 6 More Occurrences...</button>
-<div id="GradleDependencyDiv" style="display: none">
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:43</span>: <span class="message">A newer version of androidx.car.app:app-projected than 1.4.0 is available: 1.7.0</span><br /><pre class="errorlines">
 <span class="lineno"> 40 </span>    
 <span class="lineno"> 41 </span>    <span class="comment">// Android Auto support</span>
@@ -686,7 +816,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/res/values/themes.xml">../../src/main/res/values/themes.xml</a>:9</span>: <span class="message">Unnecessary; SDK_INT is always >= 21</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/values/themes.xml">../../src/main/res/values/themes.xml</a>:9</span>: <span class="message">Unnecessary; <code>SDK_INT</code> is always >= 21</span><br /><pre class="errorlines">
 <span class="lineno">  6 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorSecondary"</span>>@color/teal_200<span class="tag">&lt;/item></span>
 <span class="lineno">  7 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorSecondaryVariant"</span>>@color/teal_700<span class="tag">&lt;/item></span>
 <span class="lineno">  8 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorOnSecondary"</span>>@color/black<span class="tag">&lt;/item></span>
@@ -837,7 +967,25 @@ Unused resources make applications larger and slow down builds.<br/>
 The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.<br/>
 <br/>
 You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.<br/>
-,<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+,<br/><br/>
+This check can be configured via the following options:<br/><br/>
+<div class="options">
+<b>skip-libraries</b> (default is true):<br/>
+Whether the unused resource check should skip reporting unused resources in libraries.<br/>
+<br/>
+Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with <code>checkDependencies=true</code>).<br/>
+<br/>
+However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.<br/>
+<br/>
+To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
+<pre class="errorlines">
+<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
+<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"UnusedResources"</span>>
+<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"skip-libraries"</span> <span class="attribute">value</span>=<span class="value">"true"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
+<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
+</pre>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "UnusedResources" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
@@ -1163,8 +1311,161 @@ Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id
 Dismiss</button>            </div>
             </div>
           </section>
+<a name="Productivity"></a>
+<a name="UseKtx"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UseKtxCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Use KTX extension function</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/ecarplay/iptv/ChannelManager.kt">../../src/main/java/com/ecarplay/iptv/ChannelManager.kt</a>:97</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  94 </span><span class="string">    fun saveSubscriptions(context: Context) {
+</span><span class="lineno">  95 </span><span class="string">        val prefs = context.getSharedPreferences("iptv_prefs", Context.MODE_PRIVATE)
+</span><span class="lineno">  96 </span><span class="string">        val json = gson.toJson(subscriptions)
+</span><span class="caretline"><span class="lineno">  97 </span><span class="string">        </span><span class="warning"><span class="string">prefs.edit()</span></span><span class="string">.putString("subscriptions", json).apply()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string">
+</span><span class="lineno">  98 </span><span class="string">    }
+</span><span class="lineno">  99 </span><span class="string">    
+</span><span class="lineno"> 100 </span><span class="string">    fun loadSubscriptions(context: Context) {
+</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationUseKtx" style="display: none;">
+The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more.<br/><br/>
+This check can be configured via the following options:<br/><br/>
+<div class="options">
+<b>remove-defaults</b> (default is true):<br/>
+Whether to skip arguments that match the defaults provided by the extension.<br/>
+<br/>
+Extensions often provide default values for some of the parameters. For example:
+<pre>
+fun Path.readLines(charset: Charset = Charsets.UTF_8): List&lt;String> { return Files.readAllLines(this, charset) }
+</pre>
+This lint check will by default automatically omit parameters that match the default, so if your code was calling<br/>
+
+<pre>
+Files.readAllLines(file, Charset.UTF_8)
+</pre>
+lint would replace this with
+<pre>
+file.readLines()
+</pre>
+rather than<br/>
+
+<pre>
+file.readLines(Charset.UTF_8
+</pre>
+You can turn this behavior off using this option.<br/>
+<br/>
+To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
+<pre class="errorlines">
+<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
+<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"UseKtx"</span>>
+<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"remove-defaults"</span> <span class="attribute">value</span>=<span class="value">"true"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
+<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
+</pre>
+<b>require-present</b> (default is true):<br/>
+Whether to only offer extensions already available.<br/>
+<br/>
+This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)<br/>
+<br/>
+To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
+<pre class="errorlines">
+<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
+<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"UseKtx"</span>>
+<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"require-present"</span> <span class="attribute">value</span>=<span class="value">"true"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
+<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
+</pre>
+</div>To suppress this error, use the issue id "UseKtx" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">UseKtx</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Productivity</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUseKtxLink" onclick="reveal('explanationUseKtx');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UseKtxCardLink" onclick="hideid('UseKtxCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
 <a name="Internationalization"></a>
-<a name="HardcodedText"></a>
+<a name="SetTextI18n"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SetTextI18nCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">TextView Internationalization</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/ecarplay/iptv/CarTestActivity.kt">../../src/main/java/com/ecarplay/iptv/CarTestActivity.kt</a>:117</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno"> 114 </span>            
+<span class="lineno"> 115 </span>            <span class="keyword">fun</span> bind(channel: Channel) {
+<span class="lineno"> 116 </span>                titleView.text = channel.name
+<span class="caretline"><span class="lineno"> 117 </span>                subtitleView.text = <span class="warning"><span class="string">"${</span>channel.category<span class="string">} • HD"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 118 </span>                
+<span class="lineno"> 119 </span>                <span class="comment">// Set background color based on category</span>
+<span class="lineno"> 120 </span>                <span class="keyword">val</span> backgroundColor = <span class="keyword">when</span> (channel.category) {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ecarplay/iptv/CarTestActivity.kt">../../src/main/java/com/ecarplay/iptv/CarTestActivity.kt</a>:117</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 114 </span>            
+<span class="lineno"> 115 </span>            <span class="keyword">fun</span> bind(channel: Channel) {
+<span class="lineno"> 116 </span>                titleView.text = channel.name
+<span class="caretline"><span class="lineno"> 117 </span>                subtitleView.text = <span class="string">"${</span>channel.category<span class="string">}</span><span class="warning"><span class="string"> • HD</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 118 </span>                
+<span class="lineno"> 119 </span>                <span class="comment">// Set background color based on category</span>
+<span class="lineno"> 120 </span>                <span class="keyword">val</span> backgroundColor = <span class="keyword">when</span> (channel.category) {
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationSetTextI18n" style="display: none;">
+When calling <code>TextView#setText</code><br/>
+* Never call <code>Number#toString()</code> to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using <code>String#format</code> with proper format specifications (<code>%d</code> or <code>%f</code>) instead.<br/>
+* Do not pass a string literal (e.g. "Hello") to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.<br/>
+* Do not build messages by concatenating text chunks. Such messages can not be properly translated.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/resources/localization.html">https://developer.android.com/guide/topics/resources/localization.html</a>
+</div>To suppress this error, use the issue id "SetTextI18n" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">SetTextI18n</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Internationalization</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSetTextI18nLink" onclick="reveal('explanationSetTextI18n');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SetTextI18nCardLink" onclick="hideid('SetTextI18nCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="HardcodedText"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="HardcodedTextCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -1182,23 +1483,33 @@ Dismiss</button>            </div>
 <span class="lineno"> 15 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
 <span class="lineno"> 16 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="value">"parent"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:27</span>: <span class="message">Hardcoded string "Connect to Android Auto to start watching", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:27</span>: <span class="message">Hardcoded string "Tap 'Test Car Interface' to view channels", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno"> 24 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
 <span class="lineno"> 25 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
 <span class="lineno"> 26 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"16dp"</span>
-<span class="caretline"><span class="lineno"> 27 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Connect to Android Auto to start watching"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno"> 27 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Tap 'Test Car Interface' to view channels"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 28 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"16sp"</span>
 <span class="lineno"> 29 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
 <span class="lineno"> 30 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toStartOf</span>=<span class="value">"parent"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:38</span>: <span class="message">Hardcoded string "Import Subscription", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:38</span>: <span class="message">Hardcoded string "Test Car Interface", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno"> 35 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
 <span class="lineno"> 36 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
 <span class="lineno"> 37 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"32dp"</span>
-<span class="caretline"><span class="lineno"> 38 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Import Subscription"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno"> 38 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Test Car Interface"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 39 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
 <span class="lineno"> 40 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toStartOf</span>=<span class="value">"parent"</span>
 <span class="lineno"> 41 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintTop_toBottomOf</span>=<span class="value">"@+id/subtitle"</span> />
+</pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:48</span>: <span class="message">Hardcoded string "Import Subscription", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 45 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 46 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 47 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"16dp"</span>
+<span class="caretline"><span class="lineno"> 48 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Import Subscription"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 49 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
+<span class="lineno"> 50 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toStartOf</span>=<span class="value">"parent"</span>
+<span class="lineno"> 51 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintTop_toBottomOf</span>=<span class="value">"@+id/importButton"</span> />
 </pre>
 
 </div>
@@ -1736,16 +2047,6 @@ There are predefined sizes (for each density) for launcher icons. You should fol
 </div>
 </div>
 <div class="issue">
-<div class="id">ImplicitSamInstance<div class="issueSeparator"></div>
-</div>
-<div class="metadata">Disabled By: Default<br/>
-<div class="explanation">
-Kotlin's support for SAM (single accessor method) interfaces lets you pass a lambda to the interface. This will create a new instance on the fly even though there is no explicit constructor call. If you pass one of these lambdas or method references into a method which (for example) stores or compares the object identity, unexpected results may happen.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
 <div class="id">InvalidPackage<div class="issueSeparator"></div>
 </div>
 <div class="metadata">Disabled By: Default<br/>
@@ -1805,7 +2106,7 @@ To designate a unit test as the documentation example for an issue, name the tes
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-You should never compare two PSI elements for equality with <code>equals</code>; use <code>isEquivalentTo(PsiElement)</code> instead.<br/><br/>
+You should never compare two PSI elements for equality with <code>equals</code>; use <code>PsiEquivalenceUtil.areElementsEquivalent(PsiElement, PsiElement)</code> instead.<br/><br/>
 <br/></div>
 </div>
 </div>
@@ -1923,6 +2224,21 @@ Following this recommendation avoids naming collisions, and helps clearly identi
 </div>
 </div>
 <div class="issue">
+<div class="id">PrivacySandboxBlockedCall<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Many APIs are unavailable in the Privacy Sandbox, depending on the <code>targetSdk</code>.<br/>
+<br/>
+If your code is designed to run in the sandbox (and never outside the sandbox) then you should remove the blocked calls to avoid exceptions at runtime.<br/>
+<br/>
+If your code is part of a library that can be executed both inside and outside the sandbox, surround the code with <code>if (!Process.isSdkSandbox()) { ... }</code> (or use your own field or method annotated with <code>@ChecksRestrictedEnvironment</code>) to avoid executing blocked calls when in the sandbox. Or, add the <code>@RestrictedForEnvironment</code> annotation to the containing method if the entire method should not be called when in the sandbox.<br/>
+<br/>
+This check is disabled by default, and should only be enabled in modules that may execute in the Privacy Sandbox.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
 <div class="id">Registered<div class="issueSeparator"></div>
 </div>
 <div class="metadata">Disabled By: Default<br/>
@@ -1993,7 +2309,7 @@ A private inner class which is accessed from the outer class will force the comp
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). This can make the text more readable. Note that you should never use grave accents and apostrophes to quote, `like this'. (Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
+Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). Use the right single quotation mark for apostrophes. Never use generic quotes ", ' or free-standing accents `, ´ for quotation marks, apostrophes, or primes. This can make the text more readable.<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
 </div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 <br/>
 <br/></div>

@@ -3,10 +3,10 @@
     dir="/Users/bluehawana/Projects/ecarplay/app"
     name=":app"
     type="APP"
-    maven="ECarPlay IPTV:app:"
-    agpVersion="8.2.0"
+    maven="ECarPlay IPTV:app:unspecified"
+    agpVersion="8.10.1"
     buildFolder="build"
-    bootClassPath="/Users/bluehawana/Library/Android/sdk/platforms/android-34/android.jar:/Users/bluehawana/Library/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    bootClassPath="/Users/bluehawana/Library/Android/sdk/platforms/android-34/android.jar:/Users/bluehawana/Library/Android/sdk/build-tools/35.0.0/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-34"
     neverShrinking="true">

@@ -74,6 +74,18 @@
             </intent-filter>
         </activity>
 
+        <!-- Car Test Activity -->
+        <activity
+            android:name="com.ecarplay.iptv.CarTestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ECarPlayIPTV" />
+
+        <!-- Import Screen Activity -->
+        <activity
+            android:name="com.ecarplay.iptv.ImportScreen"
+            android:exported="false"
+            android:theme="@style/Theme.ECarPlayIPTV" />
+
         <service
             android:name="androidx.car.app.CarAppMetadataHolderService"
             android:enabled="false"

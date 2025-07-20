@@ -15,10 +15,13 @@ drawable ic_delete
 drawable ic_import
 drawable ic_info
 drawable ic_launcher_foreground
+drawable ic_movies
+drawable ic_news
 drawable ic_play_arrow
 drawable ic_play_pause
 drawable ic_playlist
 drawable ic_refresh
+drawable ic_sports
 drawable ic_tv
 drawable ic_volume
 drawable ic_volume_down
@@ -26,6 +29,7 @@ drawable ic_volume_max
 drawable ic_volume_mute
 drawable ic_volume_up
 id importButton
+id settingsButton
 id subtitle
 id title
 layout activity_main

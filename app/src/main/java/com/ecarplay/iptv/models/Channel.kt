@@ -1,4 +1,4 @@
-package com.ecarplay.iptv
+package com.ecarplay.iptv.models
 
 data class Channel(
     val id: String,

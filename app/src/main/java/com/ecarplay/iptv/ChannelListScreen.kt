@@ -9,6 +9,7 @@ import androidx.car.app.model.Row
 import androidx.car.app.model.Template
 import androidx.car.app.model.CarIcon
 import androidx.core.graphics.drawable.IconCompat
+import com.ecarplay.iptv.models.Channel
 
 class ChannelListScreen(
     carContext: CarContext,
