@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/hacker_ice_alert">
+  
+  <!-- Speaker base structure -->
+  <path
+      android:fillColor="@color/hacker_ice_white"
+      android:pathData="M3,9v6h4l5,5V4L7,9H3z"/>
+      
+  <!-- First sound wave (partially visible) -->
+  <path
+      android:fillColor="@color/hacker_ice_crystal"
+      android:pathData="M14,8.24v2.21l1.5,1.5c0.5,-0.4 0.8,-1.01 0.8,-1.71C16.3,9.25 15.5,8.5 14,8.24z"/>
+      
+  <!-- Ice crack slash effect - main diagonal -->
+  <path
+      android:fillColor="@color/hacker_ice_alert"
+      android:pathData="M3.5,3.5L20.5,20.5"
+      android:strokeWidth="2"
+      android:strokeColor="@color/hacker_ice_alert"/>
+      
+  <!-- Ice crack fragments around main slash -->
+  <path
+      android:fillColor="@color/hacker_ice_alert"
+      android:pathData="M5,5l2,1M7,7l1,2M15,15l2,1M17,17l1,2"/>
+      
+  <!-- Ice shard effects -->
+  <path
+      android:fillColor="@color/hacker_ice_glow"
+      android:pathData="M4,4l1,0.5l-0.5,1zM19,19l1,0.5l-0.5,1z"/>
+      
+  <!-- Nordic geometric accent on speaker -->
+  <path
+      android:fillColor="@color/hacker_ice_accent"
+      android:pathData="M4,10h2v1H4zM4,12h2v1H4zM4,14h2v1H4z"/>
+      
+  <!-- Crystalline speaker cone details -->
+  <path
+      android:fillColor="@color/hacker_ice_secondary"
+      android:pathData="M7.5,10l3.5,-2v1l-2.5,1.5L11,12v1l-3.5,-2z"/>
+  <path
+      android:fillColor="@color/hacker_ice_secondary"
+      android:pathData="M7.5,14l3.5,2v-1l-2.5,-1.5L11,12v-1l-3.5,2z"/>
+      
+  <!-- Warning indicators for mute state -->
+  <path
+      android:fillColor="@color/hacker_ice_alert"
+      android:pathData="M2,2l1,1M21,21l1,1"/>
+</vector>

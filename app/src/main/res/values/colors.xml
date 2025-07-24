@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Original colors -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Hacker Nordic Ice Theme -->
+    <color name="hacker_ice_primary">#00FFFF</color>        <!-- Primary Ice Blue -->
+    <color name="hacker_ice_secondary">#4DD0E1</color>      <!-- Secondary Ice Blue -->
+    <color name="hacker_ice_accent">#00BCD4</color>         <!-- Electric Blue Accent -->
+    <color name="hacker_ice_dark">#006064</color>           <!-- Dark Ice Background -->
+    <color name="hacker_ice_alert">#FF4444</color>          <!-- Alert Red -->
+    <color name="hacker_ice_success">#00FF41</color>        <!-- Matrix Green -->
+    <color name="hacker_ice_white">#E0F7FA</color>          <!-- White Ice -->
+    <color name="hacker_ice_crystal">#B2EBF2</color>        <!-- Crystal Highlight -->
+    <color name="hacker_ice_shadow">#004D5C</color>         <!-- Deep Ice Shadow -->
+    <color name="hacker_ice_glow">#80FFFF</color>           <!-- Glowing Ice Effect -->
+    
+    <!-- Button State Colors -->
+    <color name="button_normal">#00FFFF</color>             <!-- Normal state -->
+    <color name="button_active">#00BCD4</color>             <!-- Active/Selected state -->
+    <color name="button_disabled">#4D006064</color>         <!-- Disabled state (50% opacity) -->
+    <color name="button_error">#FF4444</color>              <!-- Error state -->
+    <color name="button_success">#00FF41</color>            <!-- Success state -->
 </resources>

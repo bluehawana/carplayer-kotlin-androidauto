@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ECarPlay IPTV"
+rootProject.name = "carplayer"
 include ':app'
