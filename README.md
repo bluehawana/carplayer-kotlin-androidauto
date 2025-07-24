@@ -1,4 +1,4 @@
-# ECarPlay IPTV
+# CarPlayer IPTV
 
 An Android Auto IPTV application that allows users to watch television channels in their car with optimized controls for driving safety.
 
@@ -23,8 +23,8 @@ An Android Auto IPTV application that allows users to watch television channels 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ecarplay-iptv.git
-   cd ecarplay-iptv
+   git clone https://github.com/yourusername/carplayer-kotlin-androidauto.git
+   cd carplayer-kotlin-androidauto
    ```
 
 2. Open the project in Android Studio
@@ -39,7 +39,7 @@ An Android Auto IPTV application that allows users to watch television channels 
 1. Enable Developer Options on your Android device
 2. Enable "Unknown sources" in Android Auto settings
 3. Connect your device to your car's Android Auto system
-4. Launch the ECarPlay IPTV app
+4. Launch the CarPlayer IPTV app
 
 ## API Integration
 

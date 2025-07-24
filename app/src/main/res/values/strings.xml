@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ecarxTv</string>
-    <string name="channel_list_title">IPTV Channels</string>
+    <string name="app_name">Car TV Player</string>
+    <string name="channel_list_title">Media Channels</string>
     <string name="import_subscription">Import Subscription</string>
     <string name="play_pause">Play/Pause</string>
     <string name="volume_control">Volume Control</string>

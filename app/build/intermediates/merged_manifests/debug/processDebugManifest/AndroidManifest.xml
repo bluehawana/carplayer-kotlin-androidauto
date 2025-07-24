@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ecarplay.iptv"
+    package="com.carplayer.iptv"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -28,10 +28,10 @@
     </queries>
 
     <permission
-        android:name="com.ecarplay.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.ecarplay.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -45,7 +45,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ECarPlayIPTV"
+        android:theme="@style/Theme.CarPlayerIPTV"
         android:usesCleartextTraffic="true" >
 
         <!-- Automotive App Descriptor -->
@@ -55,20 +55,26 @@
 
         <!-- Car App Service -->
         <service
-            android:name="com.ecarplay.iptv.CarAppService"
+            android:name="com.carplayer.iptv.CarAppService"
             android:exported="true" >
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
 
                 <category android:name="androidx.car.app.category.MEDIA" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
         </service>
 
         <!-- Main Phone Activity -->
         <activity
-            android:name="com.ecarplay.iptv.MainActivity"
+            android:name="com.carplayer.iptv.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.ECarPlayIPTV" >
+            android:theme="@style/Theme.CarPlayerIPTV" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -78,21 +84,21 @@
 
         <!-- Car Test Activity -->
         <activity
-            android:name="com.ecarplay.iptv.CarTestActivity"
+            android:name="com.carplayer.iptv.CarTestActivity"
             android:exported="true"
-            android:theme="@style/Theme.ECarPlayIPTV" />
+            android:theme="@style/Theme.CarPlayerIPTV" />
 
         <!-- Import Screen Activity -->
         <activity
-            android:name="com.ecarplay.iptv.ImportActivity"
+            android:name="com.carplayer.iptv.ImportActivity"
             android:exported="false"
-            android:theme="@style/Theme.ECarPlayIPTV" />
+            android:theme="@style/Theme.CarPlayerIPTV" />
 
         <!-- Video Player Activity -->
         <activity
-            android:name="com.ecarplay.iptv.VideoPlayerActivity"
+            android:name="com.carplayer.iptv.VideoPlayerActivity"
             android:exported="false"
-            android:theme="@style/Theme.ECarPlayIPTV" />
+            android:theme="@style/Theme.CarPlayerIPTV" />
 
         <service
             android:name="androidx.car.app.CarAppMetadataHolderService"
@@ -115,7 +121,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.ecarplay.iptv.androidx-startup"
+            android:authorities="com.carplayer.iptv.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

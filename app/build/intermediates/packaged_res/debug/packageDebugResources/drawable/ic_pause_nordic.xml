@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/hacker_ice_primary">
+  
+  <!-- Left crystalline pause bar -->
+  <path
+      android:fillColor="@color/hacker_ice_white"
+      android:pathData="M6,19h4V5H6v14z"/>
+      
+  <!-- Right crystalline pause bar -->
+  <path
+      android:fillColor="@color/hacker_ice_white"
+      android:pathData="M14,5v14h4V5h-4z"/>
+      
+  <!-- Ice crystal facets on left bar -->
+  <path
+      android:fillColor="@color/hacker_ice_crystal"
+      android:pathData="M6,6l1,1v-1zM9,6l1,1h-1zM6,18l1,-1v1zM9,18l1,-1h-1z"/>
+      
+  <!-- Ice crystal facets on right bar -->  
+  <path
+      android:fillColor="@color/hacker_ice_crystal"
+      android:pathData="M14,6l1,1v-1zM17,6l1,1h-1zM14,18l1,-1v1zM17,18l1,-1h-1z"/>
+      
+  <!-- Nordic geometric accent lines -->
+  <path
+      android:fillColor="@color/hacker_ice_accent"
+      android:pathData="M7,7h2v1H7zM7,11h2v1H7zM7,15h2v1H7z"/>
+  <path
+      android:fillColor="@color/hacker_ice_accent"
+      android:pathData="M15,7h2v1h-2zM15,11h2v1h-2zM15,15h2v1h-2z"/>
+      
+  <!-- Glowing ice effect outlines -->
+  <path
+      android:fillColor="@color/hacker_ice_glow"
+      android:strokeWidth="0.3"
+      android:pathData="M5.5,5v14M10.5,5v14M13.5,5v14M18.5,5v14"/>
+</vector>

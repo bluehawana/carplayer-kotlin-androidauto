@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/hacker_ice_primary">
+  
+  <!-- First arrow (left) with crystalline edges -->
+  <path
+      android:fillColor="@color/hacker_ice_white"
+      android:pathData="M3,6h1.5v12H3z"/>
+  <path
+      android:fillColor="@color/hacker_ice_white"
+      android:pathData="M5,12l6,-4.5v2.5l-3,2l3,2v2.5z"/>
+      
+  <!-- Second arrow (right) with crystalline edges -->
+  <path
+      android:fillColor="@color/hacker_ice_crystal"
+      android:pathData="M11,6h1.5v12H11z"/>
+  <path
+      android:fillColor="@color/hacker_ice_crystal"
+      android:pathData="M13,12l6,-4.5v2.5l-3,2l3,2v2.5z"/>
+      
+  <!-- Nordic ice crystal accent lines -->
+  <path
+      android:fillColor="@color/hacker_ice_glow"
+      android:strokeWidth="0.5"
+      android:pathData="M2,5l2,2M2,19l2,-2M10,5l2,2M10,19l2,-2M18,5l2,2M18,19l2,-2"/>
+</vector>
