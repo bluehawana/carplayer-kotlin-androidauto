@@ -86,10 +86,79 @@ class PlayerScreen(carContext: CarContext, private val channel: Channel, private
                 .build()
         )
         
-        return ListTemplate.Builder()
-            .setSingleList(itemListBuilder.build())
-            .setTitle("$statusIcon ${channel.name}")
+        // Create action strip with Ice Age styled channel navigation
+        val actionStrip = ActionStrip.Builder()
+            .addAction(
+                Action.Builder()
+                    .setTitle("⏮️ Previous")
+                    .setOnClickListener { previousChannel() }
+                    .setIcon(
+                        CarIcon.Builder(
+                            IconCompat.createWithResource(carContext, R.drawable.ic_previous_channel)
+                        ).build()
+                    )
+                    .build()
+            )
+            .addAction(
+                Action.Builder()
+                    .setTitle(if (isPaused) "▶️ Play" else "⏸️ Pause")
+                    .setOnClickListener { togglePlayPause() }
+                    .setIcon(
+                        CarIcon.Builder(
+                            IconCompat.createWithResource(carContext, 
+                                if (isPaused) R.drawable.ic_play_nordic else R.drawable.ic_pause_nordic)
+                        ).build()
+                    )
+                    .build()
+            )
+            .addAction(
+                Action.Builder()
+                    .setTitle("⏭️ Next")
+                    .setOnClickListener { nextChannel() }
+                    .setIcon(
+                        CarIcon.Builder(
+                            IconCompat.createWithResource(carContext, R.drawable.ic_next_channel)
+                        ).build()
+                    )
+                    .build()
+            )
+            .addAction(
+                Action.Builder()
+                    .setTitle(if (isMuted) "🔊 Unmute" else "🔇 Mute")
+                    .setOnClickListener { toggleMute() }
+                    .setIcon(
+                        CarIcon.Builder(
+                            IconCompat.createWithResource(carContext,
+                                if (isMuted) R.drawable.ic_volume_nordic else R.drawable.ic_mute_nordic)
+                        ).build()
+                    )
+                    .build()
+            )
+            .build()
+
+        // Create a message template instead of list template for better media control
+        return MessageTemplate.Builder("$statusIcon ${channel.name}")
+            .setTitle("❄️ $playbackStatus\n\n🎬 Use the controls below to navigate channels")
             .setHeaderAction(Action.BACK)
+            .setActionStrip(actionStrip)
+            .addAction(
+                Action.Builder()
+                    .setTitle("⏮️ Previous Channel")
+                    .setOnClickListener { previousChannel() }
+                    .build()
+            )
+            .addAction(
+                Action.Builder()
+                    .setTitle(if (isPaused) "▶️ Play" else "⏸️ Pause")
+                    .setOnClickListener { togglePlayPause() }
+                    .build()
+            )
+            .addAction(
+                Action.Builder()
+                    .setTitle("⏭️ Next Channel")
+                    .setOnClickListener { nextChannel() }
+                    .build()
+            )
             .build()
     }
     
@@ -97,29 +166,33 @@ class PlayerScreen(carContext: CarContext, private val channel: Channel, private
         android.util.Log.d("PlayerScreen", "Initializing player for channel: ${channel.name}")
         android.util.Log.d("PlayerScreen", "Stream URL: ${channel.streamUrl}")
         
-        mediaController.setOnErrorCallback { error ->
-            android.util.Log.e("PlayerScreen", "Playback error: $error")
+        // BYPASS Android Auto's media session - launch VideoPlayerActivity directly
+        playbackStatus = "❄️ Launching Ice Video Player..."
+        
+        try {
+            val channelNames = allChannels.map { it.name }
+            val channelUrls = allChannels.map { it.streamUrl }
+            val currentIndex = allChannels.indexOf(channel)
+            
+            val intent = android.content.Intent(carContext, VideoPlayerActivity::class.java).apply {
+                putExtra("CHANNEL_NAME", channel.name)
+                putExtra("STREAM_URL", channel.streamUrl)
+                putStringArrayListExtra("ALL_CHANNELS", ArrayList(channelNames))
+                putStringArrayListExtra("ALL_CHANNEL_URLS", ArrayList(channelUrls))
+                putExtra("CURRENT_INDEX", currentIndex)
+                addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            
+            carContext.startActivity(intent)
+            playbackStatus = "🎬 Ice Video Player launched"
+            
+        } catch (e: Exception) {
+            android.util.Log.e("PlayerScreen", "Failed to launch VideoPlayerActivity", e)
+            playbackStatus = "❄️ Error launching video player"
             hasError = true
-            playbackStatus = error
-            invalidate()
         }
         
-        mediaController.setOnStateChangedCallback { isReady ->
-            android.util.Log.d("PlayerScreen", "State changed - isReady: $isReady")
-            playbackStatus = if (isReady) "🎵 Neural stream >> car matrix" else "⏸️ Ice stream frozen"
-            hasError = false
-            invalidate()
-        }
-        
-        // Validate stream URL before attempting playback
-        if (channel.streamUrl.isBlank()) {
-            hasError = true
-            playbackStatus = "❄️ No neural matrix path found"
-            android.util.Log.e("PlayerScreen", "Empty stream URL for channel: ${channel.name}")
-        } else {
-            playbackStatus = "⚡ Hacking ice stream matrix..."
-            mediaController.startPlayback(channel.streamUrl)
-        }
+        invalidate()
     }
     
     private fun previousChannel() {

@@ -23,6 +23,9 @@ class VideoPlayerActivity : AppCompatActivity() {
     private var channelName: String = ""
     private var streamUrl: String = ""
     private var isPlaying = false
+    private var allChannels: List<String> = emptyList()
+    private var allChannelUrls: List<String> = emptyList()
+    private var currentChannelIndex: Int = 0
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +46,11 @@ class VideoPlayerActivity : AppCompatActivity() {
         channelName = intent.getStringExtra("CHANNEL_NAME") ?: "Unknown Channel"
         streamUrl = intent.getStringExtra("STREAM_URL") ?: ""
         
+        // Get channel list for navigation
+        allChannels = intent.getStringArrayListExtra("ALL_CHANNELS") ?: emptyList()
+        allChannelUrls = intent.getStringArrayListExtra("ALL_CHANNEL_URLS") ?: emptyList()
+        currentChannelIndex = intent.getIntExtra("CURRENT_INDEX", 0)
+        
         setupMediaController()
         setupUI()
         startPlayback()
@@ -50,6 +58,8 @@ class VideoPlayerActivity : AppCompatActivity() {
     
     private fun setupMediaController() {
         mediaController = MediaController(this)
+        
+        // Try to override Android Auto's media session with our own
         
         mediaController.setOnErrorCallback { errorMessage ->
             runOnUiThread {
@@ -128,33 +138,59 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
         mainLayout.addView(statusTextView)
         
-        // Control overlay (hidden initially, shown on touch)
+        // Control overlay (positioned ABOVE Android Auto's system controls) - Ice Age Style
         controlsLayout = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
-            setPadding(40, 20, 40, 40)
-            setBackgroundColor(0xBB000000.toInt()) // Semi-transparent black
+            setPadding(40, 20, 40, 20)
+            setBackgroundColor(0xCC004D5C.toInt()) // More opaque deep ice background
             layoutParams = FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 android.view.Gravity.BOTTOM
-            )
+            ).apply {
+                setMargins(0, 0, 0, 120) // Push up 120px to avoid Android Auto buttons
+            }
             visibility = android.view.View.GONE // Hidden initially
+            elevation = 10f // Ensure it appears above other elements
         }
         
-        // Play/Pause button
-        val playPauseButton = Button(this).apply {
-            text = "⏸️"
-            textSize = 24f
-            setTextColor(0xFFFFFFFF.toInt()) // White text
-            setBackgroundColor(0x66FFFFFF.toInt()) // Semi-transparent white
-            setPadding(30, 20, 30, 20)
+        // Previous Channel button - Ice Age Style
+        val previousButton = Button(this).apply {
+            text = "⏮️ PREV"
+            textSize = 18f
+            setTextColor(0xFFFFFFFF.toInt()) // White text for visibility
+            setBackgroundColor(0xDD00FF41.toInt()) // More opaque ice green
+            setPadding(32, 20, 32, 20)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply {
                 weight = 1f
-                setMargins(20, 0, 20, 0)
+                setMargins(12, 0, 12, 0)
             }
+            elevation = 12f
+            setOnClickListener {
+                previousChannel()
+                hideControlsAfterDelay()
+            }
+        }
+        controlsLayout.addView(previousButton)
+        
+        // Play/Pause button - Ice Age Style
+        val playPauseButton = Button(this).apply {
+            text = "⏸️ PAUSE"
+            textSize = 18f
+            setTextColor(0xFFFFFFFF.toInt()) // White text
+            setBackgroundColor(0xDD00BCD4.toInt()) // More opaque ice accent
+            setPadding(32, 20, 32, 20)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                weight = 1f
+                setMargins(12, 0, 12, 0)
+            }
+            elevation = 12f
             setOnClickListener {
                 mediaController.togglePlayPause()
                 hideControlsAfterDelay()
@@ -162,20 +198,43 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
         controlsLayout.addView(playPauseButton)
         
-        // Back button
-        val backButton = Button(this).apply {
-            text = "⬅ Back"
+        // Next Channel button - Ice Age Style
+        val nextButton = Button(this).apply {
+            text = "NEXT ⏭️"
             textSize = 18f
-            setTextColor(0xFFFFFFFF.toInt()) // White text
-            setBackgroundColor(0x66FF4444.toInt()) // Semi-transparent red
-            setPadding(30, 20, 30, 20)
+            setTextColor(0xFFFFFFFF.toInt()) // White text for visibility
+            setBackgroundColor(0xDD00FF41.toInt()) // More opaque ice green
+            setPadding(32, 20, 32, 20)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply {
                 weight = 1f
-                setMargins(20, 0, 20, 0)
+                setMargins(12, 0, 12, 0)
             }
+            elevation = 12f
+            setOnClickListener {
+                nextChannel()
+                hideControlsAfterDelay()
+            }
+        }
+        controlsLayout.addView(nextButton)
+        
+        // Back button - Ice Age Style
+        val backButton = Button(this).apply {
+            text = "⬅ BACK"
+            textSize = 18f
+            setTextColor(0xFFFFFFFF.toInt()) // White text
+            setBackgroundColor(0xDDb1d4e0.toInt()) // More opaque baby blue
+            setPadding(32, 20, 32, 20)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                weight = 1f
+                setMargins(12, 0, 12, 0)
+            }
+            elevation = 12f
             setOnClickListener {
                 finish()
             }
@@ -208,18 +267,60 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
     
     private fun hideControlsAfterDelay() {
-        // Auto-hide controls after 3 seconds
+        // Auto-hide controls after 5 seconds (longer for easier channel switching)
         android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
             if (controlsLayout.visibility == android.view.View.VISIBLE) {
                 controlsLayout.visibility = android.view.View.GONE
                 channelNameTextView.visibility = android.view.View.GONE
             }
-        }, 3000)
+        }, 5000)
     }
     
     private fun updatePlayPauseButton() {
-        val playPauseButton = controlsLayout.getChildAt(0) as? Button
-        playPauseButton?.text = if (isPlaying) "⏸️" else "▶️"
+        val playPauseButton = controlsLayout.getChildAt(1) as? Button // Second button is play/pause
+        playPauseButton?.text = if (isPlaying) "⏸️ PAUSE" else "▶️ PLAY"
+    }
+    
+    private fun previousChannel() {
+        if (allChannels.isNotEmpty() && currentChannelIndex > 0) {
+            currentChannelIndex--
+            switchToChannel(currentChannelIndex)
+        } else {
+            Toast.makeText(this, "❄️ At first channel", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun nextChannel() {
+        if (allChannels.isNotEmpty() && currentChannelIndex < allChannels.size - 1) {
+            currentChannelIndex++
+            switchToChannel(currentChannelIndex)
+        } else {
+            Toast.makeText(this, "❄️ At last channel", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun switchToChannel(index: Int) {
+        if (index < 0 || index >= allChannels.size || index >= allChannelUrls.size) return
+        
+        channelName = allChannels[index]
+        streamUrl = allChannelUrls[index]
+        
+        // Update channel name display
+        channelNameTextView.text = channelName
+        
+        // Show loading status
+        statusTextView.text = "❄️ Switching to $channelName..."
+        statusTextView.visibility = android.view.View.VISIBLE
+        
+        // Stop current playback and start new one
+        if (::mediaController.isInitialized) {
+            mediaController.stopPlayback()
+        }
+        
+        // Small delay before starting new stream
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            startPlayback()
+        }, 500)
     }
     
     private fun startPlayback() {

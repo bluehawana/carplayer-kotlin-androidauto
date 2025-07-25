@@ -36,7 +36,7 @@ class CarTestActivity : AppCompatActivity() {
         setContentView(recyclerView)
         
         // Set title
-        title = "ECarTV - Test Interface"
+        
         
         // Load channels
         loadChannels()
@@ -52,14 +52,26 @@ class CarTestActivity : AppCompatActivity() {
                 
                 android.util.Log.d("CarTestActivity", "Imported files: ${importedFiles.size}")
                 
+                // FORCE CLEAR CACHE and reload from updated assets first
+                clearChannelCache()
+                val channelManager = ChannelManager()
+                channelManager.reloadFromAssets(this@CarTestActivity)
+                
                 // Try to load from assets directly first
                 val channels = try {
-                    android.util.Log.d("CarTestActivity", "Loading M3U directly from assets...")
+                    android.util.Log.d("CarTestActivity", "Loading UPDATED M3U directly from assets...")
                     val content = assets.open("iptv.m3u").bufferedReader().use { it.readText() }
-                    android.util.Log.d("CarTestActivity", "M3U content length: ${content.length}")
+                    android.util.Log.d("CarTestActivity", "Updated M3U content length: ${content.length}")
+                    android.util.Log.d("CarTestActivity", "First 200 chars: ${content.take(200)}")
                     
                     val parsedChannels = parseM3UContent(content)
-                    android.util.Log.d("CarTestActivity", "Parsed ${parsedChannels.size} channels from assets")
+                    android.util.Log.d("CarTestActivity", "Parsed ${parsedChannels.size} channels from UPDATED assets")
+                    
+                    // Log first few channel names to verify
+                    parsedChannels.take(5).forEach { channel ->
+                        android.util.Log.d("CarTestActivity", "Channel: ${channel.name}")
+                    }
+                    
                     parsedChannels
                 } catch (e: Exception) {
                     android.util.Log.e("CarTestActivity", "Failed to load from assets", e)
@@ -88,22 +100,26 @@ class CarTestActivity : AppCompatActivity() {
                 
                 if (channels.isNotEmpty()) {
                     // Show ALL channels, not just 16!
+                    (application as CarPlayerApplication).channels.clear()
+                    (application as CarPlayerApplication).channels.addAll(channels)
                     channelAdapter = ChannelAdapter(channels) // Show all channels
                     recyclerView.adapter = channelAdapter
                     
                     // Update title to show channel count
                     runOnUiThread {
-                        title = "ECarTV - ${channels.size} Channels (ALL)"
+                        title = "Car TV Player - ${channels.size} Channels (FRESH)"
                     }
                 } else {
                     android.util.Log.w("CarTestActivity", "No channels loaded, using sample data")
                     // Create sample channels if loading fails
                     val sampleChannels = createSampleChannels()
+                    (application as CarPlayerApplication).channels.clear()
+                    (application as CarPlayerApplication).channels.addAll(sampleChannels)
                     channelAdapter = ChannelAdapter(sampleChannels)
                     recyclerView.adapter = channelAdapter
                     
                     runOnUiThread {
-                        title = "ECarTV - Sample Data (No M3U)"
+                        title = "❄️ Car TV Player - Sample Data (No M3U)"
                     }
                 }
                 
@@ -115,7 +131,7 @@ class CarTestActivity : AppCompatActivity() {
                 recyclerView.adapter = channelAdapter
                 
                 runOnUiThread {
-                    title = "ECarTV - Error Loading"
+                    title = "❄️ Car TV Player - Error Loading"
                 }
             }
         }
@@ -194,75 +210,12 @@ class CarTestActivity : AppCompatActivity() {
         )
     }
     
-    private class ChannelAdapter(private val channels: List<Channel>) : 
-        RecyclerView.Adapter<ChannelAdapter.ChannelViewHolder>() {
-        
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(
-                android.R.layout.simple_list_item_2, parent, false
-            )
-            return ChannelViewHolder(view)
-        }
-        
-        override fun onBindViewHolder(holder: ChannelViewHolder, position: Int) {
-            val channel = channels[position]
-            holder.bind(channel)
-        }
-        
-        override fun getItemCount() = channels.size
-        
-        class ChannelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            private val titleView: TextView = itemView.findViewById(android.R.id.text1)
-            private val subtitleView: TextView = itemView.findViewById(android.R.id.text2)
-            
-            fun bind(channel: Channel) {
-                titleView.text = channel.name
-                subtitleView.text = "${channel.category} • HD"
-                
-                // Nordic Ice Age Theme Colors
-                val backgroundColor = when (channel.category) {
-                    "News" -> 0xFF145da0.toInt()        // Midnight Blue
-                    "Sports" -> 0xFF2e8bc0.toInt()      // Blue  
-                    "Movies" -> 0xFF0c2d48.toInt()      // Dark Blue
-                    "Documentary" -> 0xFF145da0.toInt() // Midnight Blue
-                    "General" -> 0xFFb1d4e0.toInt()    // Baby Blue
-                    else -> 0xFF2e8bc0.toInt()         // Default Blue
-                }
-                itemView.setBackgroundColor(backgroundColor)
-                
-                // Set text color for Nordic feel - white for dark backgrounds, dark for light
-                val textColor = when (channel.category) {
-                    "General" -> 0xFF0c2d48.toInt()    // Dark Blue text on Baby Blue background
-                    else -> 0xFFFFFFFF.toInt()         // White text on dark backgrounds
-                }
-                titleView.setTextColor(textColor)
-                subtitleView.setTextColor(textColor)
-                
-                // Add padding for better appearance
-                itemView.setPadding(16, 16, 16, 16)
-                
-                // Add click listener to test playback
-                itemView.setOnClickListener {
-                    android.util.Log.d("CarTestActivity", "Clicked channel: ${channel.name}")
-                    android.util.Log.d("CarTestActivity", "Stream URL: ${channel.streamUrl}")
-                    
-                    // Launch our custom Nordic video player
-                    try {
-                        val intent = android.content.Intent(itemView.context, VideoPlayerActivity::class.java).apply {
-                            putExtra("CHANNEL_NAME", channel.name)
-                            putExtra("STREAM_URL", channel.streamUrl)
-                        }
-                        itemView.context.startActivity(intent)
-                    } catch (e: Exception) {
-                        android.util.Log.e("CarTestActivity", "Failed to launch player", e)
-                        android.widget.Toast.makeText(
-                            itemView.context, 
-                            "Selected: ${channel.name}\nTap to play stream", 
-                            android.widget.Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
-            }
-        }
+    
+    
+    private fun clearChannelCache() {
+        // Clear all cached channel data to force fresh reload
+        val prefs = getSharedPreferences("iptv_prefs", MODE_PRIVATE)
+        prefs.edit().clear().apply()
+        android.util.Log.d("CarTestActivity", "Channel cache cleared - will reload fresh M3U data")
     }
 }

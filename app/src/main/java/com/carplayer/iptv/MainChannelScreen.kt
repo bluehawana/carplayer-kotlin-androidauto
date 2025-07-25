@@ -62,7 +62,7 @@ class MainChannelScreen(carContext: CarContext) : Screen(carContext) {
                     )
                     .build()
             )
-            .setTitle("ECarTV")
+            .setTitle(carContext.getString(R.string.app_name))
             .build()
     }
     
@@ -86,7 +86,7 @@ class MainChannelScreen(carContext: CarContext) : Screen(carContext) {
                     )
                     .build()
             )
-            .setTitle("ECarTV")
+            .setTitle(carContext.getString(R.string.app_name))
             .setActionStrip(
                 androidx.car.app.model.ActionStrip.Builder()
                     .addAction(
@@ -128,7 +128,7 @@ class MainChannelScreen(carContext: CarContext) : Screen(carContext) {
         
         return GridTemplate.Builder()
             .setSingleList(gridItemListBuilder.build())
-            .setTitle("ECarTV - ${channels.size} Channels")
+            .setTitle("❄️ Car TV Player - ${channels.size} Channels")
             .setActionStrip(
                 androidx.car.app.model.ActionStrip.Builder()
                     .addAction(
@@ -195,7 +195,7 @@ class MainChannelScreen(carContext: CarContext) : Screen(carContext) {
         
         return ListTemplate.Builder()
             .setSingleList(listBuilder.build())
-            .setTitle("ECarTV - ${channels.size} Channels")
+            .setTitle("❄️ Car TV Player - ${channels.size} Channels")
             .setHeaderAction(Action.APP_ICON)
             .setActionStrip(
                 androidx.car.app.model.ActionStrip.Builder()
