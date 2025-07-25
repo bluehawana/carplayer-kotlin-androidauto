@@ -76,5 +76,25 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
-/app/src/main/assets/iptv.m3u
+# M3U Playlist files - contain sensitive streaming credentials
+*.m3u
+*.m3u8
+*.m3u/
+*.m3u8/
+
+# IPTV configuration files with credentials
+/app/src/main/assets/*.m3u
+/app/src/main/assets/*.m3u8
+/app/build/**/assets/**/*.m3u
+/app/build/**/assets/**/*.m3u8
+
+# Additional security-sensitive files
+*.credentials
+*.auth
+*.password
+*.secret
+config.json
+.env
+.env.local
+.env.production
 

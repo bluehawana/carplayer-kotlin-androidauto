@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.media3.common.util.UnstableApi
 import com.carplayer.iptv.models.Channel
 import com.carplayer.iptv.storage.M3UFileManager
 import kotlinx.coroutines.CoroutineScope
@@ -16,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+@UnstableApi
 class CarTestActivity : AppCompatActivity() {
     
     private lateinit var recyclerView: RecyclerView

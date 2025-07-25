@@ -34,6 +34,24 @@
     <string name="no_channels">No channels available. Import a subscription first.</string>
     <string name="play_pause">Play/Pause</string>
     <string name="volume_control">Volume Control</string>
+    <style name="NordicIceButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/nordic_ice_button_background</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="NordicIceNextButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/nordic_ice_next_button_background</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="NordicIcePrevButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/nordic_ice_prev_button_background</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">16dp</item>
+    </style>
     <style name="Theme.CarPlayerIPTV" parent="Theme.Material3.DayNight">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

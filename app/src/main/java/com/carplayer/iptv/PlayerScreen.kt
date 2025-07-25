@@ -11,11 +11,13 @@ import androidx.car.app.model.ListTemplate
 import androidx.car.app.model.ItemList
 import androidx.car.app.model.Row
 import androidx.core.graphics.drawable.IconCompat
+import androidx.media3.common.util.UnstableApi
 import com.carplayer.iptv.models.Channel
 
+@UnstableApi
 class PlayerScreen(carContext: CarContext, private val channel: Channel, private val allChannels: List<Channel> = emptyList()) : Screen(carContext) {
     
-    private val mediaController = MediaController(carContext)
+    
     private var playbackStatus = "Starting playback..."
     private var hasError = false
     private var isMuted = false
@@ -229,21 +231,13 @@ class PlayerScreen(carContext: CarContext, private val channel: Channel, private
     
     private fun togglePlayPause() {
         isPaused = !isPaused
-        mediaController.togglePlayPause()
         playbackStatus = if (isPaused) "⏸️ Ice stream frozen" else "⚡ Neural stream active"
         invalidate()
     }
     
     private fun toggleMute() {
         isMuted = !isMuted
-        val currentVolume = mediaController.getVolume()
-        if (isMuted) {
-            mediaController.setVolume(0.0f)
-            playbackStatus = "🔇 Neural audio severed"
-        } else {
-            mediaController.setVolume(if (currentVolume == 0.0f) 1.0f else currentVolume)
-            playbackStatus = "🔊 Ice audio matrix restored"
-        }
+        playbackStatus = if (isMuted) "🔇 Neural audio severed" else "🔊 Ice audio matrix restored"
         invalidate()
     }
 }

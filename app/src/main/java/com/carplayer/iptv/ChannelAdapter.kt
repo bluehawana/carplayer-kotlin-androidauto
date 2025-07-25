@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import androidx.media3.common.util.UnstableApi
 import com.carplayer.iptv.models.Channel
 
+@UnstableApi
 class ChannelAdapter(private val channels: List<Channel>) :
     RecyclerView.Adapter<ChannelAdapter.ChannelViewHolder>() {
 

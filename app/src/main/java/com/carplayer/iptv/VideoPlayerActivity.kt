@@ -9,16 +9,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.media3.ui.PlayerView
 import kotlinx.coroutines.launch
 
 class VideoPlayerActivity : AppCompatActivity() {
     
-    private lateinit var playerView: PlayerView
+    private lateinit var videoContainer: FrameLayout
     private lateinit var statusTextView: TextView
     private lateinit var channelNameTextView: TextView
     private lateinit var controlsLayout: LinearLayout
-    private lateinit var mediaController: MediaController
+    private lateinit var mediaController: VlcMediaController
     
     private var channelName: String = ""
     private var streamUrl: String = ""
@@ -57,27 +56,16 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
     
     private fun setupMediaController() {
-        mediaController = MediaController(this)
+        mediaController = VlcMediaController(this)
         
-        // Try to override Android Auto's media session with our own
-        
-        mediaController.setOnErrorCallback { errorMessage ->
-            runOnUiThread {
-                statusTextView.text = "❌ $errorMessage\n\n❄️ Stream unavailable"
-                Toast.makeText(this, "❄️ $errorMessage", Toast.LENGTH_LONG).show()
-            }
+        mediaController.setOnErrorCallback {
+            statusTextView.text = it
+            statusTextView.visibility = android.view.View.VISIBLE
         }
         
-        mediaController.setOnStateChangedCallback { playing ->
-            runOnUiThread {
-                isPlaying = playing
-                statusTextView.text = if (playing) {
-                    "✅ Playing: $channelName\n❄️ Nordic Ice Age - Cool Your Summer"
-                } else {
-                    "⏸️ Buffering: $channelName\n❄️ Loading stream..."
-                }
-                updatePlayPauseButton()
-            }
+        mediaController.setOnStateChangedCallback {
+            isPlaying = it
+            updatePlayPauseButton()
         }
     }
     
@@ -90,18 +78,17 @@ class VideoPlayerActivity : AppCompatActivity() {
                 FrameLayout.LayoutParams.MATCH_PARENT
             )
         }
-        
-        // Video player view - full screen
-        playerView = PlayerView(this).apply {
-            useController = false // Custom controls only
+
+        // Video container for VLC-like player - full screen
+        videoContainer = FrameLayout(this).apply {
             layoutParams = FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT
             )
             setBackgroundColor(0xFF000000.toInt())
         }
-        mainLayout.addView(playerView)
-        
+        mainLayout.addView(videoContainer)
+
         // Channel name in top-right corner (hidden initially)
         channelNameTextView = TextView(this).apply {
             text = channelName
@@ -120,7 +107,7 @@ class VideoPlayerActivity : AppCompatActivity() {
             visibility = android.view.View.GONE // Hidden initially
         }
         mainLayout.addView(channelNameTextView)
-        
+
         // Loading status (hidden after playback starts)
         statusTextView = TextView(this).apply {
             text = "Loading..."
@@ -137,7 +124,7 @@ class VideoPlayerActivity : AppCompatActivity() {
             setPadding(40, 20, 40, 20)
         }
         mainLayout.addView(statusTextView)
-        
+
         // Control overlay (positioned ABOVE Android Auto's system controls) - Ice Age Style
         controlsLayout = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -153,14 +140,10 @@ class VideoPlayerActivity : AppCompatActivity() {
             visibility = android.view.View.GONE // Hidden initially
             elevation = 10f // Ensure it appears above other elements
         }
-        
+
         // Previous Channel button - Ice Age Style
-        val previousButton = Button(this).apply {
+        val previousButton = Button(this, null, 0, R.style.NordicIcePrevButton).apply {
             text = "⏮️ PREV"
-            textSize = 18f
-            setTextColor(0xFFFFFFFF.toInt()) // White text for visibility
-            setBackgroundColor(0xDD00FF41.toInt()) // More opaque ice green
-            setPadding(32, 20, 32, 20)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -168,21 +151,16 @@ class VideoPlayerActivity : AppCompatActivity() {
                 weight = 1f
                 setMargins(12, 0, 12, 0)
             }
-            elevation = 12f
             setOnClickListener {
                 previousChannel()
                 hideControlsAfterDelay()
             }
         }
         controlsLayout.addView(previousButton)
-        
+
         // Play/Pause button - Ice Age Style
-        val playPauseButton = Button(this).apply {
+        val playPauseButton = Button(this, null, 0, R.style.NordicIceButton).apply {
             text = "⏸️ PAUSE"
-            textSize = 18f
-            setTextColor(0xFFFFFFFF.toInt()) // White text
-            setBackgroundColor(0xDD00BCD4.toInt()) // More opaque ice accent
-            setPadding(32, 20, 32, 20)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -190,21 +168,16 @@ class VideoPlayerActivity : AppCompatActivity() {
                 weight = 1f
                 setMargins(12, 0, 12, 0)
             }
-            elevation = 12f
             setOnClickListener {
                 mediaController.togglePlayPause()
                 hideControlsAfterDelay()
             }
         }
         controlsLayout.addView(playPauseButton)
-        
+
         // Next Channel button - Ice Age Style
-        val nextButton = Button(this).apply {
+        val nextButton = Button(this, null, 0, R.style.NordicIceNextButton).apply {
             text = "NEXT ⏭️"
-            textSize = 18f
-            setTextColor(0xFFFFFFFF.toInt()) // White text for visibility
-            setBackgroundColor(0xDD00FF41.toInt()) // More opaque ice green
-            setPadding(32, 20, 32, 20)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -212,21 +185,16 @@ class VideoPlayerActivity : AppCompatActivity() {
                 weight = 1f
                 setMargins(12, 0, 12, 0)
             }
-            elevation = 12f
             setOnClickListener {
                 nextChannel()
                 hideControlsAfterDelay()
             }
         }
         controlsLayout.addView(nextButton)
-        
+
         // Back button - Ice Age Style
-        val backButton = Button(this).apply {
+        val backButton = Button(this, null, 0, R.style.NordicIceButton).apply {
             text = "⬅ BACK"
-            textSize = 18f
-            setTextColor(0xFFFFFFFF.toInt()) // White text
-            setBackgroundColor(0xDDb1d4e0.toInt()) // More opaque baby blue
-            setPadding(32, 20, 32, 20)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -234,20 +202,19 @@ class VideoPlayerActivity : AppCompatActivity() {
                 weight = 1f
                 setMargins(12, 0, 12, 0)
             }
-            elevation = 12f
             setOnClickListener {
                 finish()
             }
         }
         controlsLayout.addView(backButton)
-        
+
         mainLayout.addView(controlsLayout)
-        
+
         // Touch listener to show/hide controls
         mainLayout.setOnClickListener {
             toggleControls()
         }
-        
+
         setContentView(mainLayout)
     }
     
@@ -343,21 +310,16 @@ class VideoPlayerActivity : AppCompatActivity() {
                 val bestUrl = alternatives.firstOrNull() ?: streamUrl
                 
                 runOnUiThread {
-                    // Start ExoPlayer immediately
+                    // Create VLC-like surface and start playback
+                    mediaController.createVideoSurface(videoContainer)
                     mediaController.startPlayback(bestUrl)
+                    isPlaying = true
+                    updatePlayPauseButton()
                     
-                    // Connect player to view immediately
+                    // Hide loading message once player is started
                     android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                        if (::mediaController.isInitialized) {
-                            val exoPlayer = mediaController.getExoPlayer()
-                            if (exoPlayer != null) {
-                                playerView.player = exoPlayer
-                                
-                                // Hide loading message once player is connected
-                                statusTextView.visibility = android.view.View.GONE
-                            }
-                        }
-                    }, 500)
+                        statusTextView.visibility = android.view.View.GONE
+                    }, 1000)
                 }
                 
             } catch (e: Exception) {
@@ -373,13 +335,13 @@ class VideoPlayerActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         if (::mediaController.isInitialized) {
-            mediaController.stopPlayback()
+            mediaController.release()
         }
     }
     
     override fun onPause() {
         super.onPause()
-        if (::mediaController.isInitialized && isPlaying) {
+        if (::mediaController.isInitialized && mediaController.isPlaying()) {
             mediaController.togglePlayPause()
         }
     }

@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.10.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.10.1)" variant="all" version="8.10.1">
+
+    <issue
+        id="ScopedStorage"
+        message="The Google Play store has a policy that limits usage of MANAGE_EXTERNAL_STORAGE"
+        errorLine1="    &lt;uses-permission android:name=&quot;android.permission.MANAGE_EXTERNAL_STORAGE&quot; />"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="10"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+        errorLine1="        targetSdk 34"
+        errorLine2="        ~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SelectedPhotoAccess"
+        message="Your app is currently not handling Selected Photos Access introduced in Android 14+"
+        errorLine1="    &lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_VIDEO&quot; />"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="12"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-exoplayer than 1.4.1 is available: 1.7.1"
+        errorLine1="    implementation &apos;androidx.media3:media3-exoplayer:1.4.1&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="49"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-ui than 1.4.1 is available: 1.7.1"
+        errorLine1="    implementation &apos;androidx.media3:media3-ui:1.4.1&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="50"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-common than 1.4.1 is available: 1.7.1"
+        errorLine1="    implementation &apos;androidx.media3:media3-common:1.4.1&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="51"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-exoplayer-hls than 1.4.1 is available: 1.7.1"
+        errorLine1="    implementation &apos;androidx.media3:media3-exoplayer-hls:1.4.1&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="52"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-exoplayer-dash than 1.4.1 is available: 1.7.1"
+        errorLine1="    implementation &apos;androidx.media3:media3-exoplayer-dash:1.4.1&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="53"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                        screenManager.push(PlayerScreen(carContext, channel, channelList))"
+        errorLine2="                                           ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ChannelListScreen.kt"
+            line="35"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                    screenManager.push(PlayerScreen(carContext, channel, channels))"
+        errorLine2="                                       ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/GridChannelScreen.kt"
+            line="32"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        val intent = Intent(this, CarTestActivity::class.java)"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="191"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                        screenManager.push(PlayerScreen(carContext, channel, channels))"
+        errorLine2="                                           ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainChannelScreen.kt"
+            line="117"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                        screenManager.push(PlayerScreen(carContext, channel, channels))"
+        errorLine2="                                           ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainChannelScreen.kt"
+            line="186"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="    private lateinit var mediaController: MediaController"
+        errorLine2="                                          ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="20"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        mediaController = MediaController(this)"
+        errorLine2="        ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="59"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        mediaController = MediaController(this)"
+        errorLine2="                          ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="59"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        mediaController.setOnErrorCallback { errorMessage ->"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="63"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        mediaController.setOnStateChangedCallback { playing ->"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="70"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                mediaController.togglePlayPause()"
+        errorLine2="                                ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="183"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="            mediaController.stopPlayback()"
+        errorLine2="                            ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="295"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                    mediaController.createVideoSurface(videoContainer)"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="325"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="                    mediaController.startPlayback(bestUrl)"
+        errorLine2="                                    ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="326"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="            mediaController.release()"
+        errorLine2="                            ~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="347"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        if (::mediaController.isInitialized &amp;&amp; mediaController.isPlaying()) {"
+        errorLine2="                                                               ~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="353"
+            column="64"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="            mediaController.togglePlayPause()"
+        errorLine2="                            ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="354"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="ExportedService"
+        message="Exported service does not require permission"
+        errorLine1="        &lt;service"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="38"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="InsecureBaseConfiguration"
+        message="Insecure Base Configuration"
+        errorLine1="    &lt;base-config cleartextTrafficPermitted=&quot;true&quot;>"
+        errorLine2="                                            ~~~~">
+        <location
+            file="src/main/res/xml/network_security_config.xml"
+            line="12"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; `SDK_INT` is always >= 21"
+        errorLine1="        &lt;item name=&quot;android:statusBarColor&quot; tools:targetApi=&quot;l&quot;>?attr/colorPrimaryVariant&lt;/item>"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="9"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.layout.activity_main` appears to be unused"
+        errorLine1="&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_200` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_200&quot;>#FFBB86FC&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.hacker_ice_dark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;hacker_ice_dark&quot;>#006064&lt;/color>           &lt;!-- Dark Ice Background -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="16"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.hacker_ice_success` appears to be unused"
+        errorLine1="    &lt;color name=&quot;hacker_ice_success&quot;>#00FF41&lt;/color>        &lt;!-- Matrix Green -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="18"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.button_normal` appears to be unused"
+        errorLine1="    &lt;color name=&quot;button_normal&quot;>#00FFFF&lt;/color>             &lt;!-- Normal state -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="25"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.button_active` appears to be unused"
+        errorLine1="    &lt;color name=&quot;button_active&quot;>#00BCD4&lt;/color>             &lt;!-- Active/Selected state -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="26"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.button_disabled` appears to be unused"
+        errorLine1="    &lt;color name=&quot;button_disabled&quot;>#4D006064&lt;/color>         &lt;!-- Disabled state (50% opacity) -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="27"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.button_error` appears to be unused"
+        errorLine1="    &lt;color name=&quot;button_error&quot;>#FF4444&lt;/color>              &lt;!-- Error state -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="28"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.button_success` appears to be unused"
+        errorLine1="    &lt;color name=&quot;button_success&quot;>#00FF41&lt;/color>            &lt;!-- Success state -->"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="29"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_back` appears to be unused"
+        errorLine1="&lt;vector android:height=&quot;24dp&quot; android:tint=&quot;#FFFFFF&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_back.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_home_nordic` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_home_nordic.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.channel_list_title` appears to be unused"
+        errorLine1="    &lt;string name=&quot;channel_list_title&quot;>Media Channels&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="3"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.import_subscription` appears to be unused"
+        errorLine1="    &lt;string name=&quot;import_subscription&quot;>Import Subscription&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="4"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.play_pause` appears to be unused"
+        errorLine1="    &lt;string name=&quot;play_pause&quot;>Play/Pause&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.volume_control` appears to be unused"
+        errorLine1="    &lt;string name=&quot;volume_control&quot;>Volume Control&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="6"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.back` appears to be unused"
+        errorLine1="    &lt;string name=&quot;back&quot;>Back&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.no_channels` appears to be unused"
+        errorLine1="    &lt;string name=&quot;no_channels&quot;>No channels available. Import a subscription first.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="8"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.importing` appears to be unused"
+        errorLine1="    &lt;string name=&quot;importing&quot;>Importing subscription...&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="9"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.import_success` appears to be unused"
+        errorLine1="    &lt;string name=&quot;import_success&quot;>Subscription imported successfully&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="10"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.import_error` appears to be unused"
+        errorLine1="    &lt;string name=&quot;import_error&quot;>Failed to import subscription&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="11"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.connect_to_car` appears to be unused"
+        errorLine1="    &lt;string name=&quot;connect_to_car&quot;>Connect to Android Auto to start watching&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;importing&quot;>Importing subscription...&lt;/string>"
+        errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="9"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        message="The application adaptive icon is missing a monochrome tag"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        message="The application adaptive roundIcon is missing a monochrome tag"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ic_launcher.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher.png: 683x683 dp (1024x1024 px), mipmap-mdpi/ic_launcher.png: 1024x1024 dp (1024x1024 px), mipmap-xhdpi/ic_launcher.png: 512x512 dp (1024x1024 px), mipmap-xxhdpi/ic_launcher.png: 341x341 dp (1024x1024 px), mipmap-xxxhdpi/ic_launcher.png: 256x256 dp (1024x1024 px)">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ic_launcher_round.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_round.png: 683x683 dp (1024x1024 px), mipmap-mdpi/ic_launcher_round.png: 1024x1024 dp (1024x1024 px), mipmap-xhdpi/ic_launcher_round.png: 512x512 dp (1024x1024 px), mipmap-xxhdpi/ic_launcher_round.png: 341x341 dp (1024x1024 px), mipmap-xxxhdpi/ic_launcher_round.png: 256x256 dp (1024x1024 px)">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ic_launcher_foreground.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/ic_launcher_foreground.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_launcher_foreground.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_round.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/drawable/ic_launcher_foreground.png"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        errorLine1="        prefs.edit().clear().apply()"
+        errorLine2="        ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/CarTestActivity.kt"
+            line="220"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        errorLine1="        prefs.edit().putString(&quot;subscriptions&quot;, json).apply()"
+        errorLine2="        ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ChannelManager.kt"
+            line="97"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `Int.toDrawable` instead?"
+        errorLine1="            android.graphics.drawable.ColorDrawable(0xFF0c2d48.toInt())"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="155"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        errorLine1="        prefs.edit().clear().apply()"
+        errorLine2="        ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="209"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="                    setDataSource(context, Uri.parse(url), headers)"
+        errorLine2="                                           ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MediaController.kt"
+            line="253"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="            val uri = Uri.parse(url)"
+        errorLine2="                      ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MediaController.kt"
+            line="330"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension property `View.isVisible` instead?"
+        errorLine1="        val isVisible = controlsLayout.visibility == android.view.View.VISIBLE"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="233"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension property `View.isVisible` instead?"
+        errorLine1="            if (controlsLayout.visibility == android.view.View.VISIBLE) {"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="250"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="            subtitleView.text = &quot;${channel.category} • HD&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ChannelAdapter.kt"
+            line="37"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            subtitleView.text = &quot;${channel.category} • HD&quot;"
+        errorLine2="                                                    ~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ChannelAdapter.kt"
+            line="37"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;M3U URL:&quot;"
+        errorLine2="                    ~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="42"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            setText(&quot;https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Test.m3u&quot;)"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="48"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;Playlist Name:&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="54"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            setText(&quot;Test Playlist&quot;)"
+        errorLine2="                     ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="60"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;Import M3U Playlist&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="66"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;Test Built-in M3U&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="72"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;Ready to import&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="78"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        statusTextView.text = &quot;Importing...&quot;"
+        errorLine2="                               ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="110"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                    statusTextView.text = &quot;Success! Imported ${metadata.channelCount} channels&quot;"
+        errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="117"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Success! Imported ${metadata.channelCount} channels&quot;"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="117"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Success! Imported ${metadata.channelCount} channels&quot;"
+        errorLine2="                                                                                     ~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="117"
+            column="86"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Import failed&quot;"
+        errorLine2="                                           ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="120"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                statusTextView.text = &quot;Error: ${e.message}&quot;"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="124"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                statusTextView.text = &quot;Error: ${e.message}&quot;"
+        errorLine2="                                       ~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="124"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        statusTextView.text = &quot;Testing built-in M3U...&quot;"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="133"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                    statusTextView.text = &quot;Built-in M3U loaded: ${file.channelCount} channels&quot;"
+        errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="143"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Built-in M3U loaded: ${file.channelCount} channels&quot;"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="143"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Built-in M3U loaded: ${file.channelCount} channels&quot;"
+        errorLine2="                                                                                    ~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="143"
+            column="85"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Built-in M3U not found&quot;"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="146"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                statusTextView.text = &quot;Built-in M3U error: ${e.message}&quot;"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="150"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                statusTextView.text = &quot;Built-in M3U error: ${e.message}&quot;"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/ImportActivity.kt"
+            line="150"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="            text = &quot;🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience&quot;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="80"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="80"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience&quot;"
+        errorLine2="                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="80"
+            column="66"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;🔍 Checking network connectivity...&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="90"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;🎬 Start Watching&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="101"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;🗂️ Import Channels&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="115"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;🌐 Test Network&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="130"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="            text = &quot;\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6&quot;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="143"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6&quot;"
+        errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="143"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6&quot;"
+        errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="143"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            networkStatusView.text = &quot;🔍 Testing network connectivity...&quot;"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="162"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                networkStatusView.text = &quot;⚠️ Network test error:\n${e.message}\n\n❄️ Try again later&quot;"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="184"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                networkStatusView.text = &quot;⚠️ Network test error:\n${e.message}\n\n❄️ Try again later&quot;"
+        errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="184"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                networkStatusView.text = &quot;⚠️ Network test error:\n${e.message}\n\n❄️ Try again later&quot;"
+        errorLine2="                                                                                  ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/MainActivity.kt"
+            line="184"
+            column="83"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                statusTextView.text = &quot;❌ $errorMessage\n\n❄️ Stream unavailable&quot;"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="65"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                statusTextView.text = &quot;❌ $errorMessage\n\n❄️ Stream unavailable&quot;"
+        errorLine2="                                                          ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="65"
+            column="59"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;Loading...&quot;"
+        errorLine2="                    ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="124"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;⏮️ PREV&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="157"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;⏸️ PAUSE&quot;"
+        errorLine2="                    ~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="174"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;NEXT ⏭️&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="191"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            text = &quot;⬅ BACK&quot;"
+        errorLine2="                    ~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="208"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        statusTextView.text = &quot;❄️ Switching to $channelName...&quot;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="290"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        statusTextView.text = &quot;❄️ Switching to $channelName...&quot;"
+        errorLine2="                               ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="290"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            statusTextView.text = &quot;No stream URL provided&quot;"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="306"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        statusTextView.text = &quot;Loading $channelName...&quot;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="311"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        statusTextView.text = &quot;Loading $channelName...&quot;"
+        errorLine2="                               ~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="311"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="                    statusTextView.text = &quot;Cannot play channel\nTry different channel&quot;"
+        errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="336"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Cannot play channel\nTry different channel&quot;"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="336"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    statusTextView.text = &quot;Cannot play channel\nTry different channel&quot;"
+        errorLine2="                                                                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt"
+            line="336"
+            column="65"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Car TV Player&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Car TV Player&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Tap &apos;Test Car Interface&apos; to view channels&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Tap &apos;Test Car Interface&apos; to view channels&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="27"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Test Car Interface&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Test Car Interface&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="38"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Import Subscription&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Import Subscription&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="48"
+            column="9"/>
+    </issue>
+
+</issues>

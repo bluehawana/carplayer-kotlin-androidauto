@@ -94,6 +94,32 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="org.videolan.android:libvlc-all:3.5.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/jars/classes.jar"
+      resolved="org.videolan.android:libvlc-all:3.5.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.legacy:legacy-support-v4:1.0.0@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/3089193ca975bb95f5d5d4fb2fa8955b/transformed/legacy-support-v4-1.0.0/jars/classes.jar"
+      resolved="androidx.legacy:legacy-support-v4:1.0.0"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/3089193ca975bb95f5d5d4fb2fa8955b/transformed/legacy-support-v4-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.fragment:fragment:1.5.4@aar"
       jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/78cc8c62cf08fc0db630a56956c47259/transformed/fragment-1.5.4/jars/classes.jar"
       resolved="androidx.fragment:fragment:1.5.4"
@@ -137,6 +163,19 @@
       jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/0e55dffb5862993b25251e4006de4ea3/transformed/media-1.7.0/jars/classes.jar"
       resolved="androidx.media:media:1.7.0"
       folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/0e55dffb5862993b25251e4006de4ea3/transformed/media-1.7.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.legacy:legacy-support-core-ui:1.0.0@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/83cca94b23829022abf4c976693d36d3/transformed/legacy-support-core-ui-1.0.0/jars/classes.jar"
+      resolved="androidx.legacy:legacy-support-core-ui:1.0.0"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/83cca94b23829022abf4c976693d36d3/transformed/legacy-support-core-ui-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -250,6 +289,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/0f6e9bfade8acfaba118a41d97e53759/transformed/slidingpanelayout-1.0.0/jars/classes.jar"
+      resolved="androidx.slidingpanelayout:slidingpanelayout:1.0.0"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/0f6e9bfade8acfaba118a41d97e53759/transformed/slidingpanelayout-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.customview:customview:1.1.0@aar"
       jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/daca2113870c84c7c738c0ad7a09ab6e/transformed/customview-1.1.0/jars/classes.jar"
       resolved="androidx.customview:customview:1.1.0"
@@ -280,6 +332,32 @@
       jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/8b94794d9a39511b3f6d16e834b13511/transformed/loader-1.0.0/jars/classes.jar"
       resolved="androidx.loader:loader:1.0.0"
       folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/8b94794d9a39511b3f6d16e834b13511/transformed/loader-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/c09b170dbd4f9c280b36e9bc6d8a91d1/transformed/swiperefreshlayout-1.0.0/jars/classes.jar"
+      resolved="androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/c09b170dbd4f9c280b36e9bc6d8a91d1/transformed/swiperefreshlayout-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/2628d317d3ca125348738530b3b91029/transformed/asynclayoutinflater-1.0.0/jars/classes.jar"
+      resolved="androidx.asynclayoutinflater:asynclayoutinflater:1.0.0"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/2628d317d3ca125348738530b3b91029/transformed/asynclayoutinflater-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -404,10 +482,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media3:media3-exoplayer-hls:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/06f4cfe996405721616f26085cd62d36/transformed/media3-exoplayer-hls-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-exoplayer-hls:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/06f4cfe996405721616f26085cd62d36/transformed/media3-exoplayer-hls-1.7.1"
+      name="androidx.media3:media3-exoplayer:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-exoplayer:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -417,10 +495,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media3:media3-exoplayer:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-exoplayer:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1"
+      name="androidx.media3:media3-ui:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/0c1e8af8c664fad74576ea84ae911064/transformed/media3-ui-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-ui:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/0c1e8af8c664fad74576ea84ae911064/transformed/media3-ui-1.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -430,10 +508,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media3:media3-ui:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/6c0fb4c843696a3f5e764f048b433f8a/transformed/media3-ui-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-ui:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/6c0fb4c843696a3f5e764f048b433f8a/transformed/media3-ui-1.7.1"
+      name="androidx.media3:media3-container:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/adb9e0c334710a28f5c33c588e74e497/transformed/media3-container-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-container:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/adb9e0c334710a28f5c33c588e74e497/transformed/media3-container-1.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -443,10 +521,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media3:media3-session:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/16243b827df04114a6eef20120ea8b6e/transformed/media3-session-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-session:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/16243b827df04114a6eef20120ea8b6e/transformed/media3-session-1.7.1"
+      name="androidx.media3:media3-common:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-common:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -456,10 +534,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media3:media3-datasource:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/318a2dbcf3e482edbf6167d5b16adb5c/transformed/media3-datasource-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-datasource:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/318a2dbcf3e482edbf6167d5b16adb5c/transformed/media3-datasource-1.7.1"
+      name="androidx.media3:media3-exoplayer-hls:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/04ea1099874a649db4cde65bfdc9a392/transformed/media3-exoplayer-hls-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-exoplayer-hls:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/04ea1099874a649db4cde65bfdc9a392/transformed/media3-exoplayer-hls-1.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -469,62 +547,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media3:media3-extractor:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/2c8722b777753cbdb84fbdeaf444fce1/transformed/media3-extractor-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-extractor:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/2c8722b777753cbdb84fbdeaf444fce1/transformed/media3-extractor-1.7.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media3:media3-container:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/a90fd162bea7a88202bc7f46e25c6be9/transformed/media3-container-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-container:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/a90fd162bea7a88202bc7f46e25c6be9/transformed/media3-container-1.7.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media3:media3-decoder:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/7b07c0f7ad97d2544240ca65a530f898/transformed/media3-decoder-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-decoder:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/7b07c0f7ad97d2544240ca65a530f898/transformed/media3-decoder-1.7.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media3:media3-database:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/6fe69bd36878cb0774ae4636c54f5d82/transformed/media3-database-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-database:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/6fe69bd36878cb0774ae4636c54f5d82/transformed/media3-database-1.7.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media3:media3-common:1.7.1@aar"
-      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1/jars/classes.jar"
-      resolved="androidx.media3:media3-common:1.7.1"
-      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1"
+      name="androidx.media3:media3-exoplayer-dash:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/17b1ad1e33a209f30732097ddac4ffe6/transformed/media3-exoplayer-dash-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-exoplayer-dash:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/17b1ad1e33a209f30732097ddac4ffe6/transformed/media3-exoplayer-dash-1.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -705,9 +731,9 @@
       jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
       resolved="org.jetbrains:annotations:13.0"/>
   <library
-      name="com.google.guava:guava:33.3.1-android@jar"
-      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.3.1-android/36162b3b4e9df67dae90db62a2c54616ca42c1bd/guava-33.3.1-android.jar"
-      resolved="com.google.guava:guava:33.3.1-android"/>
+      name="com.google.guava:guava:33.0.0-android@jar"
+      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.0.0-android/cfbbdc54f232feedb85746aeeea0722f5244bb9a/guava-33.0.0-android.jar"
+      resolved="com.google.guava:guava:33.0.0-android"/>
   <library
       name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"
       jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"
@@ -724,6 +750,58 @@
       name="com.google.guava:failureaccess:1.0.2@jar"
       jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/c4a06a64e650562f30b7bf9aaec1bfed43aca12b/failureaccess-1.0.2.jar"
       resolved="com.google.guava:failureaccess:1.0.2"/>
+  <library
+      name="androidx.media3:media3-database:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/6e568c1b96023667f31ceaa3d3eefff0/transformed/media3-database-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-database:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/6e568c1b96023667f31ceaa3d3eefff0/transformed/media3-database-1.4.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-datasource:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/39de8213fad24c6a98253b4de944de7c/transformed/media3-datasource-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-datasource:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/39de8213fad24c6a98253b4de944de7c/transformed/media3-datasource-1.4.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-decoder:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/65a67b7e9d6bbb318192ca105f20c132/transformed/media3-decoder-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-decoder:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/65a67b7e9d6bbb318192ca105f20c132/transformed/media3-decoder-1.4.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-extractor:1.4.1@aar"
+      jars="/Users/bluehawana/.gradle/caches/8.14.3/transforms/d003627389e07eca70d5eb9e45ee62af/transformed/media3-extractor-1.4.1/jars/classes.jar"
+      resolved="androidx.media3:media3-extractor:1.4.1"
+      folder="/Users/bluehawana/.gradle/caches/8.14.3/transforms/d003627389e07eca70d5eb9e45ee62af/transformed/media3-extractor-1.4.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
   <library
       name="com.google.code.gson:gson:2.8.5@jar"
       jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar"
@@ -841,19 +919,15 @@
       jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/androidx.concurrent/concurrent-futures/1.1.0/50b7fb98350d5f42a4e49704b03278542293ba48/concurrent-futures-1.1.0.jar"
       resolved="androidx.concurrent:concurrent-futures:1.1.0"/>
   <library
-      name="com.google.errorprone:error_prone_annotations:2.28.0@jar"
-      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.28.0/59fc00087ce372de42e394d2c789295dff2d19f0/error_prone_annotations-2.28.0.jar"
-      resolved="com.google.errorprone:error_prone_annotations:2.28.0"/>
+      name="com.google.errorprone:error_prone_annotations:2.23.0@jar"
+      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.23.0/43a27853b6c7d54893e0b1997c2c778c347179eb/error_prone_annotations-2.23.0.jar"
+      resolved="com.google.errorprone:error_prone_annotations:2.23.0"/>
   <library
       name="com.google.code.findbugs:jsr305:3.0.2@jar"
       jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar"
       resolved="com.google.code.findbugs:jsr305:3.0.2"/>
   <library
-      name="org.checkerframework:checker-qual:3.43.0@jar"
-      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.43.0/9425eee39e56b116d2b998b7c2cebcbd11a3c98b/checker-qual-3.43.0.jar"
-      resolved="org.checkerframework:checker-qual:3.43.0"/>
-  <library
-      name="com.google.j2objc:j2objc-annotations:3.0.0@jar"
-      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/3.0.0/7399e65dd7e9ff3404f4535b2f017093bdb134c7/j2objc-annotations-3.0.0.jar"
-      resolved="com.google.j2objc:j2objc-annotations:3.0.0"/>
+      name="org.checkerframework:checker-qual:3.41.0@jar"
+      jars="/Users/bluehawana/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.41.0/8be6df7f1e9bccb19f8f351b3651f0bac2f5e0c/checker-qual-3.41.0.jar"
+      resolved="org.checkerframework:checker-qual:3.41.0"/>
 </libraries>
