@@ -34,6 +34,7 @@
     <uses-permission android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
+        android:name="com.carplayer.iptv.CarPlayerApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -60,7 +61,7 @@
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
 
-                <category android:name="androidx.car.app.category.MEDIA" />
+                <category android:name="androidx.car.app.category.PLAYBACK" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
@@ -69,6 +70,15 @@
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>
         </service>
+
+        <!-- Media Button Receiver -->
+        <receiver
+            android:name="androidx.media.session.MediaButtonReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
 
         <!-- Main Phone Activity -->
         <activity
@@ -97,7 +107,10 @@
         <!-- Video Player Activity -->
         <activity
             android:name="com.carplayer.iptv.VideoPlayerActivity"
+            android:excludeFromRecents="true"
             android:exported="false"
+            android:launchMode="singleTop"
+            android:noHistory="true"
             android:theme="@style/Theme.CarPlayerIPTV" />
 
         <service

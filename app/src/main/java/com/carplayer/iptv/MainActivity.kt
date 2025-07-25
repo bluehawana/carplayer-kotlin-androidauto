@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity() {
         
         setupNordicUI()
         
-        // Load saved subscriptions
-        channelManager.loadSubscriptions(this)
+        // FORCE CLEAR CACHE and reload channels from updated M3U file
+        clearChannelCache()
+        channelManager.reloadFromAssets(this)
         
         // Load sample M3U files on first run
         val preloadedFiles = PreloadedM3UFiles(this)
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         
         // App title
         val titleView = TextView(this).apply {
-            text = "❄️ Car TV Player"
+            text = getString(R.string.app_name)
             textSize = 28f
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
@@ -153,7 +154,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(
             android.graphics.drawable.ColorDrawable(0xFF0c2d48.toInt())
         )
-        supportActionBar?.title = "ECarTV Nordic"
+        supportActionBar?.title = "❄️ Car TV Player"
     }
     
     private fun checkNetworkStatus() {
@@ -200,5 +201,12 @@ class MainActivity : AppCompatActivity() {
         // Launch car app service
         val intent = Intent(this, CarAppService::class.java)
         startService(intent)
+    }
+    
+    private fun clearChannelCache() {
+        // Clear all cached channel data to force fresh reload
+        val prefs = getSharedPreferences("iptv_prefs", MODE_PRIVATE)
+        prefs.edit().clear().apply()
+        android.util.Log.d("MainActivity", "Channel cache cleared - will reload fresh M3U data")
     }
 }

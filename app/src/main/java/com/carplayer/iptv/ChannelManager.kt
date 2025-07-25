@@ -106,4 +106,45 @@ class ChannelManager {
             channels = subscriptions.flatMap { it.channels }
         }
     }
+    
+    fun getAllChannels(context: Context): List<Channel> {
+        // ALWAYS reload from assets to get latest M3U content
+        android.util.Log.d("ChannelManager", "getAllChannels called - force loading from assets")
+        loadFromAssets(context)
+        
+        android.util.Log.d("ChannelManager", "Returning ${channels.size} channels")
+        return channels
+    }
+    
+    private fun loadFromAssets(context: Context) {
+        try {
+            val inputStream = context.assets.open("iptv.m3u")
+            val content = inputStream.bufferedReader().readText()
+            inputStream.close()
+            
+            val parsedChannels = parseM3U(content)
+            val assetSubscription = IPTVSubscription(
+                name = "Default IPTV Channels",
+                url = "assets://iptv.m3u",
+                channels = parsedChannels
+            )
+            
+            subscriptions = listOf(assetSubscription)
+            channels = parsedChannels
+            
+            android.util.Log.d("ChannelManager", "Loaded ${channels.size} channels from assets")
+        } catch (e: Exception) {
+            android.util.Log.e("ChannelManager", "Failed to load from assets: ${e.message}")
+            channels = emptyList()
+        }
+    }
+    
+    fun reloadFromAssets(context: Context) {
+        // Force reload from assets (ignores cache completely)
+        channels = emptyList() // Clear current channels
+        subscriptions = emptyList() // Clear current subscriptions
+        loadFromAssets(context)
+        saveSubscriptions(context) // Save the reloaded channels
+        android.util.Log.d("ChannelManager", "Force reloaded - now have ${channels.size} channels")
+    }
 }
