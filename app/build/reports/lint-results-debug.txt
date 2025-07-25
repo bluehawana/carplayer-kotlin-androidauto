@@ -1,186 +1,55 @@
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10: Warning: The Google Play store has a policy that limits usage of MANAGE_EXTERNAL_STORAGE [ScopedStorage]
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/lint-baseline.xml: Hint: 5 errors and 109 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml [LintBaseline]
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/lint-baseline.xml: Hint: 16 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: SetTextI18n (2), UnsafeOptInUsageError (12), UseKtx (2) [LintBaselineFixed]
 
-   Explanation for issues of type "ScopedStorage":
-   Scoped storage is enforced on Android 10+ (or Android 11+ if using
-   requestLegacyExternalStorage). In particular, WRITE_EXTERNAL_STORAGE will
-   no longer provide write access to all files; it will provide the equivalent
-   of READ_EXTERNAL_STORAGE instead.
+   Explanation for issues of type "LintBaselineFixed":
+   If a lint baseline describes a problem which is no longer reported, then
+   the problem has either been fixed, or perhaps the issue type has been
+   disabled. In any case, the entry can be removed from the baseline (such
+   that if the issue is reintroduced at some point, lint will complain rather
+   than just silently starting to match the old baseline entry again.)
 
-   As of Android 13, if you need to query or interact with MediaStore or media
-   files on the shared storage, you should be using instead one or more new
-   storage permissions:
-   * android.permission.READ_MEDIA_IMAGES
-   * android.permission.READ_MEDIA_VIDEO
-   * android.permission.READ_MEDIA_AUDIO
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build.gradle:64: Warning: The native library arm64-v8a/libc++_shared.so (from org.videolan.android:libvlc-all:3.5.1) is not 16 KB aligned [Aligned16KB]
+    implementation 'org.videolan.android:libvlc-all:3.5.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/jni/arm64-v8a/libc++_shared.so: Warning: The native library arm64-v8a/libc++_shared.so (from org.videolan.android:libvlc-all:3.5.1) is not 16 KB aligned [Aligned16KB]
+/Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/jni/arm64-v8a/libc++_shared.so: Warning: The native library arm64-v8a/libc++_shared.so (from org.videolan.android:libvlc-all:3.5.1) is not 16 KB aligned [Aligned16KB]
 
-   and then add maxSdkVersion="33" to the older permission. See the developer
-   guide for how to do this:
-   https://developer.android.com/about/versions/13/behavior-changes-13#granula
-   r-media-permissions
+   Explanation for issues of type "Aligned16KB":
+   Android has traditionally used 4 KB memory page sizes. However, to support
+   future devices that only work with 16 KB aligned libraries apps containing
+   native libraries need to be built with 16 KB alignment.
 
-   The MANAGE_EXTERNAL_STORAGE permission can be used to manage all files, but
-   it is rarely necessary and most apps on Google Play are not allowed to use
-   it. Most apps should instead migrate to use scoped storage. To modify or
-   delete files, apps should request write access from the user as described
-   at https://goo.gle/android-mediastore-createwriterequest.
+   Apps with 4 KB aligned native libraries may not work correctly on devices
+   requiring 16 KB alignment. To ensure compatibility and future-proof your
+   app, it is strongly recommended that your native libraries are aligned to
+   16 KB boundaries.
 
-   To learn more, read these resources: Play policy:
-   https://goo.gle/policy-storage-help Allowable use cases:
-   https://goo.gle/policy-storage-usecases
+   If your app uses any NDK libraries, directly or indirectly through an SDK,
+   you should rebuild your app to meet this recommendation. Make sure all
+   native libraries within your application, including those from
+   dependencies, are built with 16 KB page alignment.
 
-   https://goo.gle/android-storage-usecases
+   This lint check looks at all native libraries that your app depends on. If
+   any are found to be aligned to 4 KB instead of 16 KB, you will need to
+   address this.
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build.gradle:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
-        targetSdk 34
-        ~~~~~~~~~~~~
+   When a library is flagged, first try to update to a newer version that
+   supports 16 KB alignment. If an updated version is not available, contact
+   the library vendor to ask about their plans for 16 KB support and request a
+   compatible version. Updating your libraries proactively will help ensure
+   your app works properly on a wider range of devices.
 
-   Explanation for issues of type "OldTargetApi":
-   When your application or sdk runs on a version of Android that is more
-   recent than your targetSdkVersion specifies that it has been tested with,
-   various compatibility modes kick in. This ensures that your application
-   continues to work, but it may look out of place. For example, if the
-   targetSdkVersion is less than 14, your app may get an option button in the
-   UI.
+   https://developer.android.com/guide/practices/page-sizes
 
-   To fix this issue, set the targetSdkVersion to the highest available value.
-   Then test your app to make sure everything works correctly. You may want to
-   consult the compatibility notes to see what changes apply to each version
-   you are adding support for:
-   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
-   as well as follow this guide:
-   https://developer.android.com/distribute/best-practices/develop/target-sdk.
-   html
-
-   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:12: Warning: Your app is currently not handling Selected Photos Access introduced in Android 14+ [SelectedPhotoAccess]
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "SelectedPhotoAccess":
-   Selected Photo Access is a new ability for users to share partial access to
-   their photo library when apps request access to their device storage on
-   Android 14+.
-
-   Instead of letting the system manage the selection lifecycle, we recommend
-   you adapt your app to handle partial access to the photo library.
-
-   https://developer.android.com/about/versions/14/changes/partial-photo-video-access
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build.gradle:51: Warning: A newer version of androidx.media3:media3-common than 1.4.0 is available: 1.7.1 [GradleDependency]
-    implementation 'androidx.media3:media3-common:1.4.0'
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "GradleDependency":
-   This detector looks for usages of libraries where the version you are using
-   is not the current stable release. Using older versions is fine, and there
-   are cases where you deliberately want to stick with an older version.
-   However, you may simply not be aware that a more recent version is
-   available, and that is what this lint check helps find.
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:38: Warning: Exported service does not require permission [ExportedService]
-        <service
-         ~~~~~~~
-
-   Explanation for issues of type "ExportedService":
-   Exported services (services which either set exported=true or contain an
-   intent-filter and do not specify exported=false) should define a permission
-   that an entity must have in order to launch the service or bind to it.
-   Without this, any application can use this service.
-
-   https://goo.gle/ExportedService
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/xml/network_security_config.xml:12: Warning: Insecure Base Configuration [InsecureBaseConfiguration]
-    <base-config cleartextTrafficPermitted="true">
-                                            ~~~~
-
-   Explanation for issues of type "InsecureBaseConfiguration":
-   Permitting cleartext traffic could allow eavesdroppers to intercept data
-   sent by your app, which impacts the privacy of your users. Consider only
-   allowing encrypted traffic by setting the cleartextTrafficPermitted tag to
-   false.
-
-   https://goo.gle/InsecureBaseConfiguration
-   https://developer.android.com/preview/features/security-config.html
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/themes.xml:9: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-                                            ~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "ObsoleteSdkInt":
-   This check flags version checks that are not necessary, because the
-   minSdkVersion (or surrounding known API level) is already at least as high
-   as the version checked for.
-
-   Similarly, it also looks for resources in -vNN folders, such as values-v14
-   where the version qualifier is less than or equal to the minSdkVersion,
-   where the contents should be merged into the best folder.
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/layout/activity_main.xml:2: Warning: The resource R.layout.activity_main appears to be unused [UnusedResources]
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.purple_200 appears to be unused [UnusedResources]
-    <color name="purple_200">#FFBB86FC</color>
-           ~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:16: Warning: The resource R.color.hacker_ice_dark appears to be unused [UnusedResources]
-    <color name="hacker_ice_dark">#006064</color>           <!-- Dark Ice Background -->
-           ~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:18: Warning: The resource R.color.hacker_ice_success appears to be unused [UnusedResources]
-    <color name="hacker_ice_success">#00FF41</color>        <!-- Matrix Green -->
-           ~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:25: Warning: The resource R.color.button_normal appears to be unused [UnusedResources]
-    <color name="button_normal">#00FFFF</color>             <!-- Normal state -->
-           ~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:26: Warning: The resource R.color.button_active appears to be unused [UnusedResources]
-    <color name="button_active">#00BCD4</color>             <!-- Active/Selected state -->
-           ~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:27: Warning: The resource R.color.button_disabled appears to be unused [UnusedResources]
-    <color name="button_disabled">#4D006064</color>         <!-- Disabled state (50% opacity) -->
-           ~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:28: Warning: The resource R.color.button_error appears to be unused [UnusedResources]
-    <color name="button_error">#FF4444</color>              <!-- Error state -->
-           ~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/colors.xml:29: Warning: The resource R.color.button_success appears to be unused [UnusedResources]
-    <color name="button_success">#00FF41</color>            <!-- Success state -->
-           ~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_back.xml:1: Warning: The resource R.drawable.ic_back appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_down.xml:1: Warning: The resource R.drawable.ic_volume_down appears to be unused [UnusedResources]
 <vector android:height="24dp" android:tint="#FFFFFF"
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_home_nordic.xml:1: Warning: The resource R.drawable.ic_home_nordic appears to be unused [UnusedResources]
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_max.xml:1: Warning: The resource R.drawable.ic_volume_max appears to be unused [UnusedResources]
+<vector android:height="24dp" android:tint="#FFFFFF"
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:3: Warning: The resource R.string.channel_list_title appears to be unused [UnusedResources]
-    <string name="channel_list_title">Media Channels</string>
-            ~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:4: Warning: The resource R.string.import_subscription appears to be unused [UnusedResources]
-    <string name="import_subscription">Import Subscription</string>
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:5: Warning: The resource R.string.play_pause appears to be unused [UnusedResources]
-    <string name="play_pause">Play/Pause</string>
-            ~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:6: Warning: The resource R.string.volume_control appears to be unused [UnusedResources]
-    <string name="volume_control">Volume Control</string>
-            ~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:7: Warning: The resource R.string.back appears to be unused [UnusedResources]
-    <string name="back">Back</string>
-            ~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:8: Warning: The resource R.string.no_channels appears to be unused [UnusedResources]
-    <string name="no_channels">No channels available. Import a subscription first.</string>
-            ~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:9: Warning: The resource R.string.importing appears to be unused [UnusedResources]
-    <string name="importing">Importing subscription...</string>
-            ~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:10: Warning: The resource R.string.import_success appears to be unused [UnusedResources]
-    <string name="import_success">Subscription imported successfully</string>
-            ~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:11: Warning: The resource R.string.import_error appears to be unused [UnusedResources]
-    <string name="import_error">Failed to import subscription</string>
-            ~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:12: Warning: The resource R.string.connect_to_car appears to be unused [UnusedResources]
-    <string name="connect_to_car">Connect to Android Auto to start watching</string>
-            ~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_up.xml:1: Warning: The resource R.drawable.ic_volume_up appears to be unused [UnusedResources]
+<vector android:height="24dp" android:tint="#FFFFFF"
+^
 
    Explanation for issues of type "UnusedResources":
    Unused resources make applications larger and slow down builds.
@@ -215,104 +84,9 @@
    </lint>
    ```
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/values/strings.xml:9: Warning: Replace "..." with ellipsis character (…, &#8230;) ? [TypographyEllipsis]
-    <string name="importing">Importing subscription...</string>
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "TypographyEllipsis":
-   You can replace the string "..." with a dedicated ellipsis character,
-   ellipsis character (u2026, &#8230;). This can help make the text more
-   readable.
-
-   https://en.wikipedia.org/wiki/Ellipsis
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-hdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-mdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-hdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-mdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
-
-   Explanation for issues of type "IconLauncherShape":
-   According to the Android Design Guide
-   (https://d.android.com/r/studio-ui/designer/material/iconography) your
-   launcher icons should "use a distinct silhouette", a "three-dimensional,
-   front view, with a slight perspective as if viewed from above, so that
-   users perceive some depth."
-
-   The unique silhouette implies that your launcher icon should not be a
-   filled square.
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-^
-
-   Explanation for issues of type "MonochromeLauncherIcon":
-   If android:roundIcon and android:icon are both in your manifest, you must
-   either remove the reference to android:roundIcon if it is not needed; or,
-   supply the monochrome icon in the drawable defined by the android:roundIcon
-   and android:icon attribute.
-
-   For example, if android:roundIcon and android:icon are both in the
-   manifest, a launcher might choose to use android:roundIcon over
-   android:icon to display the adaptive app icon. Therefore, your themed
-   application iconwill not show if your monochrome attribute is not also
-   specified in android:roundIcon.
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: The image ic_launcher.png varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher.png: 683x683 dp (1024x1024 px), mipmap-mdpi/ic_launcher.png: 1024x1024 dp (1024x1024 px), mipmap-xhdpi/ic_launcher.png: 512x512 dp (1024x1024 px), mipmap-xxhdpi/ic_launcher.png: 341x341 dp (1024x1024 px), mipmap-xxxhdpi/ic_launcher.png: 256x256 dp (1024x1024 px) [IconDipSize]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: The image ic_launcher_round.png varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_round.png: 683x683 dp (1024x1024 px), mipmap-mdpi/ic_launcher_round.png: 1024x1024 dp (1024x1024 px), mipmap-xhdpi/ic_launcher_round.png: 512x512 dp (1024x1024 px), mipmap-xxhdpi/ic_launcher_round.png: 341x341 dp (1024x1024 px), mipmap-xxxhdpi/ic_launcher_round.png: 256x256 dp (1024x1024 px) [IconDipSize]
-
-   Explanation for issues of type "IconDipSize":
-   Checks the all icons which are provided in multiple densities, all compute
-   to roughly the same density-independent pixel (dip) size. This catches
-   errors where images are either placed in the wrong folder, or icons are
-   changed to new sizes but some folders are forgotten.
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_launcher_foreground.png: Warning: Found bitmap drawable res/drawable/ic_launcher_foreground.png in densityless folder [IconLocation]
-
-   Explanation for issues of type "IconLocation":
-   The res/drawable folder is intended for density-independent graphics such
-   as shapes defined in XML. For bitmaps, move it to drawable-mdpi and
-   consider providing higher and lower resolution versions in drawable-ldpi,
-   drawable-hdpi and drawable-xhdpi. If the icon really is density independent
-   (for example a solid color) you can place it in drawable-nodpi.
-
-   https://developer.android.com/guide/practices/screens_support.html
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: The following unrelated icon files have identical contents: ic_launcher_foreground.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png [IconDuplicates]
-
-   Explanation for issues of type "IconDuplicates":
-   If an icon is repeated under different names, you can consolidate and just
-   use one of the icons and delete the others to make your application
-   smaller. However, duplicated icons usually are not intentional and can
-   sometimes point to icons that were accidentally overwritten or accidentally
-   not updated.
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/CarTestActivity.kt:218: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-        prefs.edit().clear().apply()
-        ~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ChannelManager.kt:97: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-        prefs.edit().putString("subscriptions", json).apply()
-        ~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:155: Warning: Use the KTX extension function Int.toDrawable instead? [UseKtx]
-            android.graphics.drawable.ColorDrawable(0xFF0c2d48.toInt())
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:209: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-        prefs.edit().clear().apply()
-        ~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:255: Warning: Use the KTX extension property View.isVisible instead? [UseKtx]
-        val isVisible = controlsLayout.visibility == android.view.View.VISIBLE
-                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:272: Warning: Use the KTX extension property View.isVisible instead? [UseKtx]
-            if (controlsLayout.visibility == android.view.View.VISIBLE) {
-                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VlcMediaController.kt:52: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+        val media = org.videolan.libvlc.Media(libVLC, Uri.parse(url))
+                                                      ~~~~~~~~~~~~~~
 
    Explanation for issues of type "UseKtx":
    The Android KTX libraries decorates the Android platform SDK as well as
@@ -370,201 +144,4 @@
    </lint>
    ```
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ChannelAdapter.kt:35: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-            subtitleView.text = "${channel.category} • HD"
-                                ~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ChannelAdapter.kt:35: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            subtitleView.text = "${channel.category} • HD"
-                                                    ~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:42: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "M3U URL:"
-                    ~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:48: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            setText("https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Test.m3u")
-                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:54: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Playlist Name:"
-                    ~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:60: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            setText("Test Playlist")
-                     ~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:66: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Import M3U Playlist"
-                    ~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:72: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Test Built-in M3U"
-                    ~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:78: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Ready to import"
-                    ~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:110: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-        statusTextView.text = "Importing..."
-                               ~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:117: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                    statusTextView.text = "Success! Imported ${metadata.channelCount} channels"
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:117: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Success! Imported ${metadata.channelCount} channels"
-                                           ~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:117: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Success! Imported ${metadata.channelCount} channels"
-                                                                                     ~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:120: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Import failed"
-                                           ~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:124: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                statusTextView.text = "Error: ${e.message}"
-                                      ~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:124: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                statusTextView.text = "Error: ${e.message}"
-                                       ~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:133: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-        statusTextView.text = "Testing built-in M3U..."
-                               ~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:143: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                    statusTextView.text = "Built-in M3U loaded: ${file.channelCount} channels"
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Built-in M3U loaded: ${file.channelCount} channels"
-                                           ~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Built-in M3U loaded: ${file.channelCount} channels"
-                                                                                    ~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:146: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Built-in M3U not found"
-                                           ~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:150: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                statusTextView.text = "Built-in M3U error: ${e.message}"
-                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ImportActivity.kt:150: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                statusTextView.text = "Built-in M3U error: ${e.message}"
-                                       ~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:80: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-            text = "🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience"
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:80: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience"
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:80: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience"
-                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:90: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "🔍 Checking network connectivity..."
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:101: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "🎬 Start Watching"
-                    ~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:115: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "🗂️ Import Channels"
-                    ~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:130: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "🌐 Test Network"
-                    ~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:143: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-            text = "\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6"
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6"
-                      ~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6"
-                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:162: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            networkStatusView.text = "🔍 Testing network connectivity..."
-                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:184: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                networkStatusView.text = "⚠️ Network test error:\n${e.message}\n\n❄️ Try again later"
-                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:184: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                networkStatusView.text = "⚠️ Network test error:\n${e.message}\n\n❄️ Try again later"
-                                          ~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/MainActivity.kt:184: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                networkStatusView.text = "⚠️ Network test error:\n${e.message}\n\n❄️ Try again later"
-                                                                                  ~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:66: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                statusTextView.text = "❌ $errorMessage\n\n❄️ Stream unavailable"
-                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:66: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                statusTextView.text = "❌ $errorMessage\n\n❄️ Stream unavailable"
-                                                          ~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:126: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Loading..."
-                    ~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:159: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "⏮️ PREV"
-                    ~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:181: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "⏸️ PAUSE"
-                    ~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:203: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "NEXT ⏭️"
-                    ~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:225: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "⬅ BACK"
-                    ~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:312: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-        statusTextView.text = "❄️ Switching to $channelName..."
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:312: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-        statusTextView.text = "❄️ Switching to $channelName..."
-                               ~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:328: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            statusTextView.text = "No stream URL provided"
-                                   ~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:333: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-        statusTextView.text = "Loading $channelName..."
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:333: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-        statusTextView.text = "Loading $channelName..."
-                               ~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:365: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                    statusTextView.text = "Cannot play channel\nTry different channel"
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:365: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Cannot play channel\nTry different channel"
-                                           ~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:365: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusTextView.text = "Cannot play channel\nTry different channel"
-                                                                ~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "SetTextI18n":
-   When calling TextView#setText
-   * Never call Number#toString() to format numbers; it will not handle
-   fraction separators and locale-specific digits properly. Consider using
-   String#format with proper format specifications (%d or %f) instead.
-   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
-   text can not be properly translated to other languages. Consider using
-   Android resource strings instead.
-   * Do not build messages by concatenating text chunks. Such messages can not
-   be properly translated.
-
-   https://developer.android.com/guide/topics/resources/localization.html
-
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/layout/activity_main.xml:13: Warning: Hardcoded string "Car TV Player", should use @string resource [HardcodedText]
-        android:text="Car TV Player"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/layout/activity_main.xml:27: Warning: Hardcoded string "Tap 'Test Car Interface' to view channels", should use @string resource [HardcodedText]
-        android:text="Tap 'Test Car Interface' to view channels"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/layout/activity_main.xml:38: Warning: Hardcoded string "Test Car Interface", should use @string resource [HardcodedText]
-        android:text="Test Car Interface"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/layout/activity_main.xml:48: Warning: Hardcoded string "Import Subscription", should use @string resource [HardcodedText]
-        android:text="Import Subscription"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "HardcodedText":
-   Hardcoding text attributes directly in layout files is bad for several
-   reasons:
-
-   * When creating configuration variations (for example for landscape or
-   portrait) you have to repeat the actual text (and keep it up to date when
-   making changes)
-
-   * The application cannot be translated to other languages by just adding
-   new translations for existing string resources.
-
-   There are quickfixes to automatically extract this hardcoded string into a
-   resource lookup.
-
-0 errors, 107 warnings
+0 errors, 7 warnings (and 5 errors, 109 warnings filtered by baseline lint-baseline.xml)

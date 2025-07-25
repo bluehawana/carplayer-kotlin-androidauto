@@ -5,30 +5,33 @@ INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/ma
 INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
 INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.media3:media3-exoplayer-hls:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/06f4cfe996405721616f26085cd62d36/transformed/media3-exoplayer-hls-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-exoplayer:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.media3:media3-ui:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6c0fb4c843696a3f5e764f048b433f8a/transformed/media3-ui-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-session:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/16243b827df04114a6eef20120ea8b6e/transformed/media3-session-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-datasource:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/318a2dbcf3e482edbf6167d5b16adb5c/transformed/media3-datasource-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-extractor:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2c8722b777753cbdb84fbdeaf444fce1/transformed/media3-extractor-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-container:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/a90fd162bea7a88202bc7f46e25c6be9/transformed/media3-container-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-decoder:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7b07c0f7ad97d2544240ca65a530f898/transformed/media3-decoder-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-database:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6fe69bd36878cb0774ae4636c54f5d82/transformed/media3-database-1.7.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media3:media3-common:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/08d20a7975a1fb8612329581e5cf9503/transformed/constraintlayout-2.2.1/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/064accf497869886f33387b0a0215023/transformed/appcompat-resources-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/edbec0fe4e92c406c619b3f5071631e6/transformed/appcompat-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.car.app:app-projected:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/5883f4324b1fceb4e386e9cfd7b07018/transformed/app-projected-1.7.0/AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:17:1-41:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/15416c2756078238aac304e4bc512877/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [org.videolan.android:libvlc-all:3.5.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3089193ca975bb95f5d5d4fb2fa8955b/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.5.4] /Users/bluehawana/.gradle/caches/8.14.3/transforms/78cc8c62cf08fc0db630a56956c47259/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0b3056424095f71f74fb18b9f0c74576/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-hls:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/04ea1099874a649db4cde65bfdc9a392/transformed/media3-exoplayer-hls-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-dash:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/17b1ad1e33a209f30732097ddac4ffe6/transformed/media3-exoplayer-dash-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media3:media3-extractor:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/d003627389e07eca70d5eb9e45ee62af/transformed/media3-extractor-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-container:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/adb9e0c334710a28f5c33c588e74e497/transformed/media3-container-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-datasource:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/39de8213fad24c6a98253b4de944de7c/transformed/media3-datasource-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-decoder:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/65a67b7e9d6bbb318192ca105f20c132/transformed/media3-decoder-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-database:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6e568c1b96023667f31ceaa3d3eefff0/transformed/media3-database-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media3:media3-ui:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0c1e8af8c664fad74576ea84ae911064/transformed/media3-ui-1.4.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3bb28f25f616a59c23827c977e7f8d2c/transformed/recyclerview-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/003e12d87c8cce0119d6ee2a3a945dde/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/96923483e0bce7455c0a20764d545e44/transformed/core-ktx-1.16.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.media:media:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0e55dffb5862993b25251e4006de4ea3/transformed/media-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/683243e473ba47300bce267f5b4b3a03/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/80069a561c74d728ab43e70f5f0e1193/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/83cca94b23829022abf4c976693d36d3/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/8122e5934f02351537676b5d6753fa75/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/9e6741bdb595f204bb25af0b8315c4ac/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.5.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/71a8b13fbc615daf1b6a3824294491c8/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
@@ -38,7 +41,10 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bluehawana/.gr
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/a2fb669ecbdff37927df686a57367316/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/8b94794d9a39511b3f6d16e834b13511/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/f53bf999898eddecd7ce92efe993fbbb/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0f6e9bfade8acfaba118a41d97e53759/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/daca2113870c84c7c738c0ad7a09ab6e/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/c09b170dbd4f9c280b36e9bc6d8a91d1/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2628d317d3ca125348738530b3b91029/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/bluehawana/.gradle/caches/8.14.3/transforms/56ff48a4f606d3df19db5ded3ec87aad/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/bluehawana/.gradle/caches/8.14.3/transforms/47bb174906ef541e93c184f1a54cfd3a/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:17:1-22:12
@@ -77,10 +83,10 @@ ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/
 		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:6:5-79
-MERGED from [androidx.media3:media3-exoplayer:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1/AndroidManifest.xml:22:5-79
-MERGED from [androidx.media3:media3-exoplayer:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1/AndroidManifest.xml:22:5-79
-MERGED from [androidx.media3:media3-common:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1/AndroidManifest.xml:22:5-79
-MERGED from [androidx.media3:media3-common:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:6:22-76
 uses-permission#android.permission.WAKE_LOCK
@@ -266,26 +272,6 @@ INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/ma
 INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-exoplayer-hls:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/06f4cfe996405721616f26085cd62d36/transformed/media3-exoplayer-hls-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-exoplayer-hls:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/06f4cfe996405721616f26085cd62d36/transformed/media3-exoplayer-hls-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-exoplayer:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-exoplayer:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/89ddd7ac4b40f2b919e8079f5006ab34/transformed/media3-exoplayer-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-ui:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6c0fb4c843696a3f5e764f048b433f8a/transformed/media3-ui-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-ui:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6c0fb4c843696a3f5e764f048b433f8a/transformed/media3-ui-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-session:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/16243b827df04114a6eef20120ea8b6e/transformed/media3-session-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-session:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/16243b827df04114a6eef20120ea8b6e/transformed/media3-session-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-datasource:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/318a2dbcf3e482edbf6167d5b16adb5c/transformed/media3-datasource-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-datasource:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/318a2dbcf3e482edbf6167d5b16adb5c/transformed/media3-datasource-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-extractor:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2c8722b777753cbdb84fbdeaf444fce1/transformed/media3-extractor-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-extractor:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2c8722b777753cbdb84fbdeaf444fce1/transformed/media3-extractor-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-container:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/a90fd162bea7a88202bc7f46e25c6be9/transformed/media3-container-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-container:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/a90fd162bea7a88202bc7f46e25c6be9/transformed/media3-container-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-decoder:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7b07c0f7ad97d2544240ca65a530f898/transformed/media3-decoder-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-decoder:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7b07c0f7ad97d2544240ca65a530f898/transformed/media3-decoder-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-database:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6fe69bd36878cb0774ae4636c54f5d82/transformed/media3-database-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-database:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6fe69bd36878cb0774ae4636c54f5d82/transformed/media3-database-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-common:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media3:media3-common:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/02f8026250731ac12ae9e5a33d86f799/transformed/media3-common-1.7.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/08d20a7975a1fb8612329581e5cf9503/transformed/constraintlayout-2.2.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/08d20a7975a1fb8612329581e5cf9503/transformed/constraintlayout-2.2.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/064accf497869886f33387b0a0215023/transformed/appcompat-resources-1.7.1/AndroidManifest.xml:5:5-44
@@ -298,10 +284,34 @@ MERGED from [androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3
 MERGED from [androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/15416c2756078238aac304e4bc512877/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/15416c2756078238aac304e4bc512877/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [org.videolan.android:libvlc-all:3.5.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/AndroidManifest.xml:7:5-9:41
+MERGED from [org.videolan.android:libvlc-all:3.5.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3089193ca975bb95f5d5d4fb2fa8955b/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3089193ca975bb95f5d5d4fb2fa8955b/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.5.4] /Users/bluehawana/.gradle/caches/8.14.3/transforms/78cc8c62cf08fc0db630a56956c47259/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.5.4] /Users/bluehawana/.gradle/caches/8.14.3/transforms/78cc8c62cf08fc0db630a56956c47259/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.8.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0b3056424095f71f74fb18b9f0c74576/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0b3056424095f71f74fb18b9f0c74576/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/04ea1099874a649db4cde65bfdc9a392/transformed/media3-exoplayer-hls-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/04ea1099874a649db4cde65bfdc9a392/transformed/media3-exoplayer-hls-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/17b1ad1e33a209f30732097ddac4ffe6/transformed/media3-exoplayer-dash-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/17b1ad1e33a209f30732097ddac4ffe6/transformed/media3-exoplayer-dash-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/d003627389e07eca70d5eb9e45ee62af/transformed/media3-extractor-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/d003627389e07eca70d5eb9e45ee62af/transformed/media3-extractor-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/adb9e0c334710a28f5c33c588e74e497/transformed/media3-container-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/adb9e0c334710a28f5c33c588e74e497/transformed/media3-container-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/39de8213fad24c6a98253b4de944de7c/transformed/media3-datasource-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/39de8213fad24c6a98253b4de944de7c/transformed/media3-datasource-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/65a67b7e9d6bbb318192ca105f20c132/transformed/media3-decoder-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/65a67b7e9d6bbb318192ca105f20c132/transformed/media3-decoder-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6e568c1b96023667f31ceaa3d3eefff0/transformed/media3-database-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/6e568c1b96023667f31ceaa3d3eefff0/transformed/media3-database-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-ui:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0c1e8af8c664fad74576ea84ae911064/transformed/media3-ui-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-ui:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0c1e8af8c664fad74576ea84ae911064/transformed/media3-ui-1.4.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3bb28f25f616a59c23827c977e7f8d2c/transformed/recyclerview-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3bb28f25f616a59c23827c977e7f8d2c/transformed/recyclerview-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/003e12d87c8cce0119d6ee2a3a945dde/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
@@ -314,6 +324,8 @@ MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/bluehawana/.gradl
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/683243e473ba47300bce267f5b4b3a03/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/80069a561c74d728ab43e70f5f0e1193/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/80069a561c74d728ab43e70f5f0e1193/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/83cca94b23829022abf4c976693d36d3/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/83cca94b23829022abf4c976693d36d3/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/8122e5934f02351537676b5d6753fa75/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/8122e5934f02351537676b5d6753fa75/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/9e6741bdb595f204bb25af0b8315c4ac/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -332,8 +344,14 @@ MERGED from [androidx.loader:loader:1.0.0] /Users/bluehawana/.gradle/caches/8.14
 MERGED from [androidx.loader:loader:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/8b94794d9a39511b3f6d16e834b13511/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/f53bf999898eddecd7ce92efe993fbbb/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/f53bf999898eddecd7ce92efe993fbbb/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0f6e9bfade8acfaba118a41d97e53759/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/0f6e9bfade8acfaba118a41d97e53759/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/daca2113870c84c7c738c0ad7a09ab6e/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/daca2113870c84c7c738c0ad7a09ab6e/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/c09b170dbd4f9c280b36e9bc6d8a91d1/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/c09b170dbd4f9c280b36e9bc6d8a91d1/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2628d317d3ca125348738530b3b91029/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/2628d317d3ca125348738530b3b91029/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/bluehawana/.gradle/caches/8.14.3/transforms/56ff48a4f606d3df19db5ded3ec87aad/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44

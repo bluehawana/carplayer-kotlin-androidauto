@@ -1,6 +1,6 @@
 <dependencies>
   <compile
-      roots=":@@:app::debug,androidx.test.ext:junit:1.2.1@aar,androidx.test.espresso:espresso-core:3.6.1@aar,com.squareup.okhttp3:logging-interceptor:4.12.0@jar,com.squareup.retrofit2:converter-gson:2.9.0@jar,com.squareup.retrofit2:retrofit:2.9.0@jar,com.squareup.okhttp3:okhttp:4.12.0@jar,androidx.test:core:1.6.1@aar,androidx.concurrent:concurrent-futures-ktx:1.1.0@jar,com.google.android.material:material:1.12.0@aar,androidx.appcompat:appcompat-resources:1.7.1@aar,androidx.appcompat:appcompat:1.7.1@aar,androidx.viewpager2:viewpager2:1.0.0@aar,androidx.fragment:fragment:1.5.4@aar,androidx.fragment:fragment:1.5.4@aar,androidx.car.app:app-projected:1.7.0@aar,androidx.car.app:app:1.7.0@aar,androidx.activity:activity:1.8.0@aar,androidx.dynamicanimation:dynamicanimation:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-livedata-core:2.6.2@aar,androidx.lifecycle:lifecycle-common-java8:2.6.2@jar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar,androidx.core:core-ktx:1.16.0@aar,androidx.media:media:1.7.0@aar,androidx.drawerlayout:drawerlayout:1.1.1@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.transition:transition:1.5.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.customview:customview:1.1.0@aar,androidx.core:core:1.16.0@aar,androidx.core:core:1.16.0@aar,androidx.lifecycle:lifecycle-runtime:2.6.2@aar,androidx.lifecycle:lifecycle-common:2.6.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,com.squareup.okio:okio-jvm:3.6.0@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar,androidx.constraintlayout:constraintlayout:2.2.1@aar,androidx.media3:media3-exoplayer-hls:1.7.1@aar,androidx.media3:media3-exoplayer:1.7.1@aar,androidx.media3:media3-ui:1.7.1@aar,androidx.media3:media3-session:1.7.1@aar,androidx.media3:media3-datasource:1.7.1@aar,androidx.media3:media3-extractor:1.7.1@aar,androidx.media3:media3-container:1.7.1@aar,androidx.media3:media3-decoder:1.7.1@aar,androidx.media3:media3-database:1.7.1@aar,androidx.media3:media3-common:1.7.1@aar,androidx.test:runner:1.6.1@aar,androidx.test.services:storage:1.5.0@aar,androidx.test:monitor:1.7.1@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.savedstate:savedstate:1.2.1@aar,androidx.cardview:cardview:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.annotation:annotation-jvm:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10@jar,androidx.annotation:annotation-experimental:1.4.1@aar,androidx.core:core-viewtree:1.0.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10@jar,org.jetbrains:annotations:13.0@jar,androidx.tracing:tracing:1.2.0@aar,com.google.guava:guava:33.3.1-android@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,junit:junit:4.13.2@jar,org.hamcrest:hamcrest-library:1.3@jar,org.hamcrest:hamcrest-core:1.3@jar,androidx.test.espresso:espresso-idling-resource:3.6.1@aar,com.google.code.findbugs:jsr305:3.0.2@jar,com.google.errorprone:error_prone_annotations:2.28.0@jar,javax.inject:javax.inject:1@jar,androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar,org.jspecify:jspecify:1.0.0@jar,com.google.code.gson:gson:2.8.5@jar,com.google.guava:failureaccess:1.0.2@jar">
+      roots=":@@:app::debug,androidx.test.ext:junit:1.2.1@aar,androidx.test.espresso:espresso-core:3.6.1@aar,com.squareup.okhttp3:logging-interceptor:4.12.0@jar,com.squareup.retrofit2:converter-gson:2.9.0@jar,com.squareup.retrofit2:retrofit:2.9.0@jar,com.squareup.okhttp3:okhttp:4.12.0@jar,androidx.test:core:1.6.1@aar,androidx.concurrent:concurrent-futures-ktx:1.1.0@jar,com.google.android.material:material:1.12.0@aar,androidx.appcompat:appcompat-resources:1.7.1@aar,androidx.appcompat:appcompat:1.7.1@aar,androidx.viewpager2:viewpager2:1.0.0@aar,org.videolan.android:libvlc-all:3.5.1@aar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.fragment:fragment:1.5.4@aar,androidx.fragment:fragment:1.5.4@aar,androidx.car.app:app-projected:1.7.0@aar,androidx.car.app:app:1.7.0@aar,androidx.activity:activity:1.8.0@aar,androidx.dynamicanimation:dynamicanimation:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-livedata-core:2.6.2@aar,androidx.lifecycle:lifecycle-common-java8:2.6.2@jar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar,androidx.core:core-ktx:1.16.0@aar,androidx.media:media:1.7.0@aar,androidx.media:media:1.7.0@aar,androidx.drawerlayout:drawerlayout:1.1.1@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.transition:transition:1.5.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.1.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.16.0@aar,androidx.core:core:1.16.0@aar,androidx.lifecycle:lifecycle-runtime:2.6.2@aar,androidx.lifecycle:lifecycle-common:2.6.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,com.squareup.okio:okio-jvm:3.6.0@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar,androidx.constraintlayout:constraintlayout:2.2.1@aar,androidx.media3:media3-exoplayer:1.4.1@aar,androidx.media3:media3-ui:1.4.1@aar,androidx.media3:media3-container:1.4.1@aar,androidx.media3:media3-common:1.4.1@aar,androidx.media3:media3-exoplayer-hls:1.4.1@aar,androidx.media3:media3-exoplayer-dash:1.4.1@aar,androidx.test:runner:1.6.1@aar,androidx.test.services:storage:1.5.0@aar,androidx.test:monitor:1.7.1@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.savedstate:savedstate:1.2.1@aar,androidx.cardview:cardview:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.annotation:annotation-jvm:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10@jar,androidx.annotation:annotation-experimental:1.4.1@aar,androidx.core:core-viewtree:1.0.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10@jar,org.jetbrains:annotations:13.0@jar,androidx.tracing:tracing:1.2.0@aar,com.google.guava:guava:33.0.0-android@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,junit:junit:4.13.2@jar,org.hamcrest:hamcrest-library:1.3@jar,org.hamcrest:hamcrest-core:1.3@jar,androidx.test.espresso:espresso-idling-resource:3.6.1@aar,com.google.code.findbugs:jsr305:3.0.2@jar,com.google.errorprone:error_prone_annotations:2.23.0@jar,javax.inject:javax.inject:1@jar,androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar,org.jspecify:jspecify:1.0.0@jar,androidx.media3:media3-datasource:1.4.1@aar,androidx.media3:media3-decoder:1.4.1@aar,androidx.media3:media3-extractor:1.4.1@aar,androidx.media3:media3-database:1.4.1@aar,com.google.code.gson:gson:2.8.5@jar,com.google.guava:failureaccess:1.0.2@jar">
     <dependency
         name=":@@:app::debug"
         simpleName="artifacts::app"/>
@@ -41,6 +41,12 @@
         name="androidx.viewpager2:viewpager2:1.0.0@aar"
         simpleName="androidx.viewpager2:viewpager2"/>
     <dependency
+        name="org.videolan.android:libvlc-all:3.5.1@aar"
+        simpleName="org.videolan.android:libvlc-all"/>
+    <dependency
+        name="androidx.legacy:legacy-support-v4:1.0.0@aar"
+        simpleName="androidx.legacy:legacy-support-v4"/>
+    <dependency
         name="androidx.fragment:fragment:1.5.4@aar"
         simpleName="androidx.fragment:fragment"/>
     <dependency
@@ -55,6 +61,9 @@
     <dependency
         name="androidx.dynamicanimation:dynamicanimation:1.0.0@aar"
         simpleName="androidx.dynamicanimation:dynamicanimation"/>
+    <dependency
+        name="androidx.legacy:legacy-support-core-ui:1.0.0@aar"
+        simpleName="androidx.legacy:legacy-support-core-ui"/>
     <dependency
         name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"
         simpleName="androidx.legacy:legacy-support-core-utils"/>
@@ -104,8 +113,17 @@
         name="androidx.recyclerview:recyclerview:1.1.0@aar"
         simpleName="androidx.recyclerview:recyclerview"/>
     <dependency
+        name="androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar"
+        simpleName="androidx.slidingpanelayout:slidingpanelayout"/>
+    <dependency
         name="androidx.customview:customview:1.1.0@aar"
         simpleName="androidx.customview:customview"/>
+    <dependency
+        name="androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar"
+        simpleName="androidx.swiperefreshlayout:swiperefreshlayout"/>
+    <dependency
+        name="androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar"
+        simpleName="androidx.asynclayoutinflater:asynclayoutinflater"/>
     <dependency
         name="androidx.core:core:1.16.0@aar"
         simpleName="androidx.core:core"/>
@@ -131,35 +149,23 @@
         name="androidx.constraintlayout:constraintlayout:2.2.1@aar"
         simpleName="androidx.constraintlayout:constraintlayout"/>
     <dependency
-        name="androidx.media3:media3-exoplayer-hls:1.7.1@aar"
-        simpleName="androidx.media3:media3-exoplayer-hls"/>
-    <dependency
-        name="androidx.media3:media3-exoplayer:1.7.1@aar"
+        name="androidx.media3:media3-exoplayer:1.4.1@aar"
         simpleName="androidx.media3:media3-exoplayer"/>
     <dependency
-        name="androidx.media3:media3-ui:1.7.1@aar"
+        name="androidx.media3:media3-ui:1.4.1@aar"
         simpleName="androidx.media3:media3-ui"/>
     <dependency
-        name="androidx.media3:media3-session:1.7.1@aar"
-        simpleName="androidx.media3:media3-session"/>
-    <dependency
-        name="androidx.media3:media3-datasource:1.7.1@aar"
-        simpleName="androidx.media3:media3-datasource"/>
-    <dependency
-        name="androidx.media3:media3-extractor:1.7.1@aar"
-        simpleName="androidx.media3:media3-extractor"/>
-    <dependency
-        name="androidx.media3:media3-container:1.7.1@aar"
+        name="androidx.media3:media3-container:1.4.1@aar"
         simpleName="androidx.media3:media3-container"/>
     <dependency
-        name="androidx.media3:media3-decoder:1.7.1@aar"
-        simpleName="androidx.media3:media3-decoder"/>
-    <dependency
-        name="androidx.media3:media3-database:1.7.1@aar"
-        simpleName="androidx.media3:media3-database"/>
-    <dependency
-        name="androidx.media3:media3-common:1.7.1@aar"
+        name="androidx.media3:media3-common:1.4.1@aar"
         simpleName="androidx.media3:media3-common"/>
+    <dependency
+        name="androidx.media3:media3-exoplayer-hls:1.4.1@aar"
+        simpleName="androidx.media3:media3-exoplayer-hls"/>
+    <dependency
+        name="androidx.media3:media3-exoplayer-dash:1.4.1@aar"
+        simpleName="androidx.media3:media3-exoplayer-dash"/>
     <dependency
         name="androidx.test:runner:1.6.1@aar"
         simpleName="androidx.test:runner"/>
@@ -230,7 +236,7 @@
         name="androidx.tracing:tracing:1.2.0@aar"
         simpleName="androidx.tracing:tracing"/>
     <dependency
-        name="com.google.guava:guava:33.3.1-android@jar"
+        name="com.google.guava:guava:33.0.0-android@jar"
         simpleName="com.google.guava:guava"/>
     <dependency
         name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"
@@ -251,7 +257,7 @@
         name="com.google.code.findbugs:jsr305:3.0.2@jar"
         simpleName="com.google.code.findbugs:jsr305"/>
     <dependency
-        name="com.google.errorprone:error_prone_annotations:2.28.0@jar"
+        name="com.google.errorprone:error_prone_annotations:2.23.0@jar"
         simpleName="com.google.errorprone:error_prone_annotations"/>
     <dependency
         name="javax.inject:javax.inject:1@jar"
@@ -263,6 +269,18 @@
         name="org.jspecify:jspecify:1.0.0@jar"
         simpleName="org.jspecify:jspecify"/>
     <dependency
+        name="androidx.media3:media3-datasource:1.4.1@aar"
+        simpleName="androidx.media3:media3-datasource"/>
+    <dependency
+        name="androidx.media3:media3-decoder:1.4.1@aar"
+        simpleName="androidx.media3:media3-decoder"/>
+    <dependency
+        name="androidx.media3:media3-extractor:1.4.1@aar"
+        simpleName="androidx.media3:media3-extractor"/>
+    <dependency
+        name="androidx.media3:media3-database:1.4.1@aar"
+        simpleName="androidx.media3:media3-database"/>
+    <dependency
         name="com.google.code.gson:gson:2.8.5@jar"
         simpleName="com.google.code.gson:gson"/>
     <dependency
@@ -270,7 +288,7 @@
         simpleName="com.google.guava:failureaccess"/>
   </compile>
   <package
-      roots="androidx.test.ext:junit:1.2.1@aar,androidx.test.espresso:espresso-core:3.6.1@aar,androidx.test:core:1.6.1@aar,androidx.concurrent:concurrent-futures-ktx:1.1.0@jar,androidx.lifecycle:lifecycle-common:2.6.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar,androidx.test:runner:1.6.1@aar,androidx.test.services:storage:1.5.0@aar,androidx.test:monitor:1.7.1@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.tracing:tracing:1.2.0@aar,androidx.annotation:annotation-jvm:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10@jar,org.jetbrains:annotations:13.0@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.errorprone:error_prone_annotations:2.28.0@jar,com.google.code.findbugs:jsr305:3.0.2@jar,junit:junit:4.13.2@jar,androidx.test.espresso:espresso-idling-resource:3.6.1@aar,javax.inject:javax.inject:1@jar,org.hamcrest:hamcrest-library:1.3@jar,org.hamcrest:hamcrest-core:1.3@jar">
+      roots="androidx.test.ext:junit:1.2.1@aar,androidx.test.espresso:espresso-core:3.6.1@aar,androidx.test:core:1.6.1@aar,androidx.concurrent:concurrent-futures-ktx:1.1.0@jar,androidx.lifecycle:lifecycle-common:2.6.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar,androidx.test:runner:1.6.1@aar,androidx.test.services:storage:1.5.0@aar,androidx.test:monitor:1.7.1@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.tracing:tracing:1.2.0@aar,androidx.annotation:annotation-jvm:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10@jar,org.jetbrains:annotations:13.0@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.errorprone:error_prone_annotations:2.23.0@jar,com.google.code.findbugs:jsr305:3.0.2@jar,junit:junit:4.13.2@jar,androidx.test.espresso:espresso-idling-resource:3.6.1@aar,javax.inject:javax.inject:1@jar,org.hamcrest:hamcrest-library:1.3@jar,org.hamcrest:hamcrest-core:1.3@jar">
     <dependency
         name="androidx.test.ext:junit:1.2.1@aar"
         simpleName="androidx.test.ext:junit"/>
@@ -329,7 +347,7 @@
         name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"
         simpleName="com.google.guava:listenablefuture"/>
     <dependency
-        name="com.google.errorprone:error_prone_annotations:2.28.0@jar"
+        name="com.google.errorprone:error_prone_annotations:2.23.0@jar"
         simpleName="com.google.errorprone:error_prone_annotations"/>
     <dependency
         name="com.google.code.findbugs:jsr305:3.0.2@jar"

@@ -113,7 +113,7 @@ suspend fun fetchChannelsFromAPI(apiUrl: String): List<Channel> {
 
 - **CarAppService**: Main Android Auto service
 - **ChannelManager**: Handles channel data and subscriptions
-- **MediaController**: Controls video playback using ExoPlayer
+- **VlcMediaController**: Controls video playback using VLC
 - **Screen Classes**: Car-optimized UI screens
 
 ## Data Usage Optimization
