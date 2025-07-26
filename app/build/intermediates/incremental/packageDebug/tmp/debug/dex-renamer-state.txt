@@ -1,4 +1,4 @@
-#Fri Jul 25 23:13:54 CEST 2025
+#Sat Jul 26 16:43:11 CEST 2025
 base.0=/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex

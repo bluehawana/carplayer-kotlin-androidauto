@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 7 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 10 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Jul 25 23:14:12 CEST 2025 by AGP (8.10.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Jul 26 16:43:18 CEST 2025 by AGP (8.10.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -189,7 +189,7 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#LintBaseline"><i class="material-icons warning-icon">warning</i>Baseline Applied (1)</a>
       <a class="mdl-navigation__link" href="#LintBaselineFixed"><i class="material-icons warning-icon">warning</i>Baselined Issues Fixed (1)</a>
       <a class="mdl-navigation__link" href="#Aligned16KB"><i class="material-icons warning-icon">warning</i>Native library dependency not 16 KB aligned (3)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (3)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (6)</a>
       <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (1)</a>
     </nav>
   </div>
@@ -219,7 +219,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
@@ -397,6 +397,30 @@ Dismiss</button>            </div>
 <span class="lineno"> 4 </span>    <span class="tag">&lt;path</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"@android:color/white"</span> <span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M3,9v6h4l5,5L12,4L7,9L3,9zM16.5,12c0,-1.77 -1.02,-3.29 -2.5,-4.03v8.05c1.48,-0.73 2.5,-2.25 2.5,-4.02zM14,3.23v2.06c2.89,0.86 5,3.54 5,6.71s-2.11,5.85 -5,6.71v2.06c4.01,-0.91 7,-4.49 7,-8.77s-2.99,-7.86 -7,-8.77z"</span>/>
 </pre>
 
+<span class="location"><a href="../../src/main/res/drawable/nordic_ice_button_background.xml">../../src/main/res/drawable/nordic_ice_button_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.nordic_ice_button_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;selector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="tag">&lt;item</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">state_pressed</span>=<span class="value">"true"</span>>
+<span class="lineno">  4 </span>        <span class="tag">&lt;shape></span>
+<span class="lineno">  5 </span>            <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#00667A"</span>/>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/nordic_ice_next_button_background.xml">../../src/main/res/drawable/nordic_ice_next_button_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.nordic_ice_next_button_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;selector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="tag">&lt;item</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">state_pressed</span>=<span class="value">"true"</span>>
+<span class="lineno">  4 </span>        <span class="tag">&lt;shape></span>
+<span class="lineno">  5 </span>            <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#3D5A73"</span>/>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/nordic_ice_prev_button_background.xml">../../src/main/res/drawable/nordic_ice_prev_button_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.nordic_ice_prev_button_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;selector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="tag">&lt;item</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">state_pressed</span>=<span class="value">"true"</span>>
+<span class="lineno">  4 </span>        <span class="tag">&lt;shape></span>
+<span class="lineno">  5 </span>            <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#2A5471"</span>/>
+</pre>
+
 </div>
 <div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
 Unused resources make applications larger and slow down builds.<br/>
@@ -459,14 +483,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/carplayer/iptv/VlcMediaController.kt">../../src/main/java/com/carplayer/iptv/VlcMediaController.kt</a>:52</span>: <span class="message">Use the KTX extension function <code>String.toUri</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 49 </span>    }
-<span class="lineno"> 50 </span>
-<span class="lineno"> 51 </span>    <span class="keyword">fun</span> startPlayback(url: String) {
-<span class="caretline"><span class="lineno"> 52 </span>        <span class="keyword">val</span> media = org.videolan.libvlc.Media(libVLC, <span class="warning">Uri.parse(url)</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 53 </span>        mediaPlayer?.media = media
-<span class="lineno"> 54 </span>        media.release()
-<span class="lineno"> 55 </span>        mediaPlayer?.play()
+<span class="location"><a href="../../src/main/java/com/carplayer/iptv/VlcMediaController.kt">../../src/main/java/com/carplayer/iptv/VlcMediaController.kt</a>:118</span>: <span class="message">Use the KTX extension function <code>String.toUri</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 115 </span>    <span class="keyword">fun</span> startPlayback(url: String) {
+<span class="lineno"> 116 </span>        Log.d(TAG, <span class="string">"Starting VLC playback for: $url"</span>)
+<span class="lineno"> 117 </span>        <span class="keyword">try</span> {
+<span class="caretline"><span class="lineno"> 118 </span>            <span class="keyword">val</span> media = Media(libVLC, <span class="warning">Uri.parse(url)</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 119 </span>            
+<span class="lineno"> 120 </span>            <span class="comment">// Add media options for IPTV streams</span>
+<span class="lineno"> 121 </span>            media.addOption(<span class="string">":network-caching=1500"</span>)
 </pre>
 
 </div>
