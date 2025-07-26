@@ -50,6 +50,15 @@
 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_up.xml:1: Warning: The resource R.drawable.ic_volume_up appears to be unused [UnusedResources]
 <vector android:height="24dp" android:tint="#FFFFFF"
 ^
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_button_background appears to be unused [UnusedResources]
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+^
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_next_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_next_button_background appears to be unused [UnusedResources]
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+^
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_prev_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_prev_button_background appears to be unused [UnusedResources]
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+^
 
    Explanation for issues of type "UnusedResources":
    Unused resources make applications larger and slow down builds.
@@ -84,9 +93,9 @@
    </lint>
    ```
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VlcMediaController.kt:52: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
-        val media = org.videolan.libvlc.Media(libVLC, Uri.parse(url))
-                                                      ~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VlcMediaController.kt:118: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+            val media = Media(libVLC, Uri.parse(url))
+                                      ~~~~~~~~~~~~~~
 
    Explanation for issues of type "UseKtx":
    The Android KTX libraries decorates the Android platform SDK as well as
@@ -144,4 +153,4 @@
    </lint>
    ```
 
-0 errors, 7 warnings (and 5 errors, 109 warnings filtered by baseline lint-baseline.xml)
+0 errors, 10 warnings (and 5 errors, 109 warnings filtered by baseline lint-baseline.xml)

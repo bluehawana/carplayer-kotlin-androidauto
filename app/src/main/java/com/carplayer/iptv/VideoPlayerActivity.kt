@@ -142,7 +142,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
 
         // Previous Channel button - Ice Age Style
-        val previousButton = Button(this, null, 0, R.style.NordicIcePrevButton).apply {
+        val previousButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
             text = "⏮️ PREV"
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -159,7 +159,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         controlsLayout.addView(previousButton)
 
         // Play/Pause button - Ice Age Style
-        val playPauseButton = Button(this, null, 0, R.style.NordicIceButton).apply {
+        val playPauseButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
             text = "⏸️ PAUSE"
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -176,7 +176,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         controlsLayout.addView(playPauseButton)
 
         // Next Channel button - Ice Age Style
-        val nextButton = Button(this, null, 0, R.style.NordicIceNextButton).apply {
+        val nextButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
             text = "NEXT ⏭️"
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -193,7 +193,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         controlsLayout.addView(nextButton)
 
         // Back button - Ice Age Style
-        val backButton = Button(this, null, 0, R.style.NordicIceButton).apply {
+        val backButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
             text = "⬅ BACK"
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -302,17 +302,9 @@ class VideoPlayerActivity : AppCompatActivity() {
         
         lifecycleScope.launch {
             try {
-                // Get IPv4 alternatives for better compatibility
-                val streamTester = StreamTester()
-                val alternatives = streamTester.replaceWithIPv4Alternatives(streamUrl)
-                
-                // Start playback immediately with the best URL
-                val bestUrl = alternatives.firstOrNull() ?: streamUrl
-                
                 runOnUiThread {
-                    // Create VLC-like surface and start playback
                     mediaController.createVideoSurface(videoContainer)
-                    mediaController.startPlayback(bestUrl)
+                    mediaController.startPlayback(streamUrl)
                     isPlaying = true
                     updatePlayPauseButton()
                     
@@ -321,7 +313,6 @@ class VideoPlayerActivity : AppCompatActivity() {
                         statusTextView.visibility = android.view.View.GONE
                     }, 1000)
                 }
-                
             } catch (e: Exception) {
                 runOnUiThread {
                     statusTextView.text = "Cannot play channel\nTry different channel"

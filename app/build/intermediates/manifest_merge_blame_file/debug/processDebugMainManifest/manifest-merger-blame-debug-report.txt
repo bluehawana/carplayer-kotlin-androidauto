@@ -26,95 +26,95 @@
 16    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 16-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10:5-82
 16-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10:22-79
-17    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+17    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 17-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:11:5-75
 17-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:11:22-72
-18    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-18-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:12:5-75
-18-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:12:22-72
-19
-20    <!-- Car App Library permissions -->
-21    <uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES" />
-21-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:5-77
-21-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:22-74
-22    <uses-permission android:name="androidx.car.app.ACCESS_SURFACE" />
-22-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:16:5-71
-22-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:16:22-68
-23
-24    <queries>
-24-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:23:5-28:15
-25        <provider
-25-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:24:9-27:43
-26            android:name="androidx.car.app.connection.provider"
-26-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:25:13-64
-27            android:authorities="androidx.car.app.connection" />
-27-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:26:13-62
-28    </queries>
-29
-30    <permission
-30-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
-31        android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-31-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
-32        android:protectionLevel="signature" />
-32-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
-33
-34    <uses-permission android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-34-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
-34-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
-35
-36    <application
-36-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:18:5-96:19
-37        android:name="com.carplayer.iptv.CarPlayerApplication"
-37-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:19:9-45
-38        android:allowBackup="true"
-38-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:20:9-35
-39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
-40        android:dataExtractionRules="@xml/data_extraction_rules"
-40-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:21:9-65
-41        android:debuggable="true"
-42        android:extractNativeLibs="false"
-43        android:fullBackupContent="@xml/backup_rules"
-43-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:22:9-54
-44        android:icon="@mipmap/ic_launcher"
-44-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:23:9-43
-45        android:label="@string/app_name"
-45-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:24:9-41
-46        android:networkSecurityConfig="@xml/network_security_config"
-46-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:28:9-69
-47        android:roundIcon="@mipmap/ic_launcher_round"
-47-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:25:9-54
-48        android:supportsRtl="true"
-48-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:26:9-35
-49        android:theme="@style/Theme.CarPlayerIPTV"
-49-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:27:9-51
-50        android:usesCleartextTraffic="true" >
-50-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:29:9-44
-51
-52        <!-- Automotive App Descriptor -->
-53        <meta-data
-53-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:33:9-35:59
-54            android:name="com.google.android.gms.car.application"
-54-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:34:13-66
-55            android:resource="@xml/automotive_app_desc" />
-55-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:35:13-56
-56
-57        <!-- Car App Service -->
-58        <service
-58-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:38:9-51:19
-59            android:name="com.carplayer.iptv.CarAppService"
-59-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:39:13-42
-60            android:exported="true" >
-60-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:40:13-36
-61            <intent-filter>
-61-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:13-44:29
-62                <action android:name="androidx.car.app.CarAppService" />
-62-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:17-73
-62-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:25-70
-63
-64                <category android:name="androidx.car.app.category.PLAYBACK" />
-64-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:17-79
-64-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:27-76
+18
+19    <!-- Car App Library permissions -->
+20    <uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES" />
+20-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:14:5-77
+20-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:14:22-74
+21    <uses-permission android:name="androidx.car.app.ACCESS_SURFACE" />
+21-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:5-71
+21-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:22-68
+22
+23    <queries>
+23-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:23:5-28:15
+24        <provider
+24-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:24:9-27:43
+25            android:name="androidx.car.app.connection.provider"
+25-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:25:13-64
+26            android:authorities="androidx.car.app.connection" />
+26-->[androidx.car.app:app:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/173a6b420fa765bc6cf1a9dacacbed7a/transformed/app-1.7.0/AndroidManifest.xml:26:13-62
+27    </queries>
+28
+29    <permission
+29-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+30        android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+30-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+31        android:protectionLevel="signature" />
+31-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+32
+33    <uses-permission android:name="com.carplayer.iptv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+33-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+33-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+34
+35    <application
+35-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:17:5-96:19
+36        android:name="com.carplayer.iptv.CarPlayerApplication"
+36-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:18:9-45
+37        android:allowBackup="true"
+37-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:19:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+39        android:dataExtractionRules="@xml/data_extraction_rules"
+39-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:20:9-65
+40        android:debuggable="true"
+41        android:extractNativeLibs="false"
+42        android:fullBackupContent="@xml/backup_rules"
+42-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:21:9-54
+43        android:icon="@mipmap/ic_launcher"
+43-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:22:9-43
+44        android:label="@string/app_name"
+44-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:23:9-41
+45        android:networkSecurityConfig="@xml/network_security_config"
+45-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:27:9-69
+46        android:roundIcon="@mipmap/ic_launcher_round"
+46-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:24:9-54
+47        android:supportsRtl="true"
+47-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:25:9-35
+48        android:theme="@style/Theme.CarPlayerIPTV"
+48-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:26:9-51
+49        android:usesCleartextTraffic="true" >
+49-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:28:9-44
+50
+51        <!-- Automotive App Descriptor -->
+52        <meta-data
+52-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:32:9-34:59
+53            android:name="com.google.android.gms.car.application"
+53-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:33:13-66
+54            android:resource="@xml/automotive_app_desc" />
+54-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:34:13-56
+55
+56        <!-- Car App Service -->
+57        <service
+57-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:37:9-51:19
+58            android:name="com.carplayer.iptv.CarAppService"
+58-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:38:13-42
+59            android:exported="true" >
+59-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:39:13-36
+60            <intent-filter>
+60-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:40:13-44:29
+61                <action android:name="androidx.car.app.CarAppService" />
+61-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:17-73
+61-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:25-70
+62
+63                <category android:name="androidx.car.app.category.PLAYBACK" />
+63-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:17-79
+63-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:27-76
+64                <category android:name="androidx.car.app.category.VIDEO" />
+64-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:17-76
+64-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:27-73
 65            </intent-filter>
 66            <intent-filter>
 66-->/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:45:13-47:29

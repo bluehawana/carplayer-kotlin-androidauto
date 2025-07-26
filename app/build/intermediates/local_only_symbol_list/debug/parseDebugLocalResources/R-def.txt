@@ -54,6 +54,7 @@ drawable ic_volume_up
 drawable nordic_ice_button_background
 drawable nordic_ice_next_button_background
 drawable nordic_ice_prev_button_background
+drawable player_button_background
 id importButton
 id settingsButton
 id subtitle
@@ -72,9 +73,7 @@ string importing
 string no_channels
 string play_pause
 string volume_control
-style NordicIceButton
-style NordicIceNextButton
-style NordicIcePrevButton
+style PlayerControlButton
 style Theme.CarPlayerIPTV
 xml automotive_app_desc
 xml backup_rules
