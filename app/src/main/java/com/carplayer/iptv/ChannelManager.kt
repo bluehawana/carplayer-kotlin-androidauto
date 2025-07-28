@@ -122,21 +122,10 @@ class ChannelManager {
             val content = inputStream.bufferedReader().readText()
             inputStream.close()
             
-            val parsedChannels = parseM3U(content).toMutableList()
-            
-            // Add Sky F1 test channel for debugging
-            val skyF1Channel = Channel(
-                id = "sky-f1-test",
-                name = "Sky Sports F1 FHD",
-                description = "Sports",
-                streamUrl = "http://fortv.cc:8080/clarencekingrh@hotmail.com/pKgSdl4ZFX/35244",
-                logoUrl = "",
-                category = "Sports"
-            )
-            parsedChannels.add(0, skyF1Channel) // Add at the beginning for easy testing
+            val parsedChannels = parseM3U(content)
             
             val assetSubscription = IPTVSubscription(
-                name = "Default IPTV Channels",
+                name = "Premium IPTV Channels",
                 url = "assets://iptv.m3u",
                 channels = parsedChannels
             )
@@ -144,7 +133,7 @@ class ChannelManager {
             subscriptions = listOf(assetSubscription)
             channels = parsedChannels
             
-            android.util.Log.d("ChannelManager", "Loaded ${channels.size} channels from assets (including Sky F1 test)")
+            android.util.Log.d("ChannelManager", "Loaded ${channels.size} real channels from assets/iptv.m3u")
         } catch (e: Exception) {
             android.util.Log.e("ChannelManager", "Failed to load from assets: ${e.message}")
             channels = emptyList()

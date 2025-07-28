@@ -57,67 +57,79 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun setupNordicUI() {
-        // Create Nordic-themed layout programmatically
+        // Create Nordic-themed layout programmatically - RESPONSIVE
         val layout = android.widget.LinearLayout(this).apply {
             orientation = android.widget.LinearLayout.VERTICAL
-            setPadding(48, 48, 48, 48)
+            setPadding(24, 16, 24, 16) // Reduced padding for smaller screens
             setBackgroundColor(0xFF145da0.toInt()) // Midnight Blue background
         }
         
-        // App title
+        // App title - RESPONSIVE
         val titleView = TextView(this).apply {
             text = getString(R.string.app_name)
-            textSize = 28f
+            textSize = 22f // Smaller for different resolutions
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
-            setPadding(0, 0, 0, 32)
+            setPadding(0, 0, 0, 16) // Reduced padding
             typeface = android.graphics.Typeface.DEFAULT_BOLD
         }
         layout.addView(titleView)
         
-        // Subtitle
+        // Subtitle - RESPONSIVE
         val subtitleView = TextView(this).apply {
-            text = "🌨️ Nordic Ice Age Theme - Cool Your Summer\n🎬 Premium Streaming Experience"
-            textSize = 16f
+            text = "🌨️ Nordic Ice Age Theme\n🎬 104 Premium Channels"
+            textSize = 14f // Smaller text
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
-            setPadding(0, 0, 0, 24)
+            setPadding(0, 0, 0, 12) // Reduced padding
         }
         layout.addView(subtitleView)
         
-        // Network status
+        // Network status - RESPONSIVE
         networkStatusView = TextView(this).apply {
             text = "🔍 Checking network connectivity..."
-            textSize = 14f
+            textSize = 12f // Smaller text
             setTextColor(0xFFb1d4e0.toInt()) // Baby Blue
             gravity = android.view.Gravity.CENTER
-            setPadding(16, 16, 16, 24)
+            setPadding(12, 8, 12, 12) // Reduced padding
             setBackgroundColor(0xFF0c2d48.toInt()) // Dark Blue
         }
         layout.addView(networkStatusView)
         
-        // Start Watching button - Ice Age Style
+        // Start Watching button - RESPONSIVE Ice Age Style
         val watchButton = Button(this).apply {
             text = "🎬 Start Watching"
-            textSize = 18f
+            textSize = 16f // Smaller text
             setTextColor(0xFF00FF41.toInt()) // Ice green
             setBackgroundResource(android.R.drawable.btn_default)
             background.setColorFilter(0xFF004D5C.toInt(), android.graphics.PorterDuff.Mode.MULTIPLY) // Deep ice
-            setPadding(40, 24, 40, 24)
+            setPadding(24, 16, 24, 16) // Reduced padding
+            layoutParams = android.widget.LinearLayout.LayoutParams(
+                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(16, 8, 16, 8) // Add margins for better spacing
+            }
             setOnClickListener {
                 launchCarInterface()
             }
         }
         layout.addView(watchButton)
         
-        // Import Settings button - Ice Age Style
+        // Import Settings button - RESPONSIVE Ice Age Style
         val settingsButton = Button(this).apply {
             text = "🗂️ Import Channels"
-            textSize = 16f
+            textSize = 14f // Smaller text
             setTextColor(0xFFE0F7FA.toInt()) // Ice white
             setBackgroundResource(android.R.drawable.btn_default)
             background.setColorFilter(0xFF00BCD4.toInt(), android.graphics.PorterDuff.Mode.MULTIPLY) // Ice accent
-            setPadding(40, 20, 40, 20)
+            setPadding(24, 12, 24, 12) // Reduced padding
+            layoutParams = android.widget.LinearLayout.LayoutParams(
+                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(16, 4, 16, 4) // Add margins
+            }
             setOnClickListener {
                 val intent = Intent(this@MainActivity, ImportActivity::class.java)
                 startActivity(intent)
@@ -125,26 +137,32 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(settingsButton)
         
-        // Network test button
+        // Network test button - RESPONSIVE
         val networkButton = Button(this).apply {
             text = "🌐 Test Network"
-            textSize = 16f
+            textSize = 14f // Smaller text
             setTextColor(0xFF145da0.toInt()) // Midnight Blue text
             setBackgroundColor(0xFFb1d4e0.toInt()) // Baby Blue background
-            setPadding(32, 20, 32, 20)
+            setPadding(20, 12, 20, 12) // Reduced padding
+            layoutParams = android.widget.LinearLayout.LayoutParams(
+                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(16, 4, 16, 4) // Add margins
+            }
             setOnClickListener {
                 checkNetworkStatus()
             }
         }
         layout.addView(networkButton)
         
-        // Version info
+        // Version info - RESPONSIVE
         val versionView = TextView(this).apply {
-            text = "\n❄️ Nordic Edition v1.0\n🎯 Optimized for IPv4/IPv6"
-            textSize = 12f
+            text = "❄️ Nordic Edition v1.0 | 🎯 104 Channels"
+            textSize = 10f // Smaller text
             setTextColor(0xFFb1d4e0.toInt()) // Baby Blue
             gravity = android.view.Gravity.CENTER
-            setPadding(0, 24, 0, 0)
+            setPadding(0, 8, 0, 0) // Reduced padding
         }
         layout.addView(versionView)
         

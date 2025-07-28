@@ -12,20 +12,9 @@ class PreloadedM3UFiles(private val context: Context) {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
     
     fun loadSampleM3UFiles() {
-        coroutineScope.launch {
-            // Sample M3U content for different categories
-            val sampleFiles = mapOf(
-                "News Channels" to createNewsChannelsM3U(),
-                "Entertainment" to createEntertainmentChannelsM3U(),
-                "Sports" to createSportsChannelsM3U(),
-                "Movies" to createMovieChannelsM3U(),
-                "Music" to createMusicChannelsM3U()
-            )
-            
-            sampleFiles.forEach { (displayName, content) ->
-                m3uFileManager.saveM3UFile(content, displayName)
-            }
-        }
+        // Disabled sample files - using real channels from assets/iptv.m3u instead
+        // The app will load the 60 working channels from the M3U file in assets
+        android.util.Log.d("PreloadedM3UFiles", "Sample M3U files disabled - using real channels from assets")
     }
     
     private fun createNewsChannelsM3U(): String {
