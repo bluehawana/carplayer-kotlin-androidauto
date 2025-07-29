@@ -107,54 +107,8 @@ class ExoPlayerController(private val context: Context) {
             
             exoPlayer?.setMediaSource(mediaSource)
             exoPlayer?.prepare()
-            
-            // Special handling for Sky Sports F1 audio issues
-            if (url.contains("35244") || url.toLowerCase().contains("sky") && url.toLowerCase().contains("f1")) {
-                Log.d(TAG, "Sky Sports F1 detected - applying audio fixes")
-                
-                // Set audio attributes for sports content
-                val audioAttributes = androidx.media3.common.AudioAttributes.Builder()
-                    .setUsage(androidx.media3.common.C.USAGE_MEDIA)
-                    .setContentType(androidx.media3.common.C.AUDIO_CONTENT_TYPE_MOVIE)
-                    .build()
-                exoPlayer?.setAudioAttributes(audioAttributes, true)
-                
-                // Force audio track selection after preparation
-                exoPlayer?.addListener(object : androidx.media3.common.Player.Listener {
-                    override fun onTracksChanged(tracks: androidx.media3.common.Tracks) {
-                        Log.d(TAG, "Sky F1: Tracks changed, checking audio tracks")
-                        
-                        for (trackGroup in tracks.groups) {
-                            if (trackGroup.type == androidx.media3.common.C.TRACK_TYPE_AUDIO) {
-                                Log.d(TAG, "Sky F1: Found audio track group with ${trackGroup.length} tracks")
-                                
-                                // Try to select the first available audio track
-                                for (i in 0 until trackGroup.length) {
-                                    if (trackGroup.isTrackSupported(i)) {
-                                        Log.d(TAG, "Sky F1: Selecting audio track $i")
-                                        val trackSelectionParameters = exoPlayer?.trackSelectionParameters
-                                            ?.buildUpon()
-                                            ?.setOverrideForType(
-                                                androidx.media3.common.TrackSelectionOverride(
-                                                    trackGroup.mediaTrackGroup,
-                                                    i
-                                                )
-                                            )
-                                            ?.build()
-                                        
-                                        trackSelectionParameters?.let { params ->
-                                            exoPlayer?.trackSelectionParameters = params
-                                        }
-                                        break
-                                    }
-                                }
-                            }
-                        }
-                    }
-                })
-            }
-            
             exoPlayer?.play()
+            
             Log.d(TAG, "ExoPlayer playback started")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to start playback", e)

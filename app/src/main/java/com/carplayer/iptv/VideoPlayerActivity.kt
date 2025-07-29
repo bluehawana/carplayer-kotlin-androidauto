@@ -17,7 +17,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     private lateinit var statusTextView: TextView
     private lateinit var channelNameTextView: TextView
     private lateinit var controlsLayout: LinearLayout
-    private lateinit var mediaController: HybridMediaController
+    private lateinit var mediaController: ExoPlayerController
     
     private var channelName: String = ""
     private var streamUrl: String = ""
@@ -56,7 +56,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
     
     private fun setupMediaController() {
-        mediaController = HybridMediaController(this)
+        mediaController = ExoPlayerController(this)
         setupMediaControllerCallbacks()
     }
     
@@ -166,22 +166,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
         controlsLayout.addView(playPauseButton)
 
-        // Engine Switch button - Ice Age Style
-        val engineButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
-            text = "📺 EXO"
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply {
-                weight = 1f
-                setMargins(12, 0, 12, 0)
-            }
-            setOnClickListener {
-                switchPlayerEngine()
-                hideControlsAfterDelay()
-            }
-        }
-        controlsLayout.addView(engineButton)
+
 
         // Next Channel button - Ice Age Style
         val nextButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
@@ -315,9 +300,9 @@ class VideoPlayerActivity : AppCompatActivity() {
                 HybridMediaController.PlayerEngine.VLC -> {
                     // Switch back to ExoPlayer with surface recreation
                     android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                        // Reinitialize hybrid controller to get fresh ExoPlayer
+                        // Reinitialize ExoPlayer controller
                         mediaController.release()
-                        mediaController = HybridMediaController(this@VideoPlayerActivity)
+                        mediaController = ExoPlayerController(this@VideoPlayerActivity)
                         setupMediaControllerCallbacks()
                         mediaController.createVideoSurface(videoContainer)
                         mediaController.startPlayback(streamUrl)
@@ -389,7 +374,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         statusTextView.text = "❄️ Switching to $channelName..."
         statusTextView.visibility = android.view.View.VISIBLE
         
-        // Proper cleanup for channel switching
+        // Stop current playback for channel switching
         if (::mediaController.isInitialized) {
             mediaController.stopPlayback()
         }
