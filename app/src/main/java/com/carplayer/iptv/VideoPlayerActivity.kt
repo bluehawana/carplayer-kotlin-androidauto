@@ -17,7 +17,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     private lateinit var statusTextView: TextView
     private lateinit var channelNameTextView: TextView
     private lateinit var controlsLayout: LinearLayout
-    private lateinit var mediaController: ExoPlayerController
+    private lateinit var mediaController: HybridMediaController
     
     private var channelName: String = ""
     private var streamUrl: String = ""
@@ -56,7 +56,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
     
     private fun setupMediaController() {
-        mediaController = ExoPlayerController(this)
+        mediaController = HybridMediaController(this)
         setupMediaControllerCallbacks()
     }
     
@@ -166,6 +166,23 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
         controlsLayout.addView(playPauseButton)
 
+        // Engine Switch button for Sky F1 audio issues - Ice Age Style
+        val engineButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
+            text = "🎵 VLC"
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                weight = 1f
+                setMargins(12, 0, 12, 0)
+            }
+            setOnClickListener {
+                switchMediaEngine()
+                hideControlsAfterDelay()
+            }
+        }
+        controlsLayout.addView(engineButton)
+
         // Restart button - Ice Age Style
         val restartButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
             text = "🔄 RESTART"
@@ -256,42 +273,63 @@ class VideoPlayerActivity : AppCompatActivity() {
     private fun updatePlayPauseButton() {
         val playPauseButton = controlsLayout.getChildAt(1) as? Button // Second button is play/pause
         playPauseButton?.text = if (isPlaying) "⏸️ PAUSE" else "▶️ PLAY"
-    }
-    
-    private fun fixSkyF1Audio() {
-        statusTextView.text = "🏎️ Optimizing Sky Sports F1 for presentation..."
-        statusTextView.visibility = android.view.View.VISIBLE
         
-        if (::mediaController.isInitialized) {
-            // Stop current playback
-            mediaController.stopPlayback()
-            
-            // Restart with optimized ExoPlayer settings
-            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                mediaController.startPlayback(streamUrl)
-                
-                statusTextView.text = "🏎️ Sky F1 optimized with ExoPlayer - audio & video!"
-                
-                // Hide message after longer delay
-                android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                    statusTextView.visibility = android.view.View.GONE
-                }, 4000)
-            }, 500)
+        // Update engine button text
+        val engineButton = controlsLayout.getChildAt(2) as? Button // Third button is engine switch
+        val currentEngine = if (::mediaController.isInitialized) {
+            mediaController.getCurrentEngine()
+        } else {
+            HybridMediaController.MediaEngine.EXOPLAYER
+        }
+        engineButton?.text = when (currentEngine) {
+            HybridMediaController.MediaEngine.EXOPLAYER -> "🎵 VLC"
+            HybridMediaController.MediaEngine.VLC -> "🎵 EXO"
         }
     }
+    
+    private fun switchMediaEngine() {
+        if (!::mediaController.isInitialized) return
+        
+        val currentEngine = mediaController.getCurrentEngine()
+        statusTextView.text = when (currentEngine) {
+            HybridMediaController.MediaEngine.EXOPLAYER -> "🎵 Switching to VLC for better audio..."
+            HybridMediaController.MediaEngine.VLC -> "🎵 Switching to ExoPlayer for better sync..."
+        }
+        statusTextView.visibility = android.view.View.VISIBLE
+        
+        when (currentEngine) {
+            HybridMediaController.MediaEngine.EXOPLAYER -> {
+                mediaController.forceVlcEngine()
+            }
+            HybridMediaController.MediaEngine.VLC -> {
+                mediaController.forceExoPlayerEngine()
+            }
+        }
+        
+        updatePlayPauseButton()
+        
+        // Hide message after delay
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            statusTextView.visibility = android.view.View.GONE
+        }, 3000)
+    }
+    
+
     
     private fun restartPlayback() {
         statusTextView.text = "❄️ Restarting playback..."
         statusTextView.visibility = android.view.View.VISIBLE
         
         if (::mediaController.isInitialized) {
+            val currentEngine = mediaController.getCurrentEngine()
+            
             // Stop current playback
             mediaController.stopPlayback()
             
-            // Restart with fresh ExoPlayer instance
+            // Restart with current engine
             android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
                 mediaController.startPlayback(streamUrl)
-                statusTextView.text = "❄️ Playback restarted with ExoPlayer"
+                statusTextView.text = "❄️ Playback restarted with ${currentEngine.name}"
                 
                 // Hide message after delay
                 android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({

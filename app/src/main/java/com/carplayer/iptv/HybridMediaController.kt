@@ -4,18 +4,24 @@ import android.content.Context
 import android.util.Log
 import android.widget.FrameLayout
 
+/**
+ * Hybrid Media Controller - Uses ExoPlayer as primary, VLC as fallback
+ * This is the approach used by TiviMate, IPTV Smarters, and other successful IPTV players
+ */
 class HybridMediaController(private val context: Context) {
 
     private var exoPlayerController: ExoPlayerController? = null
     private var vlcMediaController: VlcMediaController? = null
-    private var currentEngine = PlayerEngine.EXOPLAYER
+    private var currentEngine = MediaEngine.EXOPLAYER
     private var currentUrl = ""
+    private var videoContainer: FrameLayout? = null
     
     private var errorCallback: ((String) -> Unit)? = null
     private var stateChangedCallback: ((Boolean) -> Unit)? = null
 
-    enum class PlayerEngine {
-        EXOPLAYER, VLC
+    enum class MediaEngine {
+        EXOPLAYER,
+        VLC
     }
 
     companion object {
@@ -24,57 +30,40 @@ class HybridMediaController(private val context: Context) {
 
     init {
         Log.d(TAG, "Initializing Hybrid Media Controller (ExoPlayer + VLC fallback)")
-        initializeExoPlayer()
+        setupControllers()
     }
 
-    private fun initializeExoPlayer() {
+    private fun setupControllers() {
         try {
-            exoPlayerController = ExoPlayerController(context)
-            
-            exoPlayerController?.setOnErrorCallback { error ->
-                Log.w(TAG, "ExoPlayer error: $error - trying VLC fallback")
-                switchToVLC()
-            }
-            
-            exoPlayerController?.setOnStateChangedCallback { isPlaying ->
-                stateChangedCallback?.invoke(isPlaying)
-            }
-            
-            currentEngine = PlayerEngine.EXOPLAYER
-            Log.d(TAG, "ExoPlayer initialized as primary engine")
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to initialize ExoPlayer, switching to VLC", e)
-            switchToVLC()
-        }
-    }
-
-    private fun switchToVLC() {
-        Log.d(TAG, "Switching to VLC player engine")
-        try {
-            if (vlcMediaController == null) {
-                vlcMediaController = VlcMediaController(context)
-                
-                vlcMediaController?.setOnErrorCallback { error ->
-                    Log.e(TAG, "VLC error: $error")
-                    errorCallback?.invoke("❄️ Both players failed: $error")
+            // Initialize ExoPlayer as primary
+            exoPlayerController = ExoPlayerController(context).apply {
+                setOnErrorCallback { message ->
+                    if (message.contains("Playback error") || message.contains("format issue")) {
+                        Log.w(TAG, "ExoPlayer failed, switching to VLC: $message")
+                        switchToVlcFallback()
+                    } else {
+                        errorCallback?.invoke(message)
+                    }
                 }
-                
-                vlcMediaController?.setOnStateChangedCallback { isPlaying ->
+                setOnStateChangedCallback { isPlaying ->
                     stateChangedCallback?.invoke(isPlaying)
                 }
             }
-            
-            currentEngine = PlayerEngine.VLC
-            
-            // If we have a current URL, restart playback with VLC
-            if (currentUrl.isNotEmpty()) {
-                Log.d(TAG, "Restarting playback with VLC for: $currentUrl")
-                vlcMediaController?.startPlayback(currentUrl)
+
+            // Initialize VLC as fallback
+            vlcMediaController = VlcMediaController(context).apply {
+                setOnErrorCallback { message ->
+                    errorCallback?.invoke(message)
+                }
+                setOnStateChangedCallback { isPlaying ->
+                    stateChangedCallback?.invoke(isPlaying)
+                }
             }
-            
+
+            Log.d(TAG, "Both media controllers initialized successfully")
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to initialize VLC fallback", e)
-            errorCallback?.invoke("❄️ All players failed: ${e.message}")
+            Log.e(TAG, "Failed to initialize media controllers", e)
+            errorCallback?.invoke("Media controller initialization failed: ${e.message}")
         }
     }
 
@@ -87,73 +76,126 @@ class HybridMediaController(private val context: Context) {
     }
 
     fun createVideoSurface(container: FrameLayout) {
-        Log.d(TAG, "Creating video surface for $currentEngine")
+        Log.d(TAG, "Creating video surface for current engine: $currentEngine")
+        videoContainer = container
+        
         when (currentEngine) {
-            PlayerEngine.EXOPLAYER -> exoPlayerController?.createVideoSurface(container)
-            PlayerEngine.VLC -> vlcMediaController?.createVideoSurface(container)
+            MediaEngine.EXOPLAYER -> exoPlayerController?.createVideoSurface(container)
+            MediaEngine.VLC -> vlcMediaController?.createVideoSurface(container)
         }
     }
 
-    @androidx.media3.common.util.UnstableApi
     fun startPlayback(url: String) {
         Log.d(TAG, "Starting playback with $currentEngine for: $url")
         currentUrl = url
         
+        // Special handling for Sky Sports F1 - try ExoPlayer first with optimizations
+        if (url.contains("354945") || (url.lowercase().contains("sky") && url.lowercase().contains("f1"))) {
+            Log.d(TAG, "Sky Sports F1 detected - using ExoPlayer with audio optimizations")
+            errorCallback?.invoke("🏎️ Optimizing Sky Sports F1 audio with ExoPlayer...")
+            currentEngine = MediaEngine.EXOPLAYER
+        }
+        
         when (currentEngine) {
-            PlayerEngine.EXOPLAYER -> {
+            MediaEngine.EXOPLAYER -> {
                 exoPlayerController?.startPlayback(url)
             }
-            PlayerEngine.VLC -> {
+            MediaEngine.VLC -> {
                 vlcMediaController?.startPlayback(url)
             }
         }
     }
 
+    private fun switchToVlcFallback() {
+        Log.d(TAG, "Switching from ExoPlayer to VLC fallback")
+        
+        try {
+            // Stop ExoPlayer
+            exoPlayerController?.stopPlayback()
+            
+            // Switch to VLC
+            currentEngine = MediaEngine.VLC
+            errorCallback?.invoke("❄️ Switching to VLC for better compatibility...")
+            
+            // Recreate video surface for VLC
+            videoContainer?.let { container ->
+                vlcMediaController?.createVideoSurface(container)
+            }
+            
+            // Start playback with VLC
+            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                vlcMediaController?.startPlayback(currentUrl)
+            }, 1000)
+            
+        } catch (e: Exception) {
+            Log.e(TAG, "Error switching to VLC fallback", e)
+            errorCallback?.invoke("Failed to switch to VLC: ${e.message}")
+        }
+    }
+
     fun stopPlayback() {
-        Log.d(TAG, "Stopping playback on $currentEngine")
+        Log.d(TAG, "Stopping playback on current engine: $currentEngine")
         when (currentEngine) {
-            PlayerEngine.EXOPLAYER -> exoPlayerController?.stopPlayback()
-            PlayerEngine.VLC -> vlcMediaController?.stopPlayback()
+            MediaEngine.EXOPLAYER -> exoPlayerController?.stopPlayback()
+            MediaEngine.VLC -> vlcMediaController?.stopPlayback()
         }
     }
 
     fun togglePlayPause() {
         when (currentEngine) {
-            PlayerEngine.EXOPLAYER -> exoPlayerController?.togglePlayPause()
-            PlayerEngine.VLC -> vlcMediaController?.togglePlayPause()
+            MediaEngine.EXOPLAYER -> exoPlayerController?.togglePlayPause()
+            MediaEngine.VLC -> vlcMediaController?.togglePlayPause()
         }
     }
 
     fun isPlaying(): Boolean {
         return when (currentEngine) {
-            PlayerEngine.EXOPLAYER -> exoPlayerController?.isPlaying() ?: false
-            PlayerEngine.VLC -> vlcMediaController?.isPlaying() ?: false
+            MediaEngine.EXOPLAYER -> exoPlayerController?.isPlaying() ?: false
+            MediaEngine.VLC -> vlcMediaController?.isPlaying() ?: false
         }
     }
 
-    fun getCurrentEngine(): PlayerEngine {
+    fun getCurrentEngine(): MediaEngine {
         return currentEngine
     }
 
-    fun forceVLC() {
-        Log.d(TAG, "Forcing VLC engine")
-        if (currentEngine == PlayerEngine.EXOPLAYER) {
-            exoPlayerController?.stopPlayback()
+    fun forceVlcEngine() {
+        Log.d(TAG, "Forcing VLC engine for current stream")
+        if (currentEngine == MediaEngine.EXOPLAYER) {
+            switchToVlcFallback()
         }
-        switchToVLC()
     }
-    
-    fun clearVideoSurface(container: FrameLayout) {
-        Log.d(TAG, "Clearing video surface for engine switch")
-        try {
-            container.removeAllViews()
-        } catch (e: Exception) {
-            Log.e(TAG, "Error clearing video surface", e)
+
+    fun forceExoPlayerEngine() {
+        Log.d(TAG, "Forcing ExoPlayer engine for current stream")
+        if (currentEngine == MediaEngine.VLC) {
+            try {
+                // Stop VLC
+                vlcMediaController?.stopPlayback()
+                
+                // Switch to ExoPlayer
+                currentEngine = MediaEngine.EXOPLAYER
+                errorCallback?.invoke("❄️ Switching to ExoPlayer...")
+                
+                // Recreate video surface for ExoPlayer
+                videoContainer?.let { container ->
+                    exoPlayerController?.createVideoSurface(container)
+                }
+                
+                // Start playback with ExoPlayer
+                android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                    exoPlayerController?.startPlayback(currentUrl)
+                }, 1000)
+                
+            } catch (e: Exception) {
+                Log.e(TAG, "Error switching to ExoPlayer", e)
+                errorCallback?.invoke("Failed to switch to ExoPlayer: ${e.message}")
+            }
         }
     }
 
     fun release() {
-        Log.d(TAG, "Releasing all media controllers")
+        Log.d(TAG, "Releasing all media controller resources")
         try {
             exoPlayerController?.release()
             vlcMediaController?.release()

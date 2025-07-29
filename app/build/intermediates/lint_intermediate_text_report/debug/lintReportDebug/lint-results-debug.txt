@@ -1,5 +1,5 @@
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/lint-baseline.xml: Hint: 5 errors and 109 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml [LintBaseline]
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/lint-baseline.xml: Hint: 16 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: SetTextI18n (2), UnsafeOptInUsageError (12), UseKtx (2) [LintBaselineFixed]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/lint-baseline.xml: Hint: 5 errors and 109 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml [LintBaseline]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/lint-baseline.xml: Hint: 16 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: SetTextI18n (2), UnsafeOptInUsageError (12), UseKtx (2) [LintBaselineFixed]
 
    Explanation for issues of type "LintBaselineFixed":
    If a lint baseline describes a problem which is no longer reported, then
@@ -8,7 +8,65 @@
    that if the issue is reintroduced at some point, lint will complain rather
    than just silently starting to match the old baseline entry again.)
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build.gradle:64: Warning: The native library arm64-v8a/libc++_shared.so (from org.videolan.android:libvlc-all:3.5.1) is not 16 KB aligned [Aligned16KB]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:142: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+                setMediaSource(mediaSource)
+                ~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:160: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+            .setUserAgent("ExoPlayer-IPTV/1.0")
+             ~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:161: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+            .setConnectTimeoutMs(10000) // 10 second timeout
+             ~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:162: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+            .setReadTimeoutMs(10000)
+             ~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:163: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+            .setAllowCrossProtocolRedirects(true)
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:170: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+            httpDataSourceFactory.setUserAgent("Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36")
+                                  ~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:177: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+                HlsMediaSource.Factory(httpDataSourceFactory)
+                               ~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:178: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+                    .createMediaSource(MediaItem.fromUri(uri))
+                     ~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:183: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+                ProgressiveMediaSource.Factory(httpDataSourceFactory)
+                                       ~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:184: Error: This declaration is opt-in and its usage should be marked with @androidx.media3.common.util.UnstableApi or @OptIn(markerClass = androidx.media3.common.util.UnstableApi.class) [UnsafeOptInUsageError from androidx.annotation.experimental]
+                    .createMediaSource(MediaItem.fromUri(uri))
+                     ~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnsafeOptInUsageError":
+   This API has been flagged as opt-in with error-level severity.
+
+   Any declaration annotated with this marker is considered part of an
+   unstable or
+   otherwise non-standard API surface and its call sites should accept the
+   opt-in
+   aspect of it by using the @OptIn annotation, using the marker annotation
+   --
+   effectively causing further propagation of the opt-in aspect -- or
+   configuring
+   the UnsafeOptInUsageError check's options for project-wide opt-in.
+
+   To configure project-wide opt-in, specify the opt-in option value in
+   lint.xml
+   as a comma-delimited list of opted-in annotations:
+
+   <lint>
+       <issue id="UnsafeOptInUsageError">
+           <option name="opt-in" value="com.foo.ExperimentalBarAnnotation" />
+       </issue>
+   </lint>
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.annotation.experimental
+   Feedback: https://issuetracker.google.com/issues/new?component=459778
+
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/build.gradle:64: Warning: The native library arm64-v8a/libc++_shared.so (from org.videolan.android:libvlc-all:3.5.1) is not 16 KB aligned [Aligned16KB]
     implementation 'org.videolan.android:libvlc-all:3.5.1'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /Users/bluehawana/.gradle/caches/8.14.3/transforms/2f90f10792dfe3d09721aa151e5f59e3/transformed/libvlc-all-3.5.1/jni/arm64-v8a/libc++_shared.so: Warning: The native library arm64-v8a/libc++_shared.so (from org.videolan.android:libvlc-all:3.5.1) is not 16 KB aligned [Aligned16KB]
@@ -41,22 +99,22 @@
 
    https://developer.android.com/guide/practices/page-sizes
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_down.xml:1: Warning: The resource R.drawable.ic_volume_down appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_down.xml:1: Warning: The resource R.drawable.ic_volume_down appears to be unused [UnusedResources]
 <vector android:height="24dp" android:tint="#FFFFFF"
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_max.xml:1: Warning: The resource R.drawable.ic_volume_max appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_max.xml:1: Warning: The resource R.drawable.ic_volume_max appears to be unused [UnusedResources]
 <vector android:height="24dp" android:tint="#FFFFFF"
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_up.xml:1: Warning: The resource R.drawable.ic_volume_up appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res/drawable/ic_volume_up.xml:1: Warning: The resource R.drawable.ic_volume_up appears to be unused [UnusedResources]
 <vector android:height="24dp" android:tint="#FFFFFF"
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_button_background appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_button_background appears to be unused [UnusedResources]
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_next_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_next_button_background appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_next_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_next_button_background appears to be unused [UnusedResources]
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 ^
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_prev_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_prev_button_background appears to be unused [UnusedResources]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res/drawable/nordic_ice_prev_button_background.xml:2: Warning: The resource R.drawable.nordic_ice_prev_button_background appears to be unused [UnusedResources]
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 ^
 
@@ -93,7 +151,13 @@
    </lint>
    ```
 
-/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VlcMediaController.kt:118: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/ExoPlayerController.kt:156: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+        val uri = Uri.parse(url)
+                  ~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:422: Warning: Use the KTX extension function ViewGroup.isEmpty instead? [UseKtx]
+                    if (videoContainer.childCount == 0) {
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VlcMediaController.kt:126: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
             val media = Media(libVLC, Uri.parse(url))
                                       ~~~~~~~~~~~~~~
 
@@ -153,4 +217,30 @@
    </lint>
    ```
 
-0 errors, 10 warnings (and 5 errors, 109 warnings filtered by baseline lint-baseline.xml)
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:415: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusTextView.text = "❄️ Loading $channelName...\n(Building 4-second sync buffer)"
+                               ~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:415: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusTextView.text = "❄️ Loading $channelName...\n(Building 4-second sync buffer)"
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:439: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    statusTextView.text = "❄️ Stream error: ${e.message}\n\nTap screen and try NEXT channel"
+                                           ~~~~~~~~~~~~~~~~~
+/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/java/com/carplayer/iptv/VideoPlayerActivity.kt:439: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    statusTextView.text = "❄️ Stream error: ${e.message}\n\nTap screen and try NEXT channel"
+                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+10 errors, 16 warnings (and 5 errors, 109 warnings filtered by baseline lint-baseline.xml)

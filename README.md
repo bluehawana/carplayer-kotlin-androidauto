@@ -1,4 +1,4 @@
-# CarPlayer IPTV
+I # CarPlayer IPTV
 
 An Android Auto IPTV application that allows users to watch television channels in their car with optimized controls for driving safety.
 

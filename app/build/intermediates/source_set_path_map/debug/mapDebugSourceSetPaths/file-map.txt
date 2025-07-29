@@ -34,10 +34,10 @@ com.carplayer.iptv.app-lifecycle-process-2.6.2-32 /Users/bluehawana/.gradle/cach
 com.carplayer.iptv.app-core-1.16.0-33 /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/res
 com.carplayer.iptv.app-savedstate-1.2.1-34 /Users/bluehawana/.gradle/caches/8.14.3/transforms/fd5df80cf114fe510d1ab38f0e3892f3/transformed/savedstate-1.2.1/res
 com.carplayer.iptv.app-lifecycle-livedata-core-2.6.2-35 /Users/bluehawana/.gradle/caches/8.14.3/transforms/ffa95e0bedb77903c77e31a25b6258dd/transformed/lifecycle-livedata-core-2.6.2/res
-com.carplayer.iptv.app-pngs-36 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/generated/res/pngs/debug
-com.carplayer.iptv.app-resValues-37 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/generated/res/resValues/debug
-com.carplayer.iptv.app-packageDebugResources-38 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.carplayer.iptv.app-packageDebugResources-39 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.carplayer.iptv.app-debug-40 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/build/intermediates/merged_res/debug/mergeDebugResources
-com.carplayer.iptv.app-debug-41 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/debug/res
-com.carplayer.iptv.app-main-42 /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/res
+com.carplayer.iptv.app-pngs-36 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/build/generated/res/pngs/debug
+com.carplayer.iptv.app-resValues-37 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/build/generated/res/resValues/debug
+com.carplayer.iptv.app-packageDebugResources-38 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.carplayer.iptv.app-packageDebugResources-39 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.carplayer.iptv.app-debug-40 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.carplayer.iptv.app-debug-41 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/debug/res
+com.carplayer.iptv.app-main-42 /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/res

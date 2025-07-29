@@ -1,9 +1,12 @@
 package com.carplayer.iptv
 
 import android.content.Context
+import androidx.media3.common.util.UnstableApi
 import android.net.Uri
 import android.util.Log
 import android.widget.FrameLayout
+import androidx.media3.common.AudioAttributes
+import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
@@ -14,6 +17,7 @@ import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.ui.PlayerView
 
+@UnstableApi
 class ExoPlayerController(private val context: Context) {
 
     private var exoPlayer: ExoPlayer? = null
@@ -28,46 +32,76 @@ class ExoPlayerController(private val context: Context) {
 
     init {
         Log.d(TAG, "Initializing ExoPlayer for IPTV")
+        setupExoPlayer()
+    }
+
+    private fun setupExoPlayer() {
         try {
+            // Create ExoPlayer with optimized settings for IPTV
             exoPlayer = ExoPlayer.Builder(context)
                 .build()
-                
-            // Set up player listener for events
-            exoPlayer?.addListener(object : Player.Listener {
-                override fun onPlaybackStateChanged(playbackState: Int) {
-                    when (playbackState) {
-                        Player.STATE_READY -> {
-                            Log.d(TAG, "ExoPlayer: Ready to play")
-                            stateChangedCallback?.invoke(true)
+                .apply {
+                    // Set audio attributes for better audio handling
+                    setAudioAttributes(
+                        AudioAttributes.Builder()
+                            .setUsage(C.USAGE_MEDIA)
+                            .setContentType(C.AUDIO_CONTENT_TYPE_MOVIE)
+                            .build(),
+                        true // Handle audio focus
+                    )
+                    
+                    // Add player listener for events
+                    addListener(object : Player.Listener {
+                        override fun onPlaybackStateChanged(playbackState: Int) {
+                            Log.d(TAG, "ExoPlayer state changed: $playbackState")
+                            when (playbackState) {
+                                Player.STATE_IDLE -> {
+                                    Log.d(TAG, "ExoPlayer: IDLE")
+                                }
+                                Player.STATE_BUFFERING -> {
+                                    Log.d(TAG, "ExoPlayer: BUFFERING")
+                                    errorCallback?.invoke("❄️ Buffering...")
+                                }
+                                Player.STATE_READY -> {
+                                    Log.d(TAG, "ExoPlayer: READY - playback can start")
+                                    errorCallback?.invoke("") // Clear buffering message
+                                    stateChangedCallback?.invoke(isPlaying)
+                                }
+                                Player.STATE_ENDED -> {
+                                    Log.d(TAG, "ExoPlayer: ENDED")
+                                    stateChangedCallback?.invoke(false)
+                                }
+                            }
                         }
-                        Player.STATE_BUFFERING -> {
-                            Log.d(TAG, "ExoPlayer: Buffering")
+
+                        override fun onIsPlayingChanged(isPlaying: Boolean) {
+                            Log.d(TAG, "ExoPlayer: Playing state changed to $isPlaying")
+                            stateChangedCallback?.invoke(isPlaying)
                         }
-                        Player.STATE_ENDED -> {
-                            Log.d(TAG, "ExoPlayer: Playback ended")
-                            stateChangedCallback?.invoke(false)
+
+                        override fun onPlayerError(error: PlaybackException) {
+                            Log.e(TAG, "ExoPlayer error: ${error.message}", error)
+                            
+                            // Provide specific error messages
+                            val errorMessage = when (error.errorCode) {
+                                PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED -> 
+                                    "❄️ Network connection failed - check internet"
+                                PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT -> 
+                                    "❄️ Connection timeout - trying to reconnect..."
+                                PlaybackException.ERROR_CODE_PARSING_CONTAINER_MALFORMED -> 
+                                    "❄️ Stream format issue - switching to VLC fallback..."
+                                else -> "❄️ Playback error: ${error.message}"
+                            }
+                            
+                            errorCallback?.invoke(errorMessage)
                         }
-                        Player.STATE_IDLE -> {
-                            Log.d(TAG, "ExoPlayer: Idle")
-                            stateChangedCallback?.invoke(false)
-                        }
-                    }
+                    })
                 }
-                
-                override fun onPlayerError(error: PlaybackException) {
-                    Log.e(TAG, "ExoPlayer error: ${error.message}")
-                    errorCallback?.invoke("Stream error: ${error.message}")
-                }
-                
-                override fun onIsPlayingChanged(isPlaying: Boolean) {
-                    stateChangedCallback?.invoke(isPlaying)
-                }
-            })
             
             Log.d(TAG, "ExoPlayer initialized successfully")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to initialize ExoPlayer", e)
-            errorCallback?.invoke("Player initialization failed: ${e.message}")
+            errorCallback?.invoke("ExoPlayer initialization failed: ${e.message}")
         }
     }
 
@@ -87,53 +121,69 @@ class ExoPlayerController(private val context: Context) {
                     FrameLayout.LayoutParams.MATCH_PARENT,
                     FrameLayout.LayoutParams.MATCH_PARENT
                 )
-                useController = false // Hide default controls
+                useController = false // Disable built-in controls for automotive
                 player = exoPlayer
             }
             
+            container.removeAllViews() // Clear any existing views
             container.addView(playerView)
-            Log.d(TAG, "ExoPlayer video surface created")
+            
+            Log.d(TAG, "ExoPlayer video surface created and attached")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to create video surface", e)
             errorCallback?.invoke("Failed to create video surface: ${e.message}")
         }
     }
 
-    @androidx.media3.common.util.UnstableApi
     fun startPlayback(url: String) {
         Log.d(TAG, "Starting ExoPlayer playback for: $url")
         try {
-            val mediaItem = MediaItem.fromUri(Uri.parse(url))
-            val mediaSource = createMediaSource(url, mediaItem)
+            val mediaSource = createMediaSource(url)
             
-            exoPlayer?.setMediaSource(mediaSource)
-            exoPlayer?.prepare()
-            exoPlayer?.play()
+            exoPlayer?.apply {
+                setMediaSource(mediaSource)
+                prepare()
+                playWhenReady = true
+            }
             
             Log.d(TAG, "ExoPlayer playback started")
+            
         } catch (e: Exception) {
             Log.e(TAG, "Failed to start playback", e)
-            errorCallback?.invoke("Playback failed: ${e.message}")
+            errorCallback?.invoke("ExoPlayer playback failed: ${e.message}")
         }
     }
-    
-    @androidx.media3.common.util.UnstableApi
-    private fun createMediaSource(url: String, mediaItem: MediaItem): MediaSource {
-        val dataSourceFactory = DefaultHttpDataSource.Factory()
-            .setConnectTimeoutMs(10000)
-            .setReadTimeoutMs(10000)
-            .setUserAgent("ExoPlayer-IPTV/1.0")
+
+    private fun createMediaSource(url: String): MediaSource {
+        val uri = Uri.parse(url)
         
+        // Create HTTP data source with optimized settings for IPTV
+        val httpDataSourceFactory = DefaultHttpDataSource.Factory()
+            .setUserAgent("ExoPlayer-IPTV/1.0")
+            .setConnectTimeoutMs(10000) // 10 second timeout
+            .setReadTimeoutMs(10000)
+            .setAllowCrossProtocolRedirects(true)
+
+        // Special handling for Sky Sports F1 and other problematic streams
+        if (url.contains("354945") || (url.lowercase().contains("sky") && url.lowercase().contains("f1"))) {
+            Log.d(TAG, "Sky Sports F1 detected - applying ExoPlayer audio optimizations")
+            
+            // Use specific user agent that works better with Sky streams
+            httpDataSourceFactory.setUserAgent("Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36")
+        }
+
         return when {
             url.contains(".m3u8") -> {
-                // HLS streams (most IPTV)
-                HlsMediaSource.Factory(dataSourceFactory)
-                    .createMediaSource(mediaItem)
+                // HLS stream - most IPTV streams are HLS
+                Log.d(TAG, "Creating HLS media source for: $url")
+                HlsMediaSource.Factory(httpDataSourceFactory)
+                    .createMediaSource(MediaItem.fromUri(uri))
             }
             else -> {
-                // Progressive streams
-                ProgressiveMediaSource.Factory(dataSourceFactory)
-                    .createMediaSource(mediaItem)
+                // Progressive stream fallback
+                Log.d(TAG, "Creating progressive media source for: $url")
+                ProgressiveMediaSource.Factory(httpDataSourceFactory)
+                    .createMediaSource(MediaItem.fromUri(uri))
             }
         }
     }
@@ -141,8 +191,10 @@ class ExoPlayerController(private val context: Context) {
     fun stopPlayback() {
         Log.d(TAG, "Stopping ExoPlayer playback")
         try {
-            exoPlayer?.stop()
-            exoPlayer?.clearMediaItems()
+            exoPlayer?.apply {
+                stop()
+                clearMediaItems()
+            }
         } catch (e: Exception) {
             Log.e(TAG, "Error stopping playback", e)
         }
@@ -150,12 +202,14 @@ class ExoPlayerController(private val context: Context) {
 
     fun togglePlayPause() {
         try {
-            if (exoPlayer?.isPlaying == true) {
-                Log.d(TAG, "ExoPlayer: Pausing playback")
-                exoPlayer?.pause()
-            } else {
-                Log.d(TAG, "ExoPlayer: Resuming playback")
-                exoPlayer?.play()
+            exoPlayer?.let { player ->
+                if (player.isPlaying) {
+                    Log.d(TAG, "ExoPlayer: Pausing playback")
+                    player.pause()
+                } else {
+                    Log.d(TAG, "ExoPlayer: Resuming playback")
+                    player.play()
+                }
             }
         } catch (e: Exception) {
             Log.e(TAG, "Error toggling playback", e)

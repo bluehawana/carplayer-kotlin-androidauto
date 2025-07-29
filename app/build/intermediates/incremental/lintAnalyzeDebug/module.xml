@@ -1,6 +1,6 @@
 <lint-module
     format="1"
-    dir="/Users/bluehawana/Projects/carplayer-kotlin-androidauto/app"
+    dir="/Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app"
     name=":app"
     type="APP"
     maven="carplayer:app:unspecified"

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:1-98:12
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/08d20a7975a1fb8612329581e5cf9503/transformed/constraintlayout-2.2.1/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/064accf497869886f33387b0a0215023/transformed/appcompat-resources-1.7.1/AndroidManifest.xml:2:1-7:12
@@ -68,58 +68,58 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.print:print:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/8cd6271a1c3806daf66cc05932efa4f8/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3ff4190ca18ef4bc396bc69083f48c4d/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:6:5-79
 MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:22:5-79
 MERGED from [androidx.media3:media3-exoplayer:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/7935312b56708577ea2ee26029bcfaf3/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:22:5-79
 MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:22:5-79
 MERGED from [androidx.media3:media3-common:1.4.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/35cb4ef35016bb840354321f7cd50a75/transformed/media3-common-1.4.1/AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:6:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:7:5-68
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:7:5-68
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:7:22-65
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:7:22-65
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:8:5-80
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:8:22-77
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:8:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:9:5-81
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10:5-82
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10:5-82
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10:22-79
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:10:22-79
 uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:11:5-75
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:11:5-75
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:11:22-72
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:11:22-72
 uses-permission#androidx.car.app.NAVIGATION_TEMPLATES
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:14:5-77
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:14:5-77
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:14:22-74
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:14:22-74
 uses-permission#androidx.car.app.ACCESS_SURFACE
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:5-71
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:5-71
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:22-68
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:15:22-68
 application
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:17:5-96:19
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:17:5-96:19
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:17:5-96:19
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:17:5-96:19
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/08d20a7975a1fb8612329581e5cf9503/transformed/constraintlayout-2.2.1/AndroidManifest.xml:7:5-20
@@ -141,135 +141,135 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/bluehawana/.gradle/c
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/e6654fde27ea6f46ad80956de842f511/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/e6654fde27ea6f46ad80956de842f511/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 	android:roundIcon
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:24:9-54
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:24:9-54
 	android:icon
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:22:9-43
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:22:9-43
 	android:networkSecurityConfig
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:27:9-69
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:27:9-69
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.16.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/eeef20559c423e79abc349aeccfca43d/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:25:9-35
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:25:9-35
 	android:label
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:23:9-41
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:23:9-41
 	android:fullBackupContent
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:21:9-54
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:21:9-54
 	tools:targetApi
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:29:9-29
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:29:9-29
 	android:allowBackup
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:26:9-51
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:26:9-51
 	android:dataExtractionRules
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:20:9-65
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:20:9-65
 	android:usesCleartextTraffic
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:28:9-44
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:28:9-44
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:18:9-45
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:18:9-45
 meta-data#com.google.android.gms.car.application
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:32:9-34:59
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:32:9-34:59
 	android:resource
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:34:13-56
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:34:13-56
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:33:13-66
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:33:13-66
 service#com.carplayer.iptv.CarAppService
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:37:9-51:19
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:37:9-51:19
 	android:exported
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:39:13-36
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:39:13-36
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:38:13-42
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:38:13-42
 intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.PLAYBACK+category:name:androidx.car.app.category.VIDEO
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:40:13-44:29
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:40:13-44:29
 action#androidx.car.app.CarAppService
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:17-73
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:17-73
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:25-70
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:41:25-70
 category#androidx.car.app.category.PLAYBACK
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:17-79
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:17-79
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:27-76
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:42:27-76
 category#androidx.car.app.category.VIDEO
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:17-76
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:17-76
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:27-73
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:43:27-73
 intent-filter#action:name:android.media.action.MEDIA_PLAY_FROM_SEARCH
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:45:13-47:29
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:45:13-47:29
 action#android.media.action.MEDIA_PLAY_FROM_SEARCH
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:46:17-86
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:46:17-86
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:46:25-83
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:46:25-83
 intent-filter#action:name:android.media.browse.MediaBrowserService
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:48:13-50:29
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:48:13-50:29
 action#android.media.browse.MediaBrowserService
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:49:17-83
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:49:17-83
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:49:25-80
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:49:25-80
 receiver#androidx.media.session.MediaButtonReceiver
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:55:9-61:20
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:55:9-61:20
 	android:exported
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:57:13-36
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:57:13-36
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:56:13-70
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:56:13-70
 intent-filter#action:name:android.intent.action.MEDIA_BUTTON
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:58:13-60:29
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:58:13-60:29
 action#android.intent.action.MEDIA_BUTTON
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:59:17-77
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:59:17-77
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:59:25-74
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:59:25-74
 activity#com.carplayer.iptv.MainActivity
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:64:9-72:20
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:64:9-72:20
 	android:exported
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:66:13-36
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:66:13-36
 	android:theme
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:67:13-55
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:67:13-55
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:65:13-41
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:65:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:68:13-71:29
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:68:13-71:29
 action#android.intent.action.MAIN
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:69:17-69
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:69:17-69
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:69:25-66
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:69:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:70:17-77
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:70:17-77
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:70:27-74
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:70:27-74
 activity#com.carplayer.iptv.CarTestActivity
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:75:9-78:58
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:75:9-78:58
 	android:exported
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:77:13-36
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:77:13-36
 	android:theme
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:78:13-55
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:78:13-55
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:76:13-44
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:76:13-44
 activity#com.carplayer.iptv.ImportActivity
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:81:9-84:58
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:81:9-84:58
 	android:exported
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:83:13-37
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:83:13-37
 	android:theme
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:84:13-55
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:84:13-55
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:82:13-43
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:82:13-43
 activity#com.carplayer.iptv.VideoPlayerActivity
-ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:87:9-93:40
+ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:87:9-93:40
 	android:excludeFromRecents
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:92:13-46
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:92:13-46
 	android:launchMode
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:91:13-43
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:91:13-43
 	android:noHistory
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:93:13-37
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:93:13-37
 	android:exported
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:89:13-37
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:89:13-37
 	android:theme
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:90:13-55
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:90:13-55
 	android:name
-		ADDED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:88:13-48
+		ADDED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml:88:13-48
 uses-sdk
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
-INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.12.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/cf0a729b183f362baa276dd55e98dccd/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/bluehawana/.gradle/caches/8.14.3/transforms/08d20a7975a1fb8612329581e5cf9503/transformed/constraintlayout-2.2.1/AndroidManifest.xml:5:5-44
@@ -397,9 +397,9 @@ MERGED from [androidx.print:print:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3ff4190ca18ef4bc396bc69083f48c4d/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/3ff4190ca18ef4bc396bc69083f48c4d/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
 	android:targetSdkVersion
-		INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/bluehawana/Projects/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bluehawana/Projects/carplayer/carplayer-kotlin-androidauto/app/src/main/AndroidManifest.xml
 service#androidx.car.app.CarAppMetadataHolderService
 ADDED from [androidx.car.app:app-projected:1.7.0] /Users/bluehawana/.gradle/caches/8.14.3/transforms/5883f4324b1fceb4e386e9cfd7b07018/transformed/app-projected-1.7.0/AndroidManifest.xml:24:9-34:19
 	tools:node
