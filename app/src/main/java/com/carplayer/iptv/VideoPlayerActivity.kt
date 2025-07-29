@@ -166,6 +166,23 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
         controlsLayout.addView(playPauseButton)
 
+        // Restart button - Ice Age Style
+        val restartButton = Button(this, null, 0, R.style.PlayerControlButton).apply {
+            text = "🔄 RESTART"
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                weight = 1f
+                setMargins(12, 0, 12, 0)
+            }
+            setOnClickListener {
+                restartPlayback()
+                hideControlsAfterDelay()
+            }
+        }
+        controlsLayout.addView(restartButton)
+
 
 
         // Next Channel button - Ice Age Style
@@ -242,27 +259,18 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
     
     private fun fixSkyF1Audio() {
-        statusTextView.text = "🏎️ Fixing Sky Sports F1 for presentation..."
+        statusTextView.text = "🏎️ Optimizing Sky Sports F1 for presentation..."
         statusTextView.visibility = android.view.View.VISIBLE
         
         if (::mediaController.isInitialized) {
             // Stop current playback
             mediaController.stopPlayback()
             
-            // Clear video surface
-            mediaController.clearVideoSurface(videoContainer)
-            
-            // Force VLC for Sky F1 with proper surface recreation
+            // Restart with optimized ExoPlayer settings
             android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                mediaController.forceVLC()
-                mediaController.createVideoSurface(videoContainer)
                 mediaController.startPlayback(streamUrl)
                 
-                // Update engine button
-                val engineButton = controlsLayout.getChildAt(2) as? Button // Third button is engine
-                engineButton?.text = "📺 VLC"
-                
-                statusTextView.text = "🏎️ Sky F1 optimized with VLC - audio & video!"
+                statusTextView.text = "🏎️ Sky F1 optimized with ExoPlayer - audio & video!"
                 
                 // Hide message after longer delay
                 android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
@@ -272,50 +280,24 @@ class VideoPlayerActivity : AppCompatActivity() {
         }
     }
     
-    private fun switchPlayerEngine() {
-        statusTextView.text = "❄️ Switching player engine..."
+    private fun restartPlayback() {
+        statusTextView.text = "❄️ Restarting playback..."
         statusTextView.visibility = android.view.View.VISIBLE
         
         if (::mediaController.isInitialized) {
-            val currentEngine = mediaController.getCurrentEngine()
-            val engineButton = controlsLayout.getChildAt(2) as? Button // Third button is engine
-            
             // Stop current playback
             mediaController.stopPlayback()
             
-            // Clear video surface completely
-            mediaController.clearVideoSurface(videoContainer)
-            
-            when (currentEngine) {
-                HybridMediaController.PlayerEngine.EXOPLAYER -> {
-                    // Switch to VLC with surface recreation
-                    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                        mediaController.forceVLC()
-                        mediaController.createVideoSurface(videoContainer)
-                        mediaController.startPlayback(streamUrl)
-                        engineButton?.text = "📺 VLC"
-                        statusTextView.text = "❄️ Switched to VLC player"
-                    }, 500)
-                }
-                HybridMediaController.PlayerEngine.VLC -> {
-                    // Switch back to ExoPlayer with surface recreation
-                    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                        // Reinitialize ExoPlayer controller
-                        mediaController.release()
-                        mediaController = ExoPlayerController(this@VideoPlayerActivity)
-                        setupMediaControllerCallbacks()
-                        mediaController.createVideoSurface(videoContainer)
-                        mediaController.startPlayback(streamUrl)
-                        engineButton?.text = "📺 EXO"
-                        statusTextView.text = "❄️ Switched to ExoPlayer"
-                    }, 500)
-                }
-            }
-            
-            // Hide message after delay
+            // Restart with fresh ExoPlayer instance
             android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                statusTextView.visibility = android.view.View.GONE
-            }, 3000)
+                mediaController.startPlayback(streamUrl)
+                statusTextView.text = "❄️ Playback restarted with ExoPlayer"
+                
+                // Hide message after delay
+                android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                    statusTextView.visibility = android.view.View.GONE
+                }, 3000)
+            }, 500)
         }
     }
     
