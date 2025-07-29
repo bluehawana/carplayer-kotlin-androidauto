@@ -99,6 +99,7 @@ class ExoPlayerController(private val context: Context) {
         }
     }
 
+    @androidx.media3.common.util.UnstableApi
     fun startPlayback(url: String) {
         Log.d(TAG, "Starting ExoPlayer playback for: $url")
         try {
@@ -116,6 +117,7 @@ class ExoPlayerController(private val context: Context) {
         }
     }
     
+    @androidx.media3.common.util.UnstableApi
     private fun createMediaSource(url: String, mediaItem: MediaItem): MediaSource {
         val dataSourceFactory = DefaultHttpDataSource.Factory()
             .setConnectTimeoutMs(10000)

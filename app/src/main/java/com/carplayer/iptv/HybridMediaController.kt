@@ -94,6 +94,7 @@ class HybridMediaController(private val context: Context) {
         }
     }
 
+    @androidx.media3.common.util.UnstableApi
     fun startPlayback(url: String) {
         Log.d(TAG, "Starting playback with $currentEngine for: $url")
         currentUrl = url

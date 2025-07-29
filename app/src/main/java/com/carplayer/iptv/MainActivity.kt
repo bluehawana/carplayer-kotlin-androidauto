@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         clearChannelCache()
         channelManager.reloadFromAssets(this)
         
+        // FORCE CLEAR CACHE and reload channels from updated M3U file
+        clearChannelCache()
+        channelManager.reloadFromAssets(this)
+        
         // Load sample M3U files on first run
         val preloadedFiles = PreloadedM3UFiles(this)
         preloadedFiles.loadSampleM3UFiles()
@@ -57,58 +61,70 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun setupNordicUI() {
-        // Create Nordic-themed layout programmatically - RESPONSIVE
+        // Get screen dimensions for responsive design
+        val displayMetrics = resources.displayMetrics
+        val screenWidth = displayMetrics.widthPixels
+        val screenHeight = displayMetrics.heightPixels
+        val density = displayMetrics.density
+        
+        // Calculate responsive values based on screen size
+        val basePadding = (16 * density).toInt()
+        val titleSize = if (screenWidth > 1200) 24f else if (screenWidth > 800) 20f else 18f
+        val subtitleSize = if (screenWidth > 1200) 16f else if (screenWidth > 800) 14f else 12f
+        val buttonTextSize = if (screenWidth > 1200) 18f else if (screenWidth > 800) 16f else 14f
+        
+        // Create Nordic-themed layout programmatically - FULLY RESPONSIVE
         val layout = android.widget.LinearLayout(this).apply {
             orientation = android.widget.LinearLayout.VERTICAL
-            setPadding(24, 16, 24, 16) // Reduced padding for smaller screens
+            setPadding(basePadding, basePadding/2, basePadding, basePadding/2)
             setBackgroundColor(0xFF145da0.toInt()) // Midnight Blue background
         }
         
-        // App title - RESPONSIVE
+        // App title - FULLY RESPONSIVE
         val titleView = TextView(this).apply {
             text = getString(R.string.app_name)
-            textSize = 22f // Smaller for different resolutions
+            textSize = titleSize
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
-            setPadding(0, 0, 0, 16) // Reduced padding
+            setPadding(0, 0, 0, (12 * density).toInt())
             typeface = android.graphics.Typeface.DEFAULT_BOLD
         }
         layout.addView(titleView)
         
-        // Subtitle - RESPONSIVE
+        // Subtitle - FULLY RESPONSIVE
         val subtitleView = TextView(this).apply {
-            text = "🌨️ Nordic Ice Age Theme\n🎬 104 Premium Channels"
-            textSize = 14f // Smaller text
+            text = "🌨️ Nordic Ice Age Theme\n🎬 92 Premium Channels"
+            textSize = subtitleSize
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
-            setPadding(0, 0, 0, 12) // Reduced padding
+            setPadding(0, 0, 0, (10 * density).toInt())
         }
         layout.addView(subtitleView)
         
-        // Network status - RESPONSIVE
+        // Network status - FULLY RESPONSIVE
         networkStatusView = TextView(this).apply {
             text = "🔍 Checking network connectivity..."
-            textSize = 12f // Smaller text
+            textSize = subtitleSize - 2f
             setTextColor(0xFFb1d4e0.toInt()) // Baby Blue
             gravity = android.view.Gravity.CENTER
-            setPadding(12, 8, 12, 12) // Reduced padding
+            setPadding((8 * density).toInt(), (6 * density).toInt(), (8 * density).toInt(), (8 * density).toInt())
             setBackgroundColor(0xFF0c2d48.toInt()) // Dark Blue
         }
         layout.addView(networkStatusView)
         
-        // Start Watching button - RESPONSIVE Ice Age Style
+        // Start Watching button - FULLY RESPONSIVE Ice Age Style
         val watchButton = Button(this).apply {
             text = "🎬 Start Watching"
-            textSize = 16f // Smaller text
+            textSize = buttonTextSize
             setTextColor(0xFF00FF41.toInt()) // Ice green
             setBackgroundResource(android.R.drawable.btn_default)
             background.setColorFilter(0xFF004D5C.toInt(), android.graphics.PorterDuff.Mode.MULTIPLY) // Deep ice
-            setPadding(24, 16, 24, 16) // Reduced padding
+            setPadding((20 * density).toInt(), (12 * density).toInt(), (20 * density).toInt(), (12 * density).toInt())
             layoutParams = android.widget.LinearLayout.LayoutParams(
                 android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+                (48 * density).toInt() // Fixed height based on density
             ).apply {
-                setMargins(16, 8, 16, 8) // Add margins for better spacing
+                setMargins((12 * density).toInt(), (6 * density).toInt(), (12 * density).toInt(), (6 * density).toInt())
             }
             setOnClickListener {
                 launchCarInterface()
@@ -116,19 +132,19 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(watchButton)
         
-        // Import Settings button - RESPONSIVE Ice Age Style
+        // Import Settings button - FULLY RESPONSIVE Ice Age Style
         val settingsButton = Button(this).apply {
             text = "🗂️ Import Channels"
-            textSize = 14f // Smaller text
+            textSize = buttonTextSize - 2f
             setTextColor(0xFFE0F7FA.toInt()) // Ice white
             setBackgroundResource(android.R.drawable.btn_default)
             background.setColorFilter(0xFF00BCD4.toInt(), android.graphics.PorterDuff.Mode.MULTIPLY) // Ice accent
-            setPadding(24, 12, 24, 12) // Reduced padding
+            setPadding((16 * density).toInt(), (10 * density).toInt(), (16 * density).toInt(), (10 * density).toInt())
             layoutParams = android.widget.LinearLayout.LayoutParams(
                 android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+                (44 * density).toInt() // Fixed height based on density
             ).apply {
-                setMargins(16, 4, 16, 4) // Add margins
+                setMargins((12 * density).toInt(), (4 * density).toInt(), (12 * density).toInt(), (4 * density).toInt())
             }
             setOnClickListener {
                 val intent = Intent(this@MainActivity, ImportActivity::class.java)
@@ -137,18 +153,18 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(settingsButton)
         
-        // Network test button - RESPONSIVE
+        // Network test button - FULLY RESPONSIVE
         val networkButton = Button(this).apply {
             text = "🌐 Test Network"
-            textSize = 14f // Smaller text
+            textSize = buttonTextSize - 2f
             setTextColor(0xFF145da0.toInt()) // Midnight Blue text
             setBackgroundColor(0xFFb1d4e0.toInt()) // Baby Blue background
-            setPadding(20, 12, 20, 12) // Reduced padding
+            setPadding((16 * density).toInt(), (10 * density).toInt(), (16 * density).toInt(), (10 * density).toInt())
             layoutParams = android.widget.LinearLayout.LayoutParams(
                 android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+                (44 * density).toInt() // Fixed height based on density
             ).apply {
-                setMargins(16, 4, 16, 4) // Add margins
+                setMargins((12 * density).toInt(), (4 * density).toInt(), (12 * density).toInt(), (4 * density).toInt())
             }
             setOnClickListener {
                 checkNetworkStatus()
@@ -156,13 +172,13 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(networkButton)
         
-        // Version info - RESPONSIVE
+        // Version info - FULLY RESPONSIVE
         val versionView = TextView(this).apply {
-            text = "❄️ Nordic Edition v1.0 | 🎯 104 Channels"
-            textSize = 10f // Smaller text
+            text = "❄️ Nordic Edition v1.0 | 🎯 92 Channels"
+            textSize = if (screenWidth > 800) 12f else 10f
             setTextColor(0xFFb1d4e0.toInt()) // Baby Blue
             gravity = android.view.Gravity.CENTER
-            setPadding(0, 8, 0, 0) // Reduced padding
+            setPadding(0, (6 * density).toInt(), 0, 0)
         }
         layout.addView(versionView)
         

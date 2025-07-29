@@ -126,13 +126,13 @@ class VlcMediaController(private val context: Context) {
             val media = Media(libVLC, Uri.parse(url))
             
             // Special handling for Sky Sports F1 audio issues
-            if (url.contains("35244") || (url.toLowerCase().contains("sky") && url.toLowerCase().contains("f1"))) {
+            if (url.contains("354945") || (url.lowercase().contains("sky") && url.lowercase().contains("f1"))) {
                 Log.d(TAG, "Sky Sports F1 detected - applying VLC audio fixes")
                 
                 // Add specific options for Sky F1 audio
+                // Forcing audio track 0 was causing no sound, so we let VLC choose
                 media.addOption(":network-caching=2000")
                 media.addOption(":live-caching=2000")
-                media.addOption(":audio-track=0")  // Force first audio track
                 media.addOption(":audio-language=eng")  // Prefer English audio
                 media.addOption(":no-audio-time-stretch")
                 media.addOption(":audio-desync=0")
