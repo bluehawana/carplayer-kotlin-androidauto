@@ -28,7 +28,10 @@ class NetworkBalancer(private val context: Context) {
         val hasInternet: Boolean,
         val supportsIPv4: Boolean,
         val supportsIPv6: Boolean,
-        val network: Network?
+        val network: Network?,
+        val isMetered: Boolean = false,
+        val isHotspot: Boolean = false,
+        val bandwidth: Long = -1L // -1 if unknown
     )
     
     private val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -51,6 +54,18 @@ class NetworkBalancer(private val context: Context) {
                     
                     val hasInternet = capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
                     val isConnected = networkInfo.isConnected
+                    val isMetered = !capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED)
+                    
+                    // Detect hotspot/tethering - cellular connection with WiFi characteristics
+                    val isHotspot = capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) && 
+                                   (networkInfo.extraInfo?.contains("hotspot", ignoreCase = true) == true ||
+                                    networkInfo.extraInfo?.contains("tether", ignoreCase = true) == true ||
+                                    isMetered) // WiFi connections that are metered are likely hotspots
+                    
+                    // Get bandwidth if available
+                    val bandwidth = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                        capabilities.linkDownstreamBandwidthKbps.toLong()
+                    } else -1L
                     
                     // Test IPv4/IPv6 support
                     val (ipv4, ipv6) = testIPSupport(network)
@@ -61,7 +76,10 @@ class NetworkBalancer(private val context: Context) {
                         hasInternet = hasInternet,
                         supportsIPv4 = ipv4,
                         supportsIPv6 = ipv6,
-                        network = network
+                        network = network,
+                        isMetered = isMetered,
+                        isHotspot = isHotspot,
+                        bandwidth = bandwidth
                     ))
                     
                     Log.d(TAG, "Network: $type, Connected: $isConnected, Internet: $hasInternet, IPv4: $ipv4, IPv6: $ipv6")
@@ -257,4 +275,99 @@ class NetworkBalancer(private val context: Context) {
         val network: Network?,
         val errorMessage: String?
     )
+    
+    fun getCurrentNetworkType(): NetworkInfo? {
+        return try {
+            val activeNetwork = connectivityManager.activeNetwork
+            if (activeNetwork != null) {
+                val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
+                val networkInfo = connectivityManager.getNetworkInfo(activeNetwork)
+                
+                if (capabilities != null && networkInfo != null) {
+                    val type = when {
+                        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> "WiFi"
+                        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> "Mobile Data"
+                        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> "Ethernet"
+                        else -> "Unknown"
+                    }
+                    
+                    val isMetered = !capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED)
+                    val isHotspot = capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) && 
+                                   (networkInfo.extraInfo?.contains("hotspot", ignoreCase = true) == true ||
+                                    networkInfo.extraInfo?.contains("tether", ignoreCase = true) == true ||
+                                    isMetered)
+                    
+                    val bandwidth = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                        capabilities.linkDownstreamBandwidthKbps.toLong()
+                    } else -1L
+                    
+                    NetworkInfo(
+                        type = type,
+                        isConnected = networkInfo.isConnected,
+                        hasInternet = capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET),
+                        supportsIPv4 = true,
+                        supportsIPv6 = true,
+                        network = activeNetwork,
+                        isMetered = isMetered,
+                        isHotspot = isHotspot,
+                        bandwidth = bandwidth
+                    )
+                } else null
+            } else null
+        } catch (e: Exception) {
+            Log.e(TAG, "Error getting current network type", e)
+            null
+        }
+    }
+    
+    data class StreamingProfile(
+        val bufferDurationMs: Int,
+        val connectTimeoutMs: Int,
+        val readTimeoutMs: Int,
+        val preferredEngine: String, // "exoplayer" or "vlc"
+        val preloadChannels: Boolean,
+        val adaptiveQuality: Boolean,
+        val description: String
+    )
+    
+    fun getOptimalStreamingProfile(networkInfo: NetworkInfo?): StreamingProfile {
+        return when {
+            networkInfo?.isHotspot == true || networkInfo?.type == "Mobile Data" -> {
+                Log.d(TAG, "Detected cellular/hotspot connection - using optimized profile")
+                StreamingProfile(
+                    bufferDurationMs = 8000,  // Longer buffer for cellular
+                    connectTimeoutMs = 15000,  // More time for cellular connections
+                    readTimeoutMs = 20000,
+                    preferredEngine = "exoplayer", // Better adaptive streaming
+                    preloadChannels = true,   // Preload for smoother switching
+                    adaptiveQuality = true,   // Enable quality adaptation
+                    description = "📱 Cellular/Hotspot Optimized"
+                )
+            }
+            networkInfo?.bandwidth != -1L && (networkInfo?.bandwidth ?: -1L) < 5000 -> { // < 5Mbps
+                Log.d(TAG, "Detected low bandwidth connection - using conservative profile")
+                StreamingProfile(
+                    bufferDurationMs = 10000,
+                    connectTimeoutMs = 12000,
+                    readTimeoutMs = 15000,
+                    preferredEngine = "vlc",     // VLC handles low bandwidth better
+                    preloadChannels = false,     // Don't waste bandwidth
+                    adaptiveQuality = true,
+                    description = "🐌 Low Bandwidth Mode"
+                )
+            }
+            else -> {
+                Log.d(TAG, "Using standard WiFi profile")
+                StreamingProfile(
+                    bufferDurationMs = 3000,   // Standard buffer
+                    connectTimeoutMs = 8000,
+                    readTimeoutMs = 10000,
+                    preferredEngine = "exoplayer",
+                    preloadChannels = false,
+                    adaptiveQuality = false,
+                    description = "📶 WiFi Standard"
+                )
+            }
+        }
+    }
 }

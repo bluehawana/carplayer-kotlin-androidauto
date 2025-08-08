@@ -10,6 +10,13 @@ An Android Auto IPTV application that allows users to watch television channels 
 - **Subscription Import**: Support for importing IPTV subscriptions from URLs or files
 - **Data Efficient**: Optimized for users with limited data plans (7GB-11GB monthly)
 
+### 🚀 **Smart Network Optimization** (New!)
+- **Intelligent Hotspot Detection**: Automatically detects when using cellular hotspot (Comviq/Tele2 5G)
+- **Adaptive Streaming**: Adjusts quality and buffering based on connection type
+- **Channel Preloading**: Pre-tests next channels on cellular for instant switching
+- **Hybrid Media Engine**: ExoPlayer + VLC fallback with network-aware selection
+- **Connection Monitoring**: Real-time network quality assessment and optimization
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -109,19 +116,71 @@ suspend fun fetchChannelsFromAPI(apiUrl: String): List<Channel> {
    - Volume control optimized for car audio
    - Safe UI that doesn't distract from driving
 
+## 📱 Network Optimization
+
+### Automatic Network Detection
+
+The app intelligently detects and optimizes for different network types:
+
+- **📶 WiFi**: Standard quality, minimal buffering
+- **📱 Cellular Hotspot**: Extended buffering, channel preloading
+- **🚀 5G (Comviq/Tele2)**: High-quality streaming with adaptive bitrate
+- **🐌 Poor Connection**: Conservative settings, VLC fallback engine
+
+### Smart Features for Cellular Users
+
+- **Hotspot Detection**: Automatically detects when using phone hotspot
+- **Channel Preloading**: Tests next 3 channels in background for instant switching
+- **Connection Quality Indicators**:
+  - ✅ **Fast connection (< 1s)**: Channel ready for instant playback
+  - 🟡 **Good connection (1-3s)**: Channel loads smoothly
+  - 🟠 **Slow connection (3-5s)**: May have buffering
+  - ❌ **Poor connection**: Skip this channel
+
+### Network Status Messages
+
+The app provides real-time feedback about your connection:
+
+- `📱 Hotspot detected - optimizing for cellular`
+- `🚀 5G connection - high quality available`
+- `📶 Using WiFi connection`
+- `🐌 Low bandwidth - using VLC engine`
+
+### Optimized for Swedish Networks
+
+Specifically tested and optimized for:
+- **Comviq (Tele2)**: 5G and 4G hotspot streaming
+- **Poor office WiFi scenarios**
+- **Mixed connection environments**
+
 ## Architecture
 
 - **CarAppService**: Main Android Auto service
 - **ChannelManager**: Handles channel data and subscriptions
-- **VlcMediaController**: Controls video playback using VLC
+- **HybridMediaController**: Hybrid ExoPlayer + VLC media engine with intelligent switching
+- **NetworkBalancer**: Network detection and optimization system
+- **NetworkMonitor**: Real-time connection monitoring and adaptation
+- **ChannelPreloader**: Background channel testing for smooth switching
 - **Screen Classes**: Car-optimized UI screens
 
 ## Data Usage Optimization
 
-- Adaptive bitrate streaming
-- Configurable quality settings
-- Data usage monitoring
-- Offline channel list caching
+### Smart Streaming Profiles
+
+The app automatically selects the best streaming profile based on your connection:
+
+- **📶 WiFi Standard**: Full quality, 3-second buffer
+- **📱 Cellular/Hotspot Optimized**: Extended 8-second buffer, longer timeouts, channel preloading
+- **🐌 Low Bandwidth Mode**: Conservative settings, VLC engine for better compatibility
+
+### Advanced Features
+
+- **Adaptive Bitrate Streaming**: Automatically adjusts quality based on connection speed
+- **Network-Aware Buffering**: Longer buffers on cellular connections reduce interruptions
+- **Intelligent Engine Selection**: Uses ExoPlayer for 5G, VLC for poor connections
+- **Background Channel Testing**: Preloads next channels to reduce switching delays
+- **Data-Efficient Headers**: Optimized HTTP headers for cellular compatibility
+- **Connection Quality Monitoring**: Real-time assessment prevents failed streams
 
 ## Safety Features
 

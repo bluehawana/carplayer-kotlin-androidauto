@@ -15,6 +15,7 @@ class HybridMediaController(private val context: Context) {
     private var currentEngine = MediaEngine.EXOPLAYER
     private var currentUrl = ""
     private var videoContainer: FrameLayout? = null
+    private val networkBalancer = NetworkBalancer(context)
     
     private var errorCallback: ((String) -> Unit)? = null
     private var stateChangedCallback: ((Boolean) -> Unit)? = null
@@ -89,11 +90,45 @@ class HybridMediaController(private val context: Context) {
         Log.d(TAG, "Starting playback with $currentEngine for: $url")
         currentUrl = url
         
-        // Special handling for Sky Sports F1 - try ExoPlayer first with optimizations
-        if (url.contains("354945") || (url.lowercase().contains("sky") && url.lowercase().contains("f1"))) {
-            Log.d(TAG, "Sky Sports F1 detected - using ExoPlayer with audio optimizations")
-            errorCallback?.invoke("🏎️ Optimizing Sky Sports F1 audio with ExoPlayer...")
-            currentEngine = MediaEngine.EXOPLAYER
+        // Get optimal media engine based on network conditions
+        val currentNetwork = networkBalancer.getCurrentNetworkType()
+        val streamingProfile = networkBalancer.getOptimalStreamingProfile(currentNetwork)
+        
+        // Network-aware engine selection
+        val recommendedEngine = when {
+            // Sky Sports F1 - always use ExoPlayer for audio optimizations
+            url.contains("354945") || (url.lowercase().contains("sky") && url.lowercase().contains("f1")) -> {
+                Log.d(TAG, "Sky Sports F1 detected - using ExoPlayer with audio optimizations")
+                errorCallback?.invoke("🏎️ Optimizing Sky Sports F1 audio with ExoPlayer...")
+                MediaEngine.EXOPLAYER
+            }
+            // Cellular/Hotspot - use recommended engine from profile
+            currentNetwork?.isHotspot == true || currentNetwork?.type == "Mobile Data" -> {
+                Log.d(TAG, "Cellular connection - using ${streamingProfile.preferredEngine} engine")
+                if (streamingProfile.preferredEngine == "exoplayer") MediaEngine.EXOPLAYER else MediaEngine.VLC
+            }
+            // Low bandwidth - prefer VLC
+            streamingProfile.description.contains("Low Bandwidth") -> {
+                Log.d(TAG, "Low bandwidth detected - using VLC for better compatibility")
+                errorCallback?.invoke("🐌 Low bandwidth - using VLC engine")
+                MediaEngine.VLC
+            }
+            // Default to current engine or ExoPlayer
+            else -> currentEngine
+        }
+        
+        // Switch engine if needed
+        if (currentEngine != recommendedEngine) {
+            currentEngine = recommendedEngine
+            Log.d(TAG, "Switching to recommended engine: $currentEngine")
+            
+            // Recreate video surface for the new engine
+            videoContainer?.let { container ->
+                when (currentEngine) {
+                    MediaEngine.EXOPLAYER -> exoPlayerController?.createVideoSurface(container)
+                    MediaEngine.VLC -> vlcMediaController?.createVideoSurface(container)
+                }
+            }
         }
         
         when (currentEngine) {

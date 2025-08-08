@@ -18,6 +18,8 @@ class VideoPlayerActivity : AppCompatActivity() {
     private lateinit var channelNameTextView: TextView
     private lateinit var controlsLayout: LinearLayout
     private lateinit var mediaController: HybridMediaController
+    private lateinit var networkMonitor: NetworkMonitor
+    private lateinit var channelPreloader: ChannelPreloader
     
     private var channelName: String = ""
     private var streamUrl: String = ""
@@ -51,6 +53,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         currentChannelIndex = intent.getIntExtra("CURRENT_INDEX", 0)
         
         setupMediaController()
+        setupNetworkMonitoring()
         setupUI()
         startPlayback()
     }
@@ -58,6 +61,46 @@ class VideoPlayerActivity : AppCompatActivity() {
     private fun setupMediaController() {
         mediaController = HybridMediaController(this)
         setupMediaControllerCallbacks()
+    }
+    
+    private fun setupNetworkMonitoring() {
+        networkMonitor = NetworkMonitor(this)
+        channelPreloader = ChannelPreloader(this)
+        
+        // Monitor network changes and adjust streaming
+        networkMonitor.setOnNetworkChangedCallback { networkInfo ->
+            android.util.Log.d("NetworkMonitor", "Network changed: ${networkInfo?.type} (Hotspot: ${networkInfo?.isHotspot})")
+            
+            // Update status with network info
+            val networkDesc = when {
+                networkInfo?.isHotspot == true -> "📱 Using hotspot connection"
+                networkInfo?.type == "Mobile Data" -> "📱 Using mobile data"
+                networkInfo?.type == "WiFi" -> "📶 Using WiFi connection"
+                else -> "🔌 Network connection"
+            }
+            
+            android.os.Handler(android.os.Looper.getMainLooper()).post {
+                if (statusTextView.visibility == android.view.View.GONE) {
+                    statusTextView.text = networkDesc
+                    statusTextView.visibility = android.view.View.VISIBLE
+                    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                        statusTextView.visibility = android.view.View.GONE
+                    }, 2000)
+                }
+            }
+        }
+        
+        networkMonitor.setOnStreamingProfileChangedCallback { profile ->
+            android.util.Log.d("NetworkMonitor", "Streaming profile changed: ${profile.description}")
+            
+            // Start preloading if recommended
+            if (profile.preloadChannels && allChannelUrls.isNotEmpty()) {
+                channelPreloader.preloadChannels(allChannelUrls, streamUrl)
+            }
+        }
+        
+        // Start network monitoring
+        networkMonitor.startMonitoring()
     }
     
     private fun setupUI() {
@@ -390,13 +433,30 @@ class VideoPlayerActivity : AppCompatActivity() {
         // Update channel name display
         channelNameTextView.text = channelName
         
-        // Show loading status
-        statusTextView.text = "❄️ Switching to $channelName..."
+        // Check if channel is preloaded
+        val preloadInfo = if (::channelPreloader.isInitialized) {
+            channelPreloader.getChannelRecommendation(streamUrl)
+        } else null
+        
+        // Show loading status with preload info
+        val baseMessage = "❄️ Switching to $channelName..."
+        val statusMessage = if (preloadInfo != null) {
+            "$baseMessage\n$preloadInfo"
+        } else {
+            baseMessage
+        }
+        
+        statusTextView.text = statusMessage
         statusTextView.visibility = android.view.View.VISIBLE
         
         // Stop current playback for channel switching
         if (::mediaController.isInitialized) {
             mediaController.stopPlayback()
+        }
+        
+        // Start preloading next channels after switching
+        if (::channelPreloader.isInitialized && allChannelUrls.isNotEmpty()) {
+            channelPreloader.preloadChannels(allChannelUrls, streamUrl)
         }
         
         // Longer delay for proper cleanup and buffer reset
@@ -455,6 +515,12 @@ class VideoPlayerActivity : AppCompatActivity() {
         super.onDestroy()
         if (::mediaController.isInitialized) {
             mediaController.release()
+        }
+        if (::networkMonitor.isInitialized) {
+            networkMonitor.stopMonitoring()
+        }
+        if (::channelPreloader.isInitialized) {
+            channelPreloader.clearCache()
         }
     }
     

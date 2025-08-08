@@ -22,6 +22,7 @@ class ExoPlayerController(private val context: Context) {
 
     private var exoPlayer: ExoPlayer? = null
     private var playerView: PlayerView? = null
+    private val networkBalancer = NetworkBalancer(context)
     
     private var errorCallback: ((String) -> Unit)? = null
     private var stateChangedCallback: ((Boolean) -> Unit)? = null
@@ -157,11 +158,22 @@ class ExoPlayerController(private val context: Context) {
     private fun createMediaSource(url: String): MediaSource {
         val uri = Uri.parse(url)
         
-        // Create HTTP data source with optimized settings for IPTV
+        // Get network-optimized settings
+        val currentNetwork = networkBalancer.getCurrentNetworkType()
+        val streamingProfile = networkBalancer.getOptimalStreamingProfile(currentNetwork)
+        
+        Log.d(TAG, "Using streaming profile: ${streamingProfile.description}")
+        if (currentNetwork?.isHotspot == true) {
+            errorCallback?.invoke("📱 Hotspot detected - optimizing for cellular")
+        } else if (currentNetwork?.type == "Mobile Data") {
+            errorCallback?.invoke("📱 Mobile data - using optimized settings")
+        }
+        
+        // Create HTTP data source with network-adaptive settings
         val httpDataSourceFactory = DefaultHttpDataSource.Factory()
             .setUserAgent("ExoPlayer-IPTV/1.0")
-            .setConnectTimeoutMs(10000) // 10 second timeout
-            .setReadTimeoutMs(10000)
+            .setConnectTimeoutMs(streamingProfile.connectTimeoutMs)
+            .setReadTimeoutMs(streamingProfile.readTimeoutMs)
             .setAllowCrossProtocolRedirects(true)
 
         // Special handling for Sky Sports F1 and other problematic streams
@@ -170,6 +182,16 @@ class ExoPlayerController(private val context: Context) {
             
             // Use specific user agent that works better with Sky streams
             httpDataSourceFactory.setUserAgent("Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36")
+        }
+        
+        // Additional headers for cellular/hotspot connections
+        if (currentNetwork?.isHotspot == true || currentNetwork?.type == "Mobile Data") {
+            // These headers help with some IPTV providers on cellular
+            httpDataSourceFactory.setDefaultRequestProperties(mapOf(
+                "Cache-Control" to "no-cache",
+                "Pragma" to "no-cache",
+                "Accept-Encoding" to "identity"
+            ))
         }
 
         return when {
