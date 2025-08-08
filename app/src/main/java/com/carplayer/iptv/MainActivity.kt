@@ -61,23 +61,23 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun setupNordicUI() {
-        // Get screen dimensions for responsive design
+        // Get screen dimensions for Volvo EX90 responsive design
         val displayMetrics = resources.displayMetrics
         val screenWidth = displayMetrics.widthPixels
         val screenHeight = displayMetrics.heightPixels
         val density = displayMetrics.density
         
-        // Calculate responsive values based on screen size
-        val basePadding = (16 * density).toInt()
-        val titleSize = if (screenWidth > 1200) 24f else if (screenWidth > 800) 20f else 18f
-        val subtitleSize = if (screenWidth > 1200) 16f else if (screenWidth > 800) 14f else 12f
-        val buttonTextSize = if (screenWidth > 1200) 18f else if (screenWidth > 800) 16f else 14f
+        // Volvo EX90 specific values - 11.2" display optimization
+        val basePadding = (24 * density).toInt() // Increased for car use
+        val titleSize = if (screenWidth > 1400) 28f else if (screenWidth > 1000) 24f else 20f
+        val subtitleSize = if (screenWidth > 1400) 18f else if (screenWidth > 1000) 16f else 14f
+        val buttonTextSize = if (screenWidth > 1400) 20f else if (screenWidth > 1000) 18f else 16f
         
-        // Create Nordic-themed layout programmatically - FULLY RESPONSIVE
+        // Create Volvo EX90 optimized layout - Dark theme
         val layout = android.widget.LinearLayout(this).apply {
             orientation = android.widget.LinearLayout.VERTICAL
             setPadding(basePadding, basePadding/2, basePadding, basePadding/2)
-            setBackgroundColor(0xFF145da0.toInt()) // Midnight Blue background
+            setBackgroundColor(0xFF1a1a1a.toInt()) // Volvo dark background
         }
         
         // App title - FULLY RESPONSIVE
@@ -112,73 +112,78 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(networkStatusView)
         
-        // Start Watching button - FULLY RESPONSIVE Ice Age Style
+        // Start Watching button - Volvo EX90 optimized touch target
         val watchButton = Button(this).apply {
             text = "🎬 Start Watching"
             textSize = buttonTextSize
-            setTextColor(0xFF00FF41.toInt()) // Ice green
-            setBackgroundResource(android.R.drawable.btn_default)
-            background.setColorFilter(0xFF004D5C.toInt(), android.graphics.PorterDuff.Mode.MULTIPLY) // Deep ice
-            setPadding((20 * density).toInt(), (12 * density).toInt(), (20 * density).toInt(), (12 * density).toInt())
+            setTextColor(0xFFFFFFFF.toInt()) // White text for Volvo theme
+            setBackgroundColor(0xFF2196F3.toInt()) // Volvo blue
+            setPadding((24 * density).toInt(), (16 * density).toInt(), (24 * density).toInt(), (16 * density).toInt())
             layoutParams = android.widget.LinearLayout.LayoutParams(
                 android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                (48 * density).toInt() // Fixed height based on density
+                (64 * density).toInt() // Larger touch target for car use
             ).apply {
-                setMargins((12 * density).toInt(), (6 * density).toInt(), (12 * density).toInt(), (6 * density).toInt())
+                setMargins((16 * density).toInt(), (12 * density).toInt(), (16 * density).toInt(), (12 * density).toInt())
             }
+            // Add haptic feedback for car touch
+            isHapticFeedbackEnabled = true
             setOnClickListener {
+                performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
                 launchCarInterface()
             }
         }
         layout.addView(watchButton)
         
-        // Import Settings button - FULLY RESPONSIVE Ice Age Style
+        // Import Settings button - Volvo EX90 car optimized
         val settingsButton = Button(this).apply {
             text = "🗂️ Import Channels"
             textSize = buttonTextSize - 2f
-            setTextColor(0xFFE0F7FA.toInt()) // Ice white
-            setBackgroundResource(android.R.drawable.btn_default)
-            background.setColorFilter(0xFF00BCD4.toInt(), android.graphics.PorterDuff.Mode.MULTIPLY) // Ice accent
-            setPadding((16 * density).toInt(), (10 * density).toInt(), (16 * density).toInt(), (10 * density).toInt())
+            setTextColor(0xFFFFFFFF.toInt()) // White text
+            setBackgroundColor(0xFF424242.toInt()) // Volvo dark gray
+            setPadding((20 * density).toInt(), (14 * density).toInt(), (20 * density).toInt(), (14 * density).toInt())
             layoutParams = android.widget.LinearLayout.LayoutParams(
                 android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                (44 * density).toInt() // Fixed height based on density
+                (56 * density).toInt() // Car-friendly touch target
             ).apply {
-                setMargins((12 * density).toInt(), (4 * density).toInt(), (12 * density).toInt(), (4 * density).toInt())
+                setMargins((16 * density).toInt(), (8 * density).toInt(), (16 * density).toInt(), (8 * density).toInt())
             }
+            isHapticFeedbackEnabled = true
             setOnClickListener {
+                performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
                 val intent = Intent(this@MainActivity, ImportActivity::class.java)
                 startActivity(intent)
             }
         }
         layout.addView(settingsButton)
         
-        // Network test button - FULLY RESPONSIVE
+        // Network test button - Volvo EX90 touch optimized
         val networkButton = Button(this).apply {
             text = "🌐 Test Network"
             textSize = buttonTextSize - 2f
-            setTextColor(0xFF145da0.toInt()) // Midnight Blue text
-            setBackgroundColor(0xFFb1d4e0.toInt()) // Baby Blue background
-            setPadding((16 * density).toInt(), (10 * density).toInt(), (16 * density).toInt(), (10 * density).toInt())
+            setTextColor(0xFF1a1a1a.toInt()) // Dark text
+            setBackgroundColor(0xFF9E9E9E.toInt()) // Light gray Volvo theme
+            setPadding((20 * density).toInt(), (14 * density).toInt(), (20 * density).toInt(), (14 * density).toInt())
             layoutParams = android.widget.LinearLayout.LayoutParams(
                 android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                (44 * density).toInt() // Fixed height based on density
+                (56 * density).toInt() // Car-friendly touch target
             ).apply {
-                setMargins((12 * density).toInt(), (4 * density).toInt(), (12 * density).toInt(), (4 * density).toInt())
+                setMargins((16 * density).toInt(), (8 * density).toInt(), (16 * density).toInt(), (8 * density).toInt())
             }
+            isHapticFeedbackEnabled = true
             setOnClickListener {
+                performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
                 checkNetworkStatus()
             }
         }
         layout.addView(networkButton)
         
-        // Version info - FULLY RESPONSIVE
+        // Version info - Volvo EX90 Edition
         val versionView = TextView(this).apply {
-            text = "❄️ Nordic Edition v1.0 | 🎯 92 Channels"
-            textSize = if (screenWidth > 800) 12f else 10f
-            setTextColor(0xFFb1d4e0.toInt()) // Baby Blue
+            text = "🚗 Volvo EX90 Edition v2.0 | 🎯 92 Channels | 📱 Touch Optimized"
+            textSize = if (screenWidth > 1000) 14f else 12f
+            setTextColor(0xFF9E9E9E.toInt()) // Light gray
             gravity = android.view.Gravity.CENTER
-            setPadding(0, (6 * density).toInt(), 0, 0)
+            setPadding(0, (8 * density).toInt(), 0, 0)
         }
         layout.addView(versionView)
         

@@ -28,11 +28,13 @@ class CarTestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Create simple grid layout programmatically with Nordic theme
+        // Create Volvo EX90 optimized grid layout - 2 columns for better touch targets
         recyclerView = RecyclerView(this).apply {
-            layoutManager = GridLayoutManager(this@CarTestActivity, 4) // 4 columns like APTV
-            setPadding(32, 32, 32, 32)
-            setBackgroundColor(0xFFb1d4e0.toInt()) // Baby Blue Nordic background
+            layoutManager = GridLayoutManager(this@CarTestActivity, 2) // 2 columns for Volvo EX90 touch
+            setPadding(48, 48, 48, 48) // Increased padding for car use
+            setBackgroundColor(0xFF1a1a1a.toInt()) // Volvo dark theme
+            // Add haptic feedback for touch
+            isHapticFeedbackEnabled = true
         }
         
         setContentView(recyclerView)
