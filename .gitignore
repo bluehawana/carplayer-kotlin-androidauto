@@ -98,3 +98,5 @@ config.json
 .env.local
 .env.production
 
+*.m3u
+*.m3u8
