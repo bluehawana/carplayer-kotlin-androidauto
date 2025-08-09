@@ -33,19 +33,37 @@ class M3UImporter(private val context: Context) {
             val importedFiles = mutableListOf<M3UFileManager.M3UFileMetadata>()
             
             try {
-                // Import the iptv.m3u file from assets
-                val assetManager = context.assets
-                val content = assetManager.open("iptv.m3u").bufferedReader().use { it.readText() }
+                // Load M3U content from secure location (.env.local in project root)
+                val projectRoot = java.io.File(context.applicationInfo.dataDir).parentFile?.parentFile?.parentFile?.parentFile
+                val envFile = java.io.File(projectRoot, ".env.local")
                 
-                android.util.Log.d("M3UImporter", "Loaded M3U content, length: ${content.length}")
-                android.util.Log.d("M3UImporter", "First 200 chars: ${content.take(200)}")
-                
-                val metadata = m3uFileManager.saveM3UFile(content, "IPTV Channels")
-                if (metadata != null) {
-                    android.util.Log.d("M3UImporter", "Successfully saved M3U file: ${metadata.fileName}")
-                    importedFiles.add(metadata)
+                if (envFile.exists()) {
+                    val content = envFile.readText()
+                    android.util.Log.d("M3UImporter", "Loaded M3U content from .env.local, length: ${content.length}")
+                    
+                    val metadata = m3uFileManager.saveM3UFile(content, "IPTV Channels")
+                    if (metadata != null) {
+                        android.util.Log.d("M3UImporter", "Successfully saved M3U file: ${metadata.fileName}")
+                        importedFiles.add(metadata)
+                    } else {
+                        android.util.Log.e("M3UImporter", "Failed to save M3U file")
+                    }
                 } else {
-                    android.util.Log.e("M3UImporter", "Failed to save M3U file")
+                    // Fallback: try to load from assets if .env.local not found
+                    try {
+                        val assetManager = context.assets
+                        val content = assetManager.open("iptv.m3u").bufferedReader().use { it.readText() }
+                        
+                        android.util.Log.d("M3UImporter", "Loaded fallback M3U content from assets, length: ${content.length}")
+                        
+                        val metadata = m3uFileManager.saveM3UFile(content, "IPTV Channels")
+                        if (metadata != null) {
+                            android.util.Log.d("M3UImporter", "Successfully saved fallback M3U file: ${metadata.fileName}")
+                            importedFiles.add(metadata)
+                        }
+                    } catch (assetException: Exception) {
+                        android.util.Log.e("M3UImporter", "No M3U file found in .env.local or assets", assetException)
+                    }
                 }
             } catch (e: Exception) {
                 android.util.Log.e("M3UImporter", "Failed to import M3U file", e)

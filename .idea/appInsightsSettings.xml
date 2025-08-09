@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.carplayer.iptv" />
+                  <option name="mobileSdkAppId" value="1:1055425659261:android:5ee98a20ffff8d755c8c14" />
+                  <option name="projectId" value="cartvplayer-793f6" />
+                  <option name="projectNumber" value="1055425659261" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
