@@ -62,7 +62,8 @@ captures/
 .externalNativeBuild
 
 # Google Services (e.g. APIs or Firebase)
-google-services.json
+# google-services.json - Keep template but remove actual keys
+app/google-services.json
 
 # Freeline
 freeline.py
