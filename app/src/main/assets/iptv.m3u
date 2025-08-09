@@ -1,0 +1,61 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="bbc1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/200px-BBC_One_logo_2021.svg.png" group-title="UK",BBC One
+https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_hd/t=3840/v=pv14/b=5070016/main.m3u8
+#EXTINF:-1 tvg-id="bbc2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/BBC_Two_logo_2021.svg/200px-BBC_Two_logo_2021.svg.png" group-title="UK",BBC Two
+https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_two_hd/t=3840/v=pv14/b=5070016/main.m3u8
+#EXTINF:-1 tvg-id="itv1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ITV1_logo_2013.svg/200px-ITV1_logo_2013.svg.png" group-title="UK",ITV1
+https://simulcast.itv.com/playlist.m3u8
+#EXTINF:-1 tvg-id="channel4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Channel_4_logo_2015.svg/200px-Channel_4_logo_2015.svg.png" group-title="UK",Channel 4
+https://csm-e-stv.tls1.yospace.com/csm/extlive/stv02/live.m3u8
+#EXTINF:-1 tvg-id="channel5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Channel_5_logo_2016.svg/200px-Channel_5_logo_2016.svg.png" group-title="UK",Channel 5
+https://live.my5.tv/live/live.m3u8
+#EXTINF:-1 tvg-id="skynews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sky_News_logo.svg/200px-Sky_News_logo.svg.png" group-title="News",Sky News
+https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/016a/Content/HLS_001_1080_30/Live/channel(skynews)/index.m3u8
+#EXTINF:-1 tvg-id="bbcnews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/BBC_News_2019.svg/200px-BBC_News_2019.svg.png" group-title="News",BBC News
+https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news24/t=3840/v=pv14/b=5070016/main.m3u8
+#EXTINF:-1 tvg-id="cnn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/200px-CNN_International_logo.svg.png" group-title="News",CNN International
+https://cnn-cnninternational-1-gb.samsung.wurl.com/manifest/playlist.m3u8
+#EXTINF:-1 tvg-id="euronews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Euronews_2016_logo.svg/200px-Euronews_2016_logo.svg.png" group-title="News",Euronews
+https://rakuten-euronews-1-gb.samsung.wurl.com/manifest/playlist.m3u8
+#EXTINF:-1 tvg-id="france24" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/France24.png/200px-France24.png" group-title="News",France 24
+https://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8
+#EXTINF:-1 tvg-id="bloomberg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bloomberg_Television_logo.svg/200px-Bloomberg_Television_logo.svg.png" group-title="Business",Bloomberg TV
+https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8
+#EXTINF:-1 tvg-id="natgeowild" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/National_Geographic_Wild_logo.svg/200px-National_Geographic_Wild_logo.svg.png" group-title="Documentary",Nat Geo Wild
+https://nationalgeographic.com/live/natgeowild.m3u8
+#EXTINF:-1 tvg-id="discovery" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Discovery_Channel_logo.svg/200px-Discovery_Channel_logo.svg.png" group-title="Documentary",Discovery Channel
+https://discovery.com/live/discovery.m3u8
+#EXTINF:-1 tvg-id="animalplanet" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Animal_Planet_logo.svg/200px-Animal_Planet_logo.svg.png" group-title="Documentary",Animal Planet
+https://animalplanet.com/live/animalplanet.m3u8
+#EXTINF:-1 tvg-id="historychannel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/200px-History_%282021%29.svg.png" group-title="Documentary",History Channel
+https://history.com/live/history.m3u8
+#EXTINF:-1 tvg-id="espn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/200px-ESPN_wordmark.svg.png" group-title="Sports",ESPN
+https://espn.com/live/espn.m3u8
+#EXTINF:-1 tvg-id="skysports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Sky_Sports_logo_2020.svg/200px-Sky_Sports_logo_2020.svg.png" group-title="Sports",Sky Sports
+https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/016a/Content/HLS_001_1080_30/Live/channel(skysports)/index.m3u8
+#EXTINF:-1 tvg-id="skysportsf1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sky_Sports_F1_logo_2020.svg/200px-Sky_Sports_F1_logo_2020.svg.png" group-title="Sports",Sky Sports F1
+https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/016a/Content/HLS_001_1080_30/Live/channel(skysportsf1)/index.m3u8
+#EXTINF:-1 tvg-id="eurosport1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Eurosport_1_logo.svg/200px-Eurosport_1_logo.svg.png" group-title="Sports",Eurosport 1
+https://eurosport.com/live/eurosport1.m3u8
+#EXTINF:-1 tvg-id="eurosport2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Eurosport_2_logo.svg/200px-Eurosport_2_logo.svg.png" group-title="Sports",Eurosport 2
+https://eurosport.com/live/eurosport2.m3u8
+#EXTINF:-1 tvg-id="mtv" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/MTV_Logo_2010.svg/200px-MTV_Logo_2010.svg.png" group-title="Music",MTV
+https://mtv.com/live/mtv.m3u8
+#EXTINF:-1 tvg-id="vh1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/VH1_logonew.svg/200px-VH1_logonew.svg.png" group-title="Music",VH1
+https://vh1.com/live/vh1.m3u8
+#EXTINF:-1 tvg-id="comedycentral" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/200px-Comedy_Central_2018.svg.png" group-title="Entertainment",Comedy Central
+https://comedycentral.com/live/comedycentral.m3u8
+#EXTINF:-1 tvg-id="cartoonnetwork" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/200px-Cartoon_Network_2010_logo.svg.png" group-title="Kids",Cartoon Network
+https://cartoonnetwork.com/live/cartoonnetwork.m3u8
+#EXTINF:-1 tvg-id="nickelodeon" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/200px-Nickelodeon_2009_logo.svg.png" group-title="Kids",Nickelodeon
+https://nickelodeon.com/live/nickelodeon.m3u8
+#EXTINF:-1 tvg-id="disneychannel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Disney_Channel_logo_%282014%29.svg/200px-Disney_Channel_logo_%282014%29.svg.png" group-title="Kids",Disney Channel
+https://disney.com/live/disneychannel.m3u8
+#EXTINF:-1 tvg-id="sv1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/SVT1_logo.svg/200px-SVT1_logo.svg.png" group-title="Sweden",SVT1
+https://svtplay-se.akamaized.net/svt/svt1/master.m3u8
+#EXTINF:-1 tvg-id="sv2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/SVT2_logo.svg/200px-SVT2_logo.svg.png" group-title="Sweden",SVT2
+https://svtplay-se.akamaized.net/svt/svt2/master.m3u8
+#EXTINF:-1 tvg-id="tv4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/TV4_logo_2019.svg/200px-TV4_logo_2019.svg.png" group-title="Sweden",TV4
+https://tv4play-se.akamaized.net/live/tv4.m3u8
+#EXTINF:-1 tvg-id="kanal5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Kanal_5_logo.svg/200px-Kanal_5_logo.svg.png" group-title="Sweden",Kanal 5
+https://kanal5-se.akamaized.net/live/kanal5.m3u8
