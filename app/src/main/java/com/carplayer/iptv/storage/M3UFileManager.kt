@@ -213,8 +213,9 @@ class M3UFileManager(private val context: Context) {
                     val name = extractChannelName(channelInfo)
                     val logoUrl = extractLogoUrl(channelInfo)
                     val category = extractCategory(channelInfo)
+                    val channelNumber = extractChannelNumber(channelInfo)
                     
-                    android.util.Log.d("M3UFileManager", "Creating channel: $name, URL: ${line.trim()}")
+                    android.util.Log.d("M3UFileManager", "Creating channel: $name, Number: $channelNumber, URL: ${line.trim()}")
                     
                     currentChannel = Channel(
                         id = java.util.UUID.randomUUID().toString(),
@@ -222,7 +223,8 @@ class M3UFileManager(private val context: Context) {
                         description = category,
                         streamUrl = line.trim(),
                         logoUrl = logoUrl,
-                        category = category
+                        category = category,
+                        channelNumber = channelNumber
                     )
                     channels.add(currentChannel)
                 }
@@ -245,6 +247,11 @@ class M3UFileManager(private val context: Context) {
     private fun extractCategory(info: String): String {
         val categoryPattern = """group-title="([^"]+)"""".toRegex()
         return categoryPattern.find(info)?.groupValues?.get(1) ?: "General"
+    }
+    
+    private fun extractChannelNumber(info: String): String? {
+        val channelNumberPattern = """tvg-id="([^"]+)"""".toRegex()
+        return channelNumberPattern.find(info)?.groupValues?.get(1)
     }
     
     private suspend fun saveMetadata(metadata: M3UFileMetadata) {

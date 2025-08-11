@@ -27,9 +27,15 @@ class ChannelListScreen(
         
         // Add channels from subscription
         channelList.forEach { channel ->
+            val displayTitle = if (channel.channelNumber != null) {
+                "${channel.channelNumber} - ${channel.name}"
+            } else {
+                channel.name
+            }
+            
             itemListBuilder.addItem(
                 Row.Builder()
-                    .setTitle(channel.name)
+                    .setTitle(displayTitle)
                     .addText(channel.description)
                     .setOnClickListener {
                         screenManager.push(PlayerScreen(carContext, channel, channelList))

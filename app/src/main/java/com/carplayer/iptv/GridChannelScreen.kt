@@ -24,8 +24,14 @@ class GridChannelScreen(
         val displayChannels = channels.take(12)
         
         displayChannels.forEach { channel ->
+            val displayTitle = if (channel.channelNumber != null) {
+                "${channel.channelNumber} - ${channel.name}"
+            } else {
+                channel.name
+            }
+            
             val gridItem = GridItem.Builder()
-                .setTitle(channel.name)
+                .setTitle(displayTitle)
                 .setText(getChannelCategory(channel))
                 .setImage(getChannelIcon(channel))
                 .setOnClickListener {

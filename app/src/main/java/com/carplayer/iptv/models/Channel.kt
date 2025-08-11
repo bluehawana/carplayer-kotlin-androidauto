@@ -7,7 +7,8 @@ data class Channel(
     val streamUrl: String,
     val logoUrl: String? = null,
     val category: String = "General",
-    val isHD: Boolean = false
+    val isHD: Boolean = false,
+    val channelNumber: String? = null
 )
 
 data class ChannelGroup(

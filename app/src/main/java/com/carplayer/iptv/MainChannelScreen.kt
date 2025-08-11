@@ -107,8 +107,14 @@ class MainChannelScreen(carContext: CarContext) : Screen(carContext) {
         
         // Show all channels instead of limiting to 16
         channels.forEachIndexed { _, channel ->
+            val displayTitle = if (channel.channelNumber != null) {
+                "${channel.channelNumber} - ${channel.name}"
+            } else {
+                channel.name
+            }
+            
             val gridItem = GridItem.Builder()
-                .setTitle(channel.name)
+                .setTitle(displayTitle)
                 .setText(getChannelInfo(channel))
                 .setImage(getChannelThumbnail(channel))
                 .setOnClickListener {
@@ -174,8 +180,14 @@ class MainChannelScreen(carContext: CarContext) : Screen(carContext) {
         val listBuilder = ItemList.Builder()
         
         channels.forEach { channel ->
+            val displayTitle = if (channel.channelNumber != null) {
+                "${channel.channelNumber} - ${channel.name}"
+            } else {
+                channel.name
+            }
+            
             val row = Row.Builder()
-                .setTitle(channel.name)
+                .setTitle(displayTitle)
                 .addText(getChannelInfo(channel))
                 .addText("Category: ${getChannelCategory(channel)}")
                 .setImage(getChannelThumbnail(channel))

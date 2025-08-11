@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private val channelManager = ChannelManager()
     private lateinit var networkBalancer: NetworkBalancer
     private lateinit var networkStatusView: TextView
+    private lateinit var subtitleView: TextView
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +36,11 @@ class MainActivity : AppCompatActivity() {
         val preloadedFiles = PreloadedM3UFiles(this)
         preloadedFiles.loadSampleM3UFiles()
         
-        // Import M3U files from project folder
+        // Import M3U files from project folder and update channel count
         val m3uImporter = M3UImporter(this)
         lifecycleScope.launch {
-            m3uImporter.importProjectM3UFiles()
+            val importedFiles = m3uImporter.importProjectM3UFiles()
+            updateChannelCount()
         }
         
         // Check network status
@@ -92,8 +94,8 @@ class MainActivity : AppCompatActivity() {
         layout.addView(titleView)
         
         // Subtitle - FULLY RESPONSIVE
-        val subtitleView = TextView(this).apply {
-            text = "🌨️ Nordic Ice Age Theme\n🎬 92 Premium Channels"
+        subtitleView = TextView(this).apply {
+            text = "🌨️ Nordic Ice Age Theme\n🎬 Loading channels..."
             textSize = subtitleSize
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
@@ -247,5 +249,33 @@ class MainActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("iptv_prefs", MODE_PRIVATE)
         prefs.edit().clear().apply()
         android.util.Log.d("MainActivity", "Channel cache cleared - will reload fresh M3U data")
+    }
+    
+    private fun updateChannelCount() {
+        lifecycleScope.launch {
+            try {
+                val m3uFileManager = com.carplayer.iptv.storage.M3UFileManager(this@MainActivity)
+                val m3uFiles = m3uFileManager.getAllM3UFiles()
+                
+                val channelCount = if (m3uFiles.isNotEmpty()) {
+                    val channels = m3uFileManager.loadM3UFile(m3uFiles.first().fileName)
+                    channels?.size ?: 0
+                } else {
+                    0
+                }
+                
+                runOnUiThread {
+                    subtitleView.text = "🌨️ Nordic Ice Age Theme\n🎬 $channelCount Premium Channels"
+                }
+                
+                android.util.Log.d("MainActivity", "Updated channel count: $channelCount")
+                
+            } catch (e: Exception) {
+                android.util.Log.e("MainActivity", "Failed to update channel count", e)
+                runOnUiThread {
+                    subtitleView.text = "🌨️ Nordic Ice Age Theme\n🎬 Premium Channels"
+                }
+            }
+        }
     }
 }
