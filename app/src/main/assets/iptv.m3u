@@ -1,61 +1,213 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="bbc1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/200px-BBC_One_logo_2021.svg.png" group-title="UK",BBC One
-https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_hd/t=3840/v=pv14/b=5070016/main.m3u8
-#EXTINF:-1 tvg-id="bbc2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/BBC_Two_logo_2021.svg/200px-BBC_Two_logo_2021.svg.png" group-title="UK",BBC Two
-https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_two_hd/t=3840/v=pv14/b=5070016/main.m3u8
-#EXTINF:-1 tvg-id="itv1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ITV1_logo_2013.svg/200px-ITV1_logo_2013.svg.png" group-title="UK",ITV1
-https://simulcast.itv.com/playlist.m3u8
-#EXTINF:-1 tvg-id="channel4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Channel_4_logo_2015.svg/200px-Channel_4_logo_2015.svg.png" group-title="UK",Channel 4
-https://csm-e-stv.tls1.yospace.com/csm/extlive/stv02/live.m3u8
-#EXTINF:-1 tvg-id="channel5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Channel_5_logo_2016.svg/200px-Channel_5_logo_2016.svg.png" group-title="UK",Channel 5
-https://live.my5.tv/live/live.m3u8
-#EXTINF:-1 tvg-id="skynews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sky_News_logo.svg/200px-Sky_News_logo.svg.png" group-title="News",Sky News
-https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/016a/Content/HLS_001_1080_30/Live/channel(skynews)/index.m3u8
-#EXTINF:-1 tvg-id="bbcnews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/BBC_News_2019.svg/200px-BBC_News_2019.svg.png" group-title="News",BBC News
-https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news24/t=3840/v=pv14/b=5070016/main.m3u8
-#EXTINF:-1 tvg-id="cnn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/200px-CNN_International_logo.svg.png" group-title="News",CNN International
-https://cnn-cnninternational-1-gb.samsung.wurl.com/manifest/playlist.m3u8
-#EXTINF:-1 tvg-id="euronews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Euronews_2016_logo.svg/200px-Euronews_2016_logo.svg.png" group-title="News",Euronews
-https://rakuten-euronews-1-gb.samsung.wurl.com/manifest/playlist.m3u8
-#EXTINF:-1 tvg-id="france24" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/France24.png/200px-France24.png" group-title="News",France 24
-https://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8
-#EXTINF:-1 tvg-id="bloomberg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bloomberg_Television_logo.svg/200px-Bloomberg_Television_logo.svg.png" group-title="Business",Bloomberg TV
-https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8
-#EXTINF:-1 tvg-id="natgeowild" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/National_Geographic_Wild_logo.svg/200px-National_Geographic_Wild_logo.svg.png" group-title="Documentary",Nat Geo Wild
-https://nationalgeographic.com/live/natgeowild.m3u8
-#EXTINF:-1 tvg-id="discovery" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Discovery_Channel_logo.svg/200px-Discovery_Channel_logo.svg.png" group-title="Documentary",Discovery Channel
-https://discovery.com/live/discovery.m3u8
-#EXTINF:-1 tvg-id="animalplanet" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Animal_Planet_logo.svg/200px-Animal_Planet_logo.svg.png" group-title="Documentary",Animal Planet
-https://animalplanet.com/live/animalplanet.m3u8
-#EXTINF:-1 tvg-id="historychannel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/200px-History_%282021%29.svg.png" group-title="Documentary",History Channel
-https://history.com/live/history.m3u8
-#EXTINF:-1 tvg-id="espn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/200px-ESPN_wordmark.svg.png" group-title="Sports",ESPN
-https://espn.com/live/espn.m3u8
-#EXTINF:-1 tvg-id="skysports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Sky_Sports_logo_2020.svg/200px-Sky_Sports_logo_2020.svg.png" group-title="Sports",Sky Sports
-https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/016a/Content/HLS_001_1080_30/Live/channel(skysports)/index.m3u8
-#EXTINF:-1 tvg-id="skysportsf1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sky_Sports_F1_logo_2020.svg/200px-Sky_Sports_F1_logo_2020.svg.png" group-title="Sports",Sky Sports F1
-https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/016a/Content/HLS_001_1080_30/Live/channel(skysportsf1)/index.m3u8
-#EXTINF:-1 tvg-id="eurosport1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Eurosport_1_logo.svg/200px-Eurosport_1_logo.svg.png" group-title="Sports",Eurosport 1
-https://eurosport.com/live/eurosport1.m3u8
-#EXTINF:-1 tvg-id="eurosport2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Eurosport_2_logo.svg/200px-Eurosport_2_logo.svg.png" group-title="Sports",Eurosport 2
-https://eurosport.com/live/eurosport2.m3u8
-#EXTINF:-1 tvg-id="mtv" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/MTV_Logo_2010.svg/200px-MTV_Logo_2010.svg.png" group-title="Music",MTV
-https://mtv.com/live/mtv.m3u8
-#EXTINF:-1 tvg-id="vh1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/VH1_logonew.svg/200px-VH1_logonew.svg.png" group-title="Music",VH1
-https://vh1.com/live/vh1.m3u8
-#EXTINF:-1 tvg-id="comedycentral" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/200px-Comedy_Central_2018.svg.png" group-title="Entertainment",Comedy Central
-https://comedycentral.com/live/comedycentral.m3u8
-#EXTINF:-1 tvg-id="cartoonnetwork" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/200px-Cartoon_Network_2010_logo.svg.png" group-title="Kids",Cartoon Network
-https://cartoonnetwork.com/live/cartoonnetwork.m3u8
-#EXTINF:-1 tvg-id="nickelodeon" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/200px-Nickelodeon_2009_logo.svg.png" group-title="Kids",Nickelodeon
-https://nickelodeon.com/live/nickelodeon.m3u8
-#EXTINF:-1 tvg-id="disneychannel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Disney_Channel_logo_%282014%29.svg/200px-Disney_Channel_logo_%282014%29.svg.png" group-title="Kids",Disney Channel
-https://disney.com/live/disneychannel.m3u8
-#EXTINF:-1 tvg-id="sv1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/SVT1_logo.svg/200px-SVT1_logo.svg.png" group-title="Sweden",SVT1
-https://svtplay-se.akamaized.net/svt/svt1/master.m3u8
-#EXTINF:-1 tvg-id="sv2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/SVT2_logo.svg/200px-SVT2_logo.svg.png" group-title="Sweden",SVT2
-https://svtplay-se.akamaized.net/svt/svt2/master.m3u8
-#EXTINF:-1 tvg-id="tv4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/TV4_logo_2019.svg/200px-TV4_logo_2019.svg.png" group-title="Sweden",TV4
-https://tv4play-se.akamaized.net/live/tv4.m3u8
-#EXTINF:-1 tvg-id="kanal5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Kanal_5_logo.svg/200px-Kanal_5_logo.svg.png" group-title="Sweden",Kanal 5
-https://kanal5-se.akamaized.net/live/kanal5.m3u8
+#EXTINF:-1 group-title="News",BBC WORLD NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/40091.m3u8
+#EXTINF:-1 group-title="News",CNN
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/36480.m3u8
+#EXTINF:-1 group-title="News",GB NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400200058.m3u8
+#EXTINF:-1 group-title="News",CNBC
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/82803.m3u8
+#EXTINF:-1 group-title="News",SKY NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153846.m3u8
+#EXTINF:-1 group-title="News",EURO NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181673.m3u8
+#EXTINF:-1 group-title="News",USA TODAY
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/6625.m3u8
+#EXTINF:-1 group-title="News",OAN
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181655.m3u8
+#EXTINF:-1 group-title="News",RT NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181651.m3u8
+#EXTINF:-1 group-title="News",DW ENGLISH
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176619.m3u8
+#EXTINF:-1 group-title="News",FRANCE 24
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153855.m3u8
+#EXTINF:-1 group-title="News",AL JAZEERA
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400230347.m3u8
+#EXTINF:-1 group-title="News",TRT WORLD
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400230338.m3u8
+#EXTINF:-1 group-title="News",NBC NEWS NOW
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/82805.m3u8
+#EXTINF:-1 group-title="News",CHEDDAR NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/77259.m3u8
+#EXTINF:-1 group-title="Entertainment",TALK TV
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/6520.m3u8
+#EXTINF:-1 group-title="Entertainment",ITV Quiz
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/154054.m3u8
+#EXTINF:-1 group-title="Entertainment",Game Show Network
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/33966.m3u8
+#EXTINF:-1 group-title="Entertainment",BBC 1
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153624.m3u8
+#EXTINF:-1 group-title="Entertainment",BBC 2
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153625.m3u8
+#EXTINF:-1 group-title="Entertainment",BBC 3
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/39324.m3u8
+#EXTINF:-1 group-title="Entertainment",ITV 1
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153627.m3u8
+#EXTINF:-1 group-title="Entertainment",ITV 2
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153675.m3u8
+#EXTINF:-1 group-title="Entertainment",ITV 3
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153630.m3u8
+#EXTINF:-1 group-title="Entertainment",ITV 4
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/14095.m3u8
+#EXTINF:-1 group-title="Entertainment",CHANNEL 4
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153633.m3u8
+#EXTINF:-1 group-title="Entertainment",CHANNEL 5
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153634.m3u8
+#EXTINF:-1 group-title="Entertainment",E4
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153636.m3u8
+#EXTINF:-1 group-title="Entertainment",DOVE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181554.m3u8
+#EXTINF:-1 group-title="Movies",IFC
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181559.m3u8
+#EXTINF:-1 group-title="Entertainment",STV
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153673.m3u8
+#EXTINF:-1 group-title="Entertainment",S4C
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153866.m3u8
+#EXTINF:-1 group-title="Entertainment",UTV
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153868.m3u8
+#EXTINF:-1 group-title="Entertainment",SKY MAX
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/2447.m3u8
+#EXTINF:-1 group-title="Entertainment",SYFY
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153653.m3u8
+#EXTINF:-1 group-title="Entertainment",SKY ARTS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191471.m3u8
+#EXTINF:-1 group-title="Entertainment",SKY ATLANTIC
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191472.m3u8
+#EXTINF:-1 group-title="Entertainment",MORE4
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191475.m3u8
+#EXTINF:-1 group-title="Documentary",TLC
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191459.m3u8
+#EXTINF:-1 group-title="Sports",PREMIER SPORTS 1
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153723.m3u8
+#EXTINF:-1 group-title="Sports",PREMIER SPORTS 2
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153724.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS GOLF
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191685.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS ARENA
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153705.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS NFL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191689.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS MAIN EVENT
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153691.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS PREMIER LEAGUE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153693.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS NEWS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153707.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS+
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401172773.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS FOOTBALL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153695.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS CRICKET
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153697.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS TENNIS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/391270.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS F1
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191464.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS RACING HEVC
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/433202.m3u8
+#EXTINF:-1 group-title="Sports",SKY SPORTS MIX HEVC
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/433206.m3u8
+#EXTINF:-1 group-title="Sports",TNT SPORT 1
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/13780.m3u8
+#EXTINF:-1 group-title="Sports",TNT SPORT 2
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/6203.m3u8
+#EXTINF:-1 group-title="Sports",TNT SPORT 3
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/6204.m3u8
+#EXTINF:-1 group-title="Sports",TNT SPORT 4
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401384751.m3u8
+#EXTINF:-1 group-title="Sports",TNT SPORT 5
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/62800.m3u8
+#EXTINF:-1 group-title="Sports",RACING UK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191470.m3u8
+#EXTINF:-1 group-title="Sports",BRAVO
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176775.m3u8
+#EXTINF:-1 group-title="Sports",AMC PLUS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176790.m3u8
+#EXTINF:-1 group-title="Sports",NFL RED ZONE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181403.m3u8
+#EXTINF:-1 group-title="Sports",SPORTS GRID
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400163374.m3u8
+#EXTINF:-1 group-title="Sports",WWE NETWORK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181444.m3u8
+#EXTINF:-1 group-title="Sports",SPEED SPORT 1
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401572602.m3u8
+#EXTINF:-1 group-title="Sports",CBS SPORTS GOLAZO NETWORK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/27183.m3u8
+#EXTINF:-1 group-title="Sports",CBS SPORTS HQ
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/183430.m3u8
+#EXTINF:-1 group-title="Sports",FUBO SPORTS NETWORK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400163500.m3u8
+#EXTINF:-1 group-title="Sports",NBC SPORTS NETWORK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181442.m3u8
+#EXTINF:-1 group-title="Sports",NBC GOLF CHANNEL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181475.m3u8
+#EXTINF:-1 group-title="Sports",HLN
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/253154.m3u8
+#EXTINF:-1 group-title="Sports",REAL AMERICA'S VOICE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/381772.m3u8
+#EXTINF:-1 group-title="Sports",LIFETIME
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176707.m3u8
+#EXTINF:-1 group-title="Sports",DOG TV
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/13550.m3u8
+#EXTINF:-1 group-title="Sports",AWE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176716.m3u8
+#EXTINF:-1 group-title="Sports",TRU TV
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176757.m3u8
+#EXTINF:-1 group-title="Sports",LAFF
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400309672.m3u8
+#EXTINF:-1 group-title="Sports",REVOLT
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176704.m3u8
+#EXTINF:-1 group-title="Sports",UNIVERSO
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/28279.m3u8
+#EXTINF:-1 group-title="Sports",DEFIANCE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/33938.m3u8
+#EXTINF:-1 group-title="Sports",Wild Earth
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/6615.m3u8
+#EXTINF:-1 group-title="Sports",Love Nature
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/6616.m3u8
+#EXTINF:-1 group-title="Sports",CINEMAX THRILLER MAX
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/170629.m3u8
+#EXTINF:-1 group-title="Sports",CINEVAULT WESTERNS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/77367.m3u8
+#EXTINF:-1 group-title="Sports",CINE LIFE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/42198.m3u8
+#EXTINF:-1 group-title="Sports",AMC THRILLERS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401412568.m3u8
+#EXTINF:-1 group-title="Sports",PARAMOUNT NETWORK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176601.m3u8
+#EXTINF:-1 group-title="Sports",FUBO MOVIES
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/33964.m3u8
+#EXTINF:-1 group-title="Sports",THE FILM DETECTIVE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181553.m3u8
+#EXTINF:-1 group-title="Sports",SHOWTIME 2 EAST
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/181563.m3u8
+#EXTINF:-1 group-title="Sports",SCREENPIX WESTERNS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/28289.m3u8
+#EXTINF:-1 group-title="Sports",NICKTOONS
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176798.m3u8
+#EXTINF:-1 group-title="Sports",ADULT ANIMATION
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/77598.m3u8
+#EXTINF:-1 group-title="Sports",SONY Movies
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/433239.m3u8
+#EXTINF:-1 group-title="Sports",DISCOVERY CHANNEL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176620.m3u8
+#EXTINF:-1 group-title="Sports",DISNEY CHANNEL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/153841.m3u8
+#EXTINF:-1 group-title="Sports",LOL NETWORK
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/77461.m3u8
+#EXTINF:-1 group-title="Sports",ABSOLUTE REALITY
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401442715.m3u8
+#EXTINF:-1 group-title="Sports",VICTORY CHANNEL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401442727.m3u8
+#EXTINF:-1 group-title="Sports",HISTORY CHANNEL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176584.m3u8
+#EXTINF:-1 group-title="Sports",OXYGEN EAST
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/176596.m3u8
+#EXTINF:-1 group-title="Sports",SKY SHOWCASE
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/191466.m3u8
+#EXTINF:-1 group-title="Sports",SKY ANIMATION
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/189992.m3u8
+#EXTINF:-1 group-title="Sports",COMEDY CENTRAL
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/400230293.m3u8
+#EXTINF:-1 group-title="Sports",SKY COMEDY
+http://mwyceyp.mhubery.xyz:80/live/2161039006/6680421603/401630523.m3u8
