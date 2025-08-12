@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="button_active">#00BCD4</color>
+    <color name="button_disabled">#4D006064</color>
+    <color name="button_error">#FF4444</color>
+    <color name="button_normal">#00FFFF</color>
+    <color name="button_success">#00FF41</color>
+    <color name="hacker_ice_accent">#00BCD4</color>
+    <color name="hacker_ice_alert">#FF4444</color>
+    <color name="hacker_ice_crystal">#B2EBF2</color>
+    <color name="hacker_ice_dark">#006064</color>
+    <color name="hacker_ice_glow">#80FFFF</color>
+    <color name="hacker_ice_primary">#00FFFF</color>
+    <color name="hacker_ice_secondary">#4DD0E1</color>
+    <color name="hacker_ice_shadow">#004D5C</color>
+    <color name="hacker_ice_success">#00FF41</color>
+    <color name="hacker_ice_white">#E0F7FA</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Car TV Player</string>
+    <string name="back">Back</string>
+    <string name="channel_list_title">Media Channels</string>
+    <string name="connect_to_car">Connect to Android Auto to start watching</string>
+    <string name="gcm_defaultSenderId" translatable="false">1055425659261</string>
+    <string name="google_api_key" translatable="false">AIzaSyCNAMnddnq1Ov3SVIA1NxeNZXms7Uljp_k</string>
+    <string name="google_app_id" translatable="false">1:1055425659261:android:5ee98a20ffff8d755c8c14</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCNAMnddnq1Ov3SVIA1NxeNZXms7Uljp_k</string>
+    <string name="google_storage_bucket" translatable="false">cartvplayer-793f6.firebasestorage.app</string>
+    <string name="import_error">Failed to import subscription</string>
+    <string name="import_subscription">Import Subscription</string>
+    <string name="import_success">Subscription imported successfully</string>
+    <string name="importing">Importing subscription...</string>
+    <string name="no_channels">No channels available. Import a subscription first.</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="project_id" translatable="false">cartvplayer-793f6</string>
+    <string name="volume_control">Volume Control</string>
+    <style name="PlayerControlButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/player_button_background</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="Theme.CarPlayerIPTV" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+</resources>

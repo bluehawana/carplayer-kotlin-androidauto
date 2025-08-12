@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">1055425659261</string>
+    <string name="google_api_key" translatable="false">AIzaSyCNAMnddnq1Ov3SVIA1NxeNZXms7Uljp_k</string>
+    <string name="google_app_id" translatable="false">1:1055425659261:android:5ee98a20ffff8d755c8c14</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCNAMnddnq1Ov3SVIA1NxeNZXms7Uljp_k</string>
+    <string name="google_storage_bucket" translatable="false">cartvplayer-793f6.firebasestorage.app</string>
+    <string name="project_id" translatable="false">cartvplayer-793f6</string>
+</resources>
