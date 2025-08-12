@@ -203,31 +203,54 @@ class M3UFileManager(private val context: Context) {
         var currentChannel: Channel? = null
         var channelInfo = ""
         
-        for (line in lines) {
-            when {
-                line.startsWith("#EXTINF:") -> {
-                    channelInfo = line.substringAfter("#EXTINF:")
-                    android.util.Log.d("M3UFileManager", "Found EXTINF: $channelInfo")
+        for ((lineNum, line) in lines.withIndex()) {
+            val trimmedLine = line.trim()
+            
+            // Skip empty lines and comments that aren't EXTINF
+            if (trimmedLine.isEmpty() || 
+                (trimmedLine.startsWith("#") && !trimmedLine.startsWith("#EXTINF:"))) {
+                continue
+            }
+            
+            try {
+                when {
+                    trimmedLine.startsWith("#EXTINF:") -> {
+                        channelInfo = trimmedLine.substringAfter("#EXTINF:")
+                        android.util.Log.d("M3UFileManager", "Line ${lineNum + 1}: Found EXTINF: $channelInfo")
+                    }
+                    trimmedLine.startsWith("http://") || trimmedLine.startsWith("https://") -> {
+                        if (channelInfo.isNotEmpty()) {
+                            val name = extractChannelName(channelInfo)
+                            val logoUrl = extractLogoUrl(channelInfo)
+                            val category = extractCategory(channelInfo)
+                            val channelNumber = extractChannelNumber(channelInfo)
+                            
+                            android.util.Log.d("M3UFileManager", "Line ${lineNum + 1}: Creating channel: $name, Number: $channelNumber, Category: $category, URL: $trimmedLine")
+                            
+                            currentChannel = Channel(
+                                id = java.util.UUID.randomUUID().toString(),
+                                name = name,
+                                description = category,
+                                streamUrl = trimmedLine,
+                                logoUrl = logoUrl,
+                                category = category,
+                                channelNumber = channelNumber
+                            )
+                            channels.add(currentChannel)
+                            
+                            // Clear channelInfo for next channel
+                            channelInfo = ""
+                        } else {
+                            android.util.Log.w("M3UFileManager", "Line ${lineNum + 1}: Found URL without EXTINF info: $trimmedLine")
+                        }
+                    }
+                    else -> {
+                        android.util.Log.d("M3UFileManager", "Line ${lineNum + 1}: Skipping line: $trimmedLine")
+                    }
                 }
-                line.startsWith("http") -> {
-                    val name = extractChannelName(channelInfo)
-                    val logoUrl = extractLogoUrl(channelInfo)
-                    val category = extractCategory(channelInfo)
-                    val channelNumber = extractChannelNumber(channelInfo)
-                    
-                    android.util.Log.d("M3UFileManager", "Creating channel: $name, Number: $channelNumber, URL: ${line.trim()}")
-                    
-                    currentChannel = Channel(
-                        id = java.util.UUID.randomUUID().toString(),
-                        name = name,
-                        description = category,
-                        streamUrl = line.trim(),
-                        logoUrl = logoUrl,
-                        category = category,
-                        channelNumber = channelNumber
-                    )
-                    channels.add(currentChannel)
-                }
+            } catch (e: Exception) {
+                android.util.Log.e("M3UFileManager", "Line ${lineNum + 1}: Error parsing line: $trimmedLine", e)
+                // Continue parsing despite errors
             }
         }
         
@@ -245,8 +268,19 @@ class M3UFileManager(private val context: Context) {
     }
     
     private fun extractCategory(info: String): String {
+        // Try standard group-title first
         val categoryPattern = """group-title="([^"]+)"""".toRegex()
-        return categoryPattern.find(info)?.groupValues?.get(1) ?: "General"
+        categoryPattern.find(info)?.groupValues?.get(1)?.let { return it }
+        
+        // Try aktv-group format
+        val aktvGroupPattern = """aktv-group="([^"]+)"""".toRegex()
+        aktvGroupPattern.find(info)?.groupValues?.get(1)?.let { return it }
+        
+        // Try provider format
+        val providerPattern = """provider="([^"]+)"""".toRegex()
+        providerPattern.find(info)?.groupValues?.get(1)?.let { return it }
+        
+        return "General"
     }
     
     private fun extractChannelNumber(info: String): String? {

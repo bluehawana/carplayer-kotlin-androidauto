@@ -255,13 +255,33 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 val m3uFileManager = com.carplayer.iptv.storage.M3UFileManager(this@MainActivity)
-                val m3uFiles = m3uFileManager.getAllM3UFiles()
                 
-                val channelCount = if (m3uFiles.isNotEmpty()) {
-                    val channels = m3uFileManager.loadM3UFile(m3uFiles.first().fileName)
-                    channels?.size ?: 0
-                } else {
-                    0
+                // Load directly from assets iptv.m3u to get accurate count
+                val channelCount = try {
+                    val inputStream = assets.open("iptv.m3u")
+                    val content = inputStream.bufferedReader().use { it.readText() }
+                    inputStream.close()
+                    
+                    // Parse content to count channels
+                    val lines = content.split("\n")
+                    var count = 0
+                    for (line in lines) {
+                        if (line.trim().startsWith("http://") || line.trim().startsWith("https://")) {
+                            count++
+                        }
+                    }
+                    count
+                } catch (e: Exception) {
+                    android.util.Log.e("MainActivity", "Error reading assets iptv.m3u", e)
+                    
+                    // Fallback to M3U file manager
+                    val m3uFiles = m3uFileManager.getAllM3UFiles()
+                    if (m3uFiles.isNotEmpty()) {
+                        val channels = m3uFileManager.loadM3UFile(m3uFiles.first().fileName)
+                        channels?.size ?: 0
+                    } else {
+                        0
+                    }
                 }
                 
                 runOnUiThread {
