@@ -32,6 +32,12 @@ gen/
 out/
 release/
 
+# Build directories
+build/
+*/build/
+app/build/
+**/build/
+
 # Log Files
 *.log
 
