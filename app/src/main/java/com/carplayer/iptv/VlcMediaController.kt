@@ -28,12 +28,31 @@ class VlcMediaController(private val context: Context) {
         Log.d(TAG, "Initializing VLC LibVLC")
         try {
             libVLC = LibVLC(context, ArrayList<String>().apply {
-                // SIMPLE SETTINGS from working commit a6c9e38 (perfect car player)
+                // OPTIMIZED AUDIO SETTINGS - Fix water-like sound quality
                 add("--no-stats")
                 add("--no-snapshot-preview")
-                add("--network-caching=1500")
-                add("--live-caching=1500")
-                add("--sout-mux-caching=1500")
+                
+                // Network caching optimized for IPTV
+                add("--network-caching=2000")
+                add("--live-caching=2000")
+                add("--sout-mux-caching=2000")
+                
+                // AUDIO QUALITY IMPROVEMENTS - Fix water/distortion issues
+                add("--aout=opensles")  // Use OpenSL ES for better Android audio
+                add("--audio-resampler=soxr")  // High-quality audio resampling
+                add("--gain=1.0")  // Normal audio gain to prevent distortion
+                add("--volume-save=false")  // Don't save volume between sessions
+                
+                // Audio buffer and sync improvements
+                add("--audio-desync=0")  // Perfect audio sync
+                add("--no-audio-time-stretch")  // Prevent audio pitch changes
+                add("--audio-buffer-size=16384")  // Optimized buffer size
+                
+                // Network audio streaming optimization
+                add("--http-reconnect=true")
+                add("--adaptive=true")  // Adaptive streaming
+                add("--no-drop-late-frames")  // Don't drop frames to maintain sync
+                
                 // Removed --no-audio to keep audio working
             })
             
@@ -125,19 +144,27 @@ class VlcMediaController(private val context: Context) {
         try {
             val media = Media(libVLC, Uri.parse(url))
             
-            // Special handling for Sky Sports F1 audio issues
-            if (url.contains("354945") || (url.lowercase().contains("sky") && url.lowercase().contains("f1"))) {
-                Log.d(TAG, "Sky Sports F1 detected - applying VLC audio fixes")
+            // Special handling for Sky Sports F1 and sports streams audio issues
+            if (url.contains("354945") || url.contains("skysports") || 
+                (url.lowercase().contains("sky") && url.lowercase().contains("f1")) ||
+                url.contains("eurosport")) {
+                Log.d(TAG, "Sports stream detected - applying enhanced audio fixes")
                 
-                // Add specific options for Sky F1 audio
-                // Forcing audio track 0 was causing no sound, so we let VLC choose
-                media.addOption(":network-caching=2000")
-                media.addOption(":live-caching=2000")
+                // Enhanced sports stream audio options
+                media.addOption(":network-caching=3000")  // Higher caching for sports
+                media.addOption(":live-caching=3000")
                 media.addOption(":audio-language=eng")  // Prefer English audio
-                media.addOption(":no-audio-time-stretch")
-                media.addOption(":audio-desync=0")
+                media.addOption(":preferred-resolution=720")  // Optimize for quality/performance
+                
+                // Advanced audio settings for sports commentary clarity
+                media.addOption(":audio-visual=none")  // No audio visualizations
+                media.addOption(":audio-filter=normvol")  // Volume normalization
+                media.addOption(":norm-max-level=2.0")  // Max normalization level
+                
+                // Network optimization for live sports
                 media.addOption(":http-user-agent=VLC/3.0.18 LibVLC/3.0.18")
                 media.addOption(":http-reconnect=true")
+                media.addOption(":http-continuous=true")  // Continuous HTTP streaming
             }
             
             mediaPlayer?.media = media
