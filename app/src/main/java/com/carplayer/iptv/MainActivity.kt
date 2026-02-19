@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         
         // Subtitle - FULLY RESPONSIVE
         val subtitleView = TextView(this).apply {
-            text = "🌨️ Nordic Ice Age Theme\n🎬 92 Premium Channels"
+            text = "🌨️ Nordic Ice Age Theme\n🎬 20 Premium Channels"
             textSize = subtitleSize
             setTextColor(0xFFF5F5F5.toInt()) // Smoky white
             gravity = android.view.Gravity.CENTER
@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() {
         
         // Version info - FULLY RESPONSIVE
         val versionView = TextView(this).apply {
-            text = "❄️ Nordic Edition v1.0 | 🎯 92 Channels"
+            text = "❄️ Nordic Edition v1.0 | 🎯 20 Channels"
             textSize = if (screenWidth > 800) 12f else 10f
             setTextColor(0xFFb1d4e0.toInt()) // Baby Blue
             gravity = android.view.Gravity.CENTER

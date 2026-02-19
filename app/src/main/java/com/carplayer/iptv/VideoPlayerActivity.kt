@@ -70,24 +70,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         // Monitor network changes and adjust streaming
         networkMonitor.setOnNetworkChangedCallback { networkInfo ->
             android.util.Log.d("NetworkMonitor", "Network changed: ${networkInfo?.type} (Hotspot: ${networkInfo?.isHotspot})")
-            
-            // Update status with network info
-            val networkDesc = when {
-                networkInfo?.isHotspot == true -> "📱 Using hotspot connection"
-                networkInfo?.type == "Mobile Data" -> "📱 Using mobile data"
-                networkInfo?.type == "WiFi" -> "📶 Using WiFi connection"
-                else -> "🔌 Network connection"
-            }
-            
-            android.os.Handler(android.os.Looper.getMainLooper()).post {
-                if (statusTextView.visibility == android.view.View.GONE) {
-                    statusTextView.text = networkDesc
-                    statusTextView.visibility = android.view.View.VISIBLE
-                    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-                        statusTextView.visibility = android.view.View.GONE
-                    }, 2000)
-                }
-            }
+            // No UI notification — network type is logged only
         }
         
         networkMonitor.setOnStreamingProfileChangedCallback { profile ->

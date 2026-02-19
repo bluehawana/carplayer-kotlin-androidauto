@@ -26,6 +26,9 @@ class ExoPlayerController(private val context: Context) {
     
     private var errorCallback: ((String) -> Unit)? = null
     private var stateChangedCallback: ((Boolean) -> Unit)? = null
+    private var currentUrl: String = ""
+    private var retryCount = 0
+    private val maxRetries = 3
 
     companion object {
         private const val TAG = "ExoPlayerController"
@@ -65,6 +68,7 @@ class ExoPlayerController(private val context: Context) {
                                 }
                                 Player.STATE_READY -> {
                                     Log.d(TAG, "ExoPlayer: READY - playback can start")
+                                    retryCount = 0 // Reset retries on success
                                     errorCallback?.invoke("") // Clear buffering message
                                     stateChangedCallback?.invoke(isPlaying)
                                 }
@@ -82,18 +86,36 @@ class ExoPlayerController(private val context: Context) {
 
                         override fun onPlayerError(error: PlaybackException) {
                             Log.e(TAG, "ExoPlayer error: ${error.message}", error)
-                            
+
+                            // Auto-retry on network errors (common on emulator)
+                            val isNetworkError = error.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED ||
+                                error.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT ||
+                                error.errorCode == PlaybackException.ERROR_CODE_IO_UNSPECIFIED ||
+                                error.cause is java.net.UnknownHostException ||
+                                error.cause?.cause is java.net.UnknownHostException
+
+                            if (isNetworkError && retryCount < maxRetries && currentUrl.isNotEmpty()) {
+                                retryCount++
+                                Log.d(TAG, "Network error - auto-retry $retryCount/$maxRetries in 2s")
+                                errorCallback?.invoke("❄️ Connecting... (attempt $retryCount/$maxRetries)")
+                                android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                                    startPlayback(currentUrl)
+                                }, 2000L)
+                                return
+                            }
+
                             // Provide specific error messages
                             val errorMessage = when (error.errorCode) {
-                                PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED -> 
+                                PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED ->
                                     "❄️ Network connection failed - check internet"
-                                PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT -> 
+                                PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT ->
                                     "❄️ Connection timeout - trying to reconnect..."
-                                PlaybackException.ERROR_CODE_PARSING_CONTAINER_MALFORMED -> 
+                                PlaybackException.ERROR_CODE_PARSING_CONTAINER_MALFORMED ->
                                     "❄️ Stream format issue - switching to VLC fallback..."
                                 else -> "❄️ Playback error: ${error.message}"
                             }
-                            
+
+                            retryCount = 0
                             errorCallback?.invoke(errorMessage)
                         }
                     })
@@ -138,17 +160,18 @@ class ExoPlayerController(private val context: Context) {
 
     fun startPlayback(url: String) {
         Log.d(TAG, "Starting ExoPlayer playback for: $url")
+        currentUrl = url
         try {
             val mediaSource = createMediaSource(url)
-            
+
             exoPlayer?.apply {
                 setMediaSource(mediaSource)
                 prepare()
                 playWhenReady = true
             }
-            
+
             Log.d(TAG, "ExoPlayer playback started")
-            
+
         } catch (e: Exception) {
             Log.e(TAG, "Failed to start playback", e)
             errorCallback?.invoke("ExoPlayer playback failed: ${e.message}")
